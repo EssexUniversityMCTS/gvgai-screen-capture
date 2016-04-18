@@ -1,5 +1,6 @@
 package controllers.ScreenCaptureAgent;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -9,17 +10,19 @@ public class QLearning {
 	
 	public double[][] qValues;
 	//public HashMap<Experience, Integer> mapper;
-	public double alpha = 0.1;
+	public double alpha = 0.01;
 	public double gamma = 0.9;
 	public double epsilon = 0.1;
 	
-	Experience[] experiencePool;
+	ArrayList<double[][]> pool;
+	//Experience[] experiencePool;
 	private Random random = new Random();
 	
-	public QLearning(Experience[] exp, int actionSize)
+	public QLearning(int maxKept, int actionSize)
 	{
-		experiencePool = exp;
-		qValues = new double[experiencePool.length][actionSize];
+		pool = new ArrayList();
+		//experiencePool = exp;
+		qValues = new double[maxKept][actionSize];
 	//	mapper = new HashMap<Experience, Integer>();
 	}
 	
@@ -47,6 +50,7 @@ public class QLearning {
 	
 	public int getMaxActionIndex(int index)
 	{
+		ArrayList<Integer> mIndex = new ArrayList();
 		if(random.nextDouble()<epsilon)
 		{
 			return random.nextInt(qValues[0].length);
@@ -55,14 +59,26 @@ public class QLearning {
 		else
 		{
 			double[] actionV = qValues[index];
-			int max = 0;
+		//	System.out.println(actionV.length);
+			double max = -Double.MAX_VALUE;
+			
 			for(int i=0;i<actionV.length;i++)
 			{
-				if(actionV[i]>actionV[max])
-					max = i;
+				if(actionV[i]>max)
+				{
+					max = actionV[i];
+					mIndex = new ArrayList();
+					mIndex.add(i);
+		//			System.out.println("add");
+				}
+				else if(actionV[i]==max)
+				{
+					mIndex.add(i);
+				}
 			}
 						
-			return max;
+		//	System.out.println(mIndex.size());
+			return mIndex.get(random.nextInt(mIndex.size()));
 		}
 		
 	}
@@ -76,9 +92,9 @@ public class QLearning {
 		try{
 			
 		
-		for(i=0;i<experiencePool.length;i++)
+		for(i=0;i<pool.size();i++)
 		{
-			double[][] im = experiencePool[i].getPrevious();
+			double[][] im = pool.get(i);//experiencePool[i].getPrevious();
 			
 			boolean pass = false;
 			for(int j=0;j<im.length;j++)
@@ -96,12 +112,51 @@ public class QLearning {
 				break;
 		}
 		}catch(Exception e){}
+		//System.out.println(found);
 		if(!found)
 			return -1;
 		else
 		{
-			System.out.println("found");
-			return getMaxActionIndex(i);
+		//	System.out.println("xxx "+i);
+			int index = getMaxActionIndex(i);
+			
+			System.out.println("found "+i+" "+index+" "+qValues[i][index]);
+			return index;//getMaxActionIndex(i);
+		}
+	}
+	
+	public int findIndexFromPrevious(double[][] image)
+	{
+		{
+			boolean found = false;
+			int i=0;
+			try{
+				
+			
+			for(i=0;i<pool.size();i++)//experiencePool.length;i++)
+			{
+				double[][] im = pool.get(i);//experiencePool[i].getPrevious();
+				
+				boolean pass = false;
+				for(int j=0;j<im.length;j++)
+					for(int k=0;k<im[0].length;k++)
+					{
+						if(pass)
+							break;
+						if(im[j][k]!=image[j][k])
+							pass = true;
+					}
+				if(!pass)
+					found = true;
+				
+				if(found)
+					break;
+			}
+			}catch(Exception e){}
+			if(!found)
+				return -1;
+				
+			else return i;
 		}
 	}
 	

@@ -1,0 +1,23 @@
+INDEX VERSION 1.126+D:\Essex\Master Project\Code\gvgai-screen-capture\gvgai-master\.metadata\.plugins\org.eclipse.jdt.core
+2983615333.index
+2288688875.index
+240440038.index
+3682675155.index
+3529189748.index
+3906231413.index
+1029812341.index
+3203845365.index
+1801258344.index
+2226970194.index
+1896129790.index
+4275295303.index
+2739770058.index
+524735527.index
+1347875669.index
+744979032.index
+2602344519.index
+1537758335.index
+11625921.index
+924985868.index
+1840176046.index
+2481355036.index

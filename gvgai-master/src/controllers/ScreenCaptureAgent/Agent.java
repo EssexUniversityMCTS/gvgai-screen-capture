@@ -42,14 +42,14 @@ public class Agent extends AbstractPlayer{
 	 * @param stateObs Observation of the current state.
      * @param elapsedTimer Timer when the action returned is due.
 	 */
-	static int poolSize = 200;
-	static int batchSize = 20;
+	static int poolSize = 1000;
+	static int batchSize = 100;
 	int currentIndex;
 	public static Experience[] experiencePool = new Experience[poolSize];
 	Random random = new Random();
 	MyFrame frame;
-	boolean start = false;
-	
+	int numAct;
+	ArrayList<Types.ACTIONS> actions; 
 	MultiLayerNetwork model;
 	
 	DefaultTableModel tableModel;
@@ -57,11 +57,13 @@ public class Agent extends AbstractPlayer{
 	private QLearning learning;
 	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
-		learning = new QLearning(experiencePool,stateObs.getAvailableActions().size());
+		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
 		frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
 		tableModel = (DefaultTableModel) frame.table.getModel();
 		frame.setVisible(true);
 		currentIndex = 0;
+		actions = stateObs.getAvailableActions();
+	    numAct = actions.size();
 		 int nChannels = 1;
 	     int outputNum = stateObs.getAvailableActions().size();
 	     int batchSize = 100;//1000;
@@ -164,6 +166,7 @@ public class Agent extends AbstractPlayer{
 	 */
 	
 	Experience experience;
+	
 	public ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
 		
        
@@ -198,8 +201,28 @@ public class Agent extends AbstractPlayer{
 
         	tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
         	//learning.mapper.put(experience.copy(), currentIndex);
-        	learning.qValues[currentIndex] = new double[stateObs.getAvailableActions().size()];
-        	experiencePool[currentIndex++] = experience.copy();
+        	int pixIndex =  learning.findIndexFromPrevious(pixs);
+        	//learning.qValues[currentIndex] = new double[stateObs.getAvailableActions().size()];
+        	
+        	
+        	try
+        	{
+        		
+        		if(pixIndex==-1)
+        		{
+        			learning.pool.set(currentIndex-1,pixs.clone());
+        			experiencePool[currentIndex++] = experience.copy();
+        		}
+        		else //update?
+        		{
+        			System.out.println("not add new");
+        			experiencePool[pixIndex] = experience.copy();
+        		}
+        	}
+        	catch(Exception e)
+        	{
+        		learning.pool.add(pixs);
+        	}
         	
         	if(currentIndex == poolSize)
         	{
@@ -220,35 +243,68 @@ public class Agent extends AbstractPlayer{
 //        	System.out.println(nd); 
 		//System.out.println(model.params());
         
-        ArrayList<Types.ACTIONS> actions = stateObs.getAvailableActions();
         
         int index = learning.getMaxActionIndexFromScreenCap(pixs);
-        		if(index==-1)
-        			index = random.nextInt(actions.size());
+        if(index==-1)
+        	index = random.nextInt(actions.size());
         
-        if(!start && currentIndex>batchSize)
+        try
         {
-        	start = true;
-        }
-        
-        if(start)
         for(int i=0;i<batchSize;i++)
         {
         	int rand = 0;
         	do
         	{
-        		rand = random.nextInt(poolSize);
+        		rand = random.nextInt(learning.pool.size());
         	}while(experiencePool[rand]==null);
         	
         	Experience toUpdateExp = experiencePool[rand];
+        	
         	learning.qUpdate(rand, actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
-        }
+        	
+        }}catch(Exception e){}
         //     System.out.println(index);
         
         experience.setAction(actions.get(index));
         
 		return actions.get(index);
 	}
+	
+	@Override
+	public void result(StateObservation stateObservation, ElapsedCpuTimer elapsedCpuTimer)
+    {
+		System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
+		int pixIndex = learning.findIndexFromPrevious(experience.getPrevious());
+		
+		
+		if(stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS))
+		{
+			experience.setReward(experience.getReward()+1000);
+			}
+		else
+		{
+			experience.setReward(experience.getReward()-1000);
+		}
+		if(pixIndex!=-1)
+			learning.qValues[pixIndex][actions.indexOf(experience.getAction())] = experience.getReward();
+	
+	//	System.out.println(pixIndex);
+		experience.setResult(null);
+		tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
+    	//learning.mapper.put(experience.copy(), currentIndex);
+    	//learning.qValues[currentIndex] = new double[numAct];
+		if(pixIndex!=-1)
+			experiencePool[pixIndex] = experience.copy();
+		else
+			experiencePool[currentIndex++] = experience.copy();
+    	
+    	if(currentIndex == poolSize)
+    	{
+    		currentIndex = 0;
+    	}
+    	
+    
+    }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);
 	private static int[][] convertTo2DWithoutUsingGetRGB(BufferedImage image) {

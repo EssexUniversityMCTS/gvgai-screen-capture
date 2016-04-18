@@ -1,0 +1,10 @@
+package com.depies.dl4j_tutorial;
+
+public class toTestStuff {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

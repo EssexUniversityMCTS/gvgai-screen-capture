@@ -1,0 +1,18 @@
+{
+  "D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\src": {
+    "location": "D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_77\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre1.8.0_77\\lib\\rt.jar",
+    "status": "RESOLVED"
+  },
+  "D:\\Program Files\\Java\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "D:\\Program Files\\Java\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027D:\\Program Files\\Java\\lib\\rt.jar\u0027. Skipped."
+  }
+}

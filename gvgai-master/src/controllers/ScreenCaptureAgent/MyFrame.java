@@ -133,7 +133,10 @@ public class MyFrame extends JFrame {
 	        public void valueChanged(ListSelectionEvent event) {
 	        	int row = table.getSelectedRow();
 		        if (row >= 0) {
-		        	fill(row);
+		        	try{
+		        		fill(row);
+		        	}
+		        	catch(NullPointerException e){}
 		        }
 	        }
 	    });

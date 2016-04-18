@@ -66,7 +66,7 @@ public class Test
         int seed = new Random().nextInt();
 
         //Game and level to play
-        int gameIdx = 53;
+        int gameIdx = 25;//53;
         int levelIdx = 0; //level names from 0 to 4 (game_lvlN.txt).
         String game = gamesPath + games[gameIdx] + ".txt";
         String level1 = gamesPath + games[gameIdx] + "_lvl" + levelIdx +".txt";
@@ -79,7 +79,7 @@ public class Test
         // 2. This plays a game in a level by the controller.
 //        ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);
         
-        ArcadeMachine.Learning(game, level1, visuals, screenCap, recordActionsFile, seed, false, 10);
+        ArcadeMachine.Learning(game, level1, visuals, screenCap, recordActionsFile, seed, false, 200);
 
         
         // 3. This replays a game from an action file previously recorded

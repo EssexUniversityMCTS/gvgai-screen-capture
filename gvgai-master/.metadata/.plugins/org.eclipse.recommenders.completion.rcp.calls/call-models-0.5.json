@@ -1,0 +1,17 @@
+{
+  "C:\\Users\\Aek\\.m2\\repository\\org\\deeplearning4j\\deeplearning4j-core\\0.4-rc3.8\\deeplearning4j-core-0.4-rc3.8.jar": {
+    "location": "C:\\Users\\Aek\\.m2\\repository\\org\\deeplearning4j\\deeplearning4j-core\\0.4-rc3.8\\deeplearning4j-core-0.4-rc3.8.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Users\\Aek\\.m2\\repository\\org\\deeplearning4j\\deeplearning4j-core\\0.4-rc3.8\\deeplearning4j-core-0.4-rc3.8.jar\u0027. Neither fingerprint \u00277ced3f0ca30cd472559b1cc3dd2f6a148c295e99\u0027 nor symbolic name \u0027deeplearning4j-core-0.4-rc3.8\u0027 are known."
+  },
+  "C:\\Users\\Aek\\.m2\\repository\\org\\nd4j\\nd4j-api\\0.4-rc3.8\\nd4j-api-0.4-rc3.8.jar": {
+    "location": "C:\\Users\\Aek\\.m2\\repository\\org\\nd4j\\nd4j-api\\0.4-rc3.8\\nd4j-api-0.4-rc3.8.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Users\\Aek\\.m2\\repository\\org\\nd4j\\nd4j-api\\0.4-rc3.8\\nd4j-api-0.4-rc3.8.jar\u0027. Neither fingerprint \u00278247bd513d454843df4daef4b730b901e5d0e7df\u0027 nor symbolic name \u0027nd4j-api-0.4-rc3.8\u0027 are known."
+  },
+  "D:\\Program Files\\Java\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "D:\\Program Files\\Java\\lib\\rt.jar",
+    "status": "RESOLVED"
+  }
+}

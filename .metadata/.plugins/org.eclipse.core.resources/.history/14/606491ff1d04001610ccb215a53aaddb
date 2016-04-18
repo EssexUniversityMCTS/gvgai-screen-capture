@@ -1,0 +1,164 @@
+package controllers.ScreenCaptureAgent;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
+import ontology.Types;
+
+public class QLearning {
+	
+	public double[][] qValues;
+	//public HashMap<Experience, Integer> mapper;
+	public double alpha = 0.1;
+	public double gamma = 0.9;
+	public double epsilon = 0.1;
+	
+	ArrayList<double[][]> pool;
+	//Experience[] experiencePool;
+	private Random random = new Random();
+	
+	public QLearning(int maxKept, int actionSize)
+	{
+		pool = new ArrayList();
+		//experiencePool = exp;
+		qValues = new double[maxKept][actionSize];
+	//	mapper = new HashMap<Experience, Integer>();
+	}
+	
+	public void qUpdate(int index, int actionIndex,double reward)
+	{
+		//int index = mapper.get(experience);
+		double max = 0;
+		
+		try
+		{
+			max = getMaxQValue(index);
+		}
+		catch(Exception e){}
+		
+		double prevQ = qValues[index][actionIndex];
+		qValues[index][actionIndex] = alpha*(reward+gamma*max-prevQ);
+		
+	}
+	
+	public double getMaxQValue(int index)
+	{
+		int maxIndex = getMaxActionIndex(index);
+		return qValues[index][maxIndex];
+	}
+	
+	public int getMaxActionIndex(int index)
+	{
+		ArrayList<Integer> mIndex = new ArrayList();
+		if(random.nextDouble()<epsilon)
+		{
+			return random.nextInt(qValues[0].length);
+		}
+		
+		else
+		{
+			double[] actionV = qValues[index];
+			double max = Double.MIN_VALUE;
+			
+			for(int i=0;i<actionV.length;i++)
+			{
+				if(actionV[i]>max)
+				{
+					max = actionV[i];
+					mIndex = new ArrayList();
+					mIndex.add(i);
+					System.out.println("add");
+				}
+				else if(actionV[i]==max)
+				{
+					mIndex.add(i);
+				}
+			}
+						
+			System.out.println(mIndex.size());
+			return mIndex.get(random.nextInt(mIndex.size()));
+		}
+		
+	}
+	
+	
+	
+	public int getMaxActionIndexFromScreenCap(double[][] image)
+	{
+		boolean found = false;
+		int i=0;
+		try{
+			
+		
+		for(i=0;i<pool.size();i++)
+		{
+			double[][] im = pool.get(i);//experiencePool[i].getPrevious();
+			
+			boolean pass = false;
+			for(int j=0;j<im.length;j++)
+				for(int k=0;k<im[0].length;k++)
+				{
+					if(pass)
+						break;
+					if(im[j][k]!=image[j][k])
+						pass = true;
+				}
+			if(!pass)
+				found = true;
+			
+			if(found)
+				break;
+		}
+		}catch(Exception e){}
+		System.out.println(found);
+		if(!found)
+			return -1;
+		else
+		{
+			//System.out.println("xxx "+i);
+			int index = getMaxActionIndex(i);
+			
+			System.out.println("found "+i+" "+index+" "+qValues[i][index]);
+			return getMaxActionIndex(i);
+		}
+	}
+	
+	public int findIndexFromPrevious(double[][] image)
+	{
+		{
+			boolean found = false;
+			int i=0;
+			try{
+				
+			
+			for(i=0;i<pool.size();i++)//experiencePool.length;i++)
+			{
+				double[][] im = pool.get(i);//experiencePool[i].getPrevious();
+				
+				boolean pass = false;
+				for(int j=0;j<im.length;j++)
+					for(int k=0;k<im[0].length;k++)
+					{
+						if(pass)
+							break;
+						if(im[j][k]!=image[j][k])
+							pass = true;
+					}
+				if(!pass)
+					found = true;
+				
+				if(found)
+					break;
+			}
+			}catch(Exception e){}
+			if(!found)
+				return -1;
+				
+			else return i;
+		}
+	}
+	
+	
+
+}
