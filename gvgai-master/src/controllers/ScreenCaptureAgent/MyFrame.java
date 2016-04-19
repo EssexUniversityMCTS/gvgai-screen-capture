@@ -1,47 +1,23 @@
 package controllers.ScreenCaptureAgent;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.GridLayout;
+import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JTable;
-import javax.swing.JButton;
-import javax.swing.JSplitPane;
-
-import java.awt.CardLayout;
-import java.awt.Color;
-
-import javax.swing.JTextField;
-
-import java.awt.Font;
-
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 
 import ontology.Types;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Vector;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.Component;
 
 public class MyFrame extends JFrame {
 
@@ -58,6 +34,7 @@ public class MyFrame extends JFrame {
 	Experience[] experiencePool;
 	ArrayList<Types.ACTIONS> actions;
 	double[][] qv;
+	private JTextField picSize;
 	/**
 	 * Launch the application.
 	 */
@@ -152,7 +129,7 @@ public class MyFrame extends JFrame {
 		
 		
 		JPanel qv_panel = new JPanel();
-		qv_panel.setBounds(440, 0, 170, 374);
+		qv_panel.setBounds(440, 0, 170, 137);
 		getContentPane().add(qv_panel);
 		qTable = new JTable();
 		//tableModel.addRow(new String[]{"1"});
@@ -161,14 +138,26 @@ public class MyFrame extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane(qTable);
 		qv_panel.add(scrollPane_1);
-		scrollPane_1.setPreferredSize(new Dimension(160, 374));
+		scrollPane_1.setPreferredSize(new Dimension(160, 120));
 		scrollPane_1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
+		picSize = new JTextField();
+		picSize.setEditable(false);
+		picSize.setBounds(484, 148, 86, 20);
+		getContentPane().add(picSize);
+		picSize.setColumns(10);
+		picSize.setText("Store "+QLearning.pool.size());
 		
 	//	contentPane = new JPanel();
 	//	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	//	contentPane.setLayout(new GridLayout(1, 3));
 	//	setContentPane(contentPane);
+	}
+	
+	public void update()
+	{
+		picSize.setText("Store "+QLearning.pool.size());
+		
 	}
 	
 	public void fill(int row)
@@ -207,11 +196,12 @@ public class MyFrame extends JFrame {
     	*/
     	DefaultTableModel qTableModel = (DefaultTableModel) qTable.getModel();
     	
+    	int index = QLearning.findIndexFromImage(experience.getPrevious());
     	for(int i=0;i<actions.size();i++)
     	{
     		//String[] st = new String[]{actions.get(i)+"", qv[row][i]+""};
     		qTableModel.setValueAt(actions.get(i), i, 0);
-    		qTableModel.setValueAt(qv[row][i], i, 1);
+    		qTableModel.setValueAt(qv[index][i], i, 1);
     	}
     	
     	repaint();

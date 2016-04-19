@@ -1,0 +1,58 @@
+package controllers.ScreenCaptureAgent;
+
+import java.util.ArrayList;
+
+public class ToTestThing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ArrayList<double[][]> pool = new ArrayList();
+		
+		double[][] x = {{1,2,3},
+						{4,5,6}
+		
+		};
+		double[][] x2 = {{1,2,3},
+				{4,5,6}
+
+		};
+		double[][] y = {{2,4,6},
+					{8,10,12}
+		};
+		
+		double[][] z = x.clone();
+		
+			boolean found = false;
+			int i=0;
+			try{
+				
+				pool.add(x);
+				pool.add(y);
+				//pool.add(z);
+			
+			for(i=0;i<pool.size();i++)//experiencePool.length;i++)
+			{
+				double[][] im = pool.get(i);//experiencePool[i].getPrevious();
+				
+				boolean pass = false;
+				for(int j=0;j<im.length;j++)
+					for(int k=0;k<im[0].length;k++)
+					{
+						if(pass)
+							break;
+						if(im[j][k]!=x2[j][k])
+							pass = true;
+					}
+				if(!pass)
+					found = true;
+				
+				if(found)
+					break;
+			}}catch(Exception e){}
+			
+			System.out.println(found);
+			
+	}
+
+}

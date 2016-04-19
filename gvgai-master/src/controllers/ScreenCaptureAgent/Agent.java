@@ -188,12 +188,13 @@ public class Agent extends AbstractPlayer{
         int blockW = stateObs.getBlockSize();//25;
         double[][] pixs = preProcess(bufferedImage,blockW);
         
-        System.out.println(experience+" "+currentIndex);
-        
         if(experience == null)
         {
         	experience = new Experience();
         	experience.setPrevious(pixs);
+        	
+        	if(QLearning.findIndexFromImage(pixs)==-1)
+        		QLearning.pool.add(pixs);
         }
         
         else
@@ -203,7 +204,7 @@ public class Agent extends AbstractPlayer{
 
         	tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
         	//learning.mapper.put(experience.copy(), currentIndex);
-        	int pixIndex =  learning.findIndexFromPrevious(pixs);
+        	int pixIndex =  QLearning.findIndexFromImage(pixs);
         	//learning.qValues[currentIndex] = new double[stateObs.getAvailableActions().size()];
         	
         	
@@ -212,7 +213,7 @@ public class Agent extends AbstractPlayer{
         		
         		if(pixIndex==-1)
         		{
-        			learning.pool.set(currentIndex,pixs.clone());
+        			QLearning.pool.add(experience.getPrevious().clone());//.set(currentIndex,experience.getPrevious().clone());
         			experiencePool[currentIndex] = experience.copy();
         			currentIndex++;
         		}
@@ -224,7 +225,7 @@ public class Agent extends AbstractPlayer{
         	}
         	catch(Exception e)
         	{
-        		learning.pool.add(pixs);
+        		//learning.pool.add(pixs);
         	}
         	
         	if(currentIndex == poolSize)
@@ -261,12 +262,12 @@ public class Agent extends AbstractPlayer{
         	do
         	{
         		//System.out.println(learning.pool.size()+" "+rand);
-        		rand = random.nextInt(learning.pool.size()+1);
+        		rand = random.nextInt(QLearning.pool.size()+1);
         	}while(experiencePool[rand]==null);
         	
         	Experience toUpdateExp = experiencePool[rand];
-        	
-        	learning.qUpdate(rand, actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
+        	int nextIndex = QLearning.findIndexFromImage(toUpdateExp.getResult());
+        	learning.qUpdate(rand, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
         	
         }}catch(Exception e){}
         //     System.out.println(index);
@@ -274,7 +275,7 @@ public class Agent extends AbstractPlayer{
         experience.setAction(actions.get(index));
         
         
-        
+        frame.update();
 		return actions.get(index);
 	}
 	
@@ -282,30 +283,33 @@ public class Agent extends AbstractPlayer{
 	public void result(StateObservation stateObservation, ElapsedCpuTimer elapsedCpuTimer)
     {
 		System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
-		int pixIndex = learning.findIndexFromPrevious(experience.getPrevious());
+		int pixIndex = QLearning.findIndexFromImage(experience.getPrevious());
 		
 		
 		if(stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS))
 		{
-			experience.setReward(experience.getReward()+1000);
+			experience.setReward(1000);
 			}
 		else
 		{
-			experience.setReward(experience.getReward()-1000);
+			experience.setReward(1000);
 		}
-		if(pixIndex!=-1)
-			learning.qValues[pixIndex][actions.indexOf(experience.getAction())] = experience.getReward();
-	
+		
 	//	System.out.println(pixIndex);
 		experience.setResult(null);
 		tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
     	//learning.mapper.put(experience.copy(), currentIndex);
     	//learning.qValues[currentIndex] = new double[numAct];
 		if(pixIndex!=-1)
+		{
+			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()),experience.getReward());
 			experiencePool[pixIndex] = experience.copy();
+		}
 		else
+		{
+			learning.qUpdate(currentIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
 			experiencePool[currentIndex++] = experience.copy();
-    	
+		}
     	if(currentIndex == poolSize)
     	{
     		currentIndex = 0;

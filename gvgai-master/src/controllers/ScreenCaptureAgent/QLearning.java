@@ -10,11 +10,11 @@ public class QLearning {
 	
 	public double[][] qValues;
 	//public HashMap<Experience, Integer> mapper;
-	public double alpha = 0.01;
+	public double alpha = 0.1;
 	public double gamma = 0.9;
 	public double epsilon = 0.1;
 	
-	ArrayList<double[][]> pool;
+	static ArrayList<double[][]> pool;
 	//Experience[] experiencePool;
 	private Random random = new Random();
 	
@@ -26,19 +26,22 @@ public class QLearning {
 	//	mapper = new HashMap<Experience, Integer>();
 	}
 	
-	public void qUpdate(int index, int actionIndex,double reward)
+	public void qUpdate(int curIndex, int nextIndex, int actionIndex,double reward)
 	{
 		//int index = mapper.get(experience);
 		double max = 0;
 		
 		try
 		{
-			max = getMaxQValue(index);
+			max = getMaxQValue(nextIndex);
 		}
-		catch(Exception e){}
+		catch(Exception e)
+		{
+			max = reward;
+		}
 		
-		double prevQ = qValues[index][actionIndex];
-		qValues[index][actionIndex] = alpha*(reward+gamma*max-prevQ);
+		double prevQ = qValues[curIndex][actionIndex];
+		qValues[curIndex][actionIndex] = prevQ+alpha*(reward+gamma*max-prevQ);
 		
 	}
 	
@@ -87,33 +90,9 @@ public class QLearning {
 	
 	public int getMaxActionIndexFromScreenCap(double[][] image)
 	{
-		boolean found = false;
-		int i=0;
-		try{
-			
+		int i= findIndexFromImage(image);
 		
-		for(i=0;i<pool.size();i++)
-		{
-			double[][] im = pool.get(i);//experiencePool[i].getPrevious();
-			
-			boolean pass = false;
-			for(int j=0;j<im.length;j++)
-				for(int k=0;k<im[0].length;k++)
-				{
-					if(pass)
-						break;
-					if(im[j][k]!=image[j][k])
-						pass = true;
-				}
-			if(!pass)
-				found = true;
-			
-			if(found)
-				break;
-		}
-		}catch(Exception e){}
-		//System.out.println(found);
-		if(!found)
+		if(i==-1)
 			return -1;
 		else
 		{
@@ -125,7 +104,7 @@ public class QLearning {
 		}
 	}
 	
-	public int findIndexFromPrevious(double[][] image)
+	public static int findIndexFromImage(double[][] image)
 	{
 		{
 			boolean found = false;

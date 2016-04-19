@@ -1,9 +1,6 @@
-wwwwwwwwwwwww
-w          Aw
-w           w
-w           w
-w           w
-w           w
-w           w
-wx          w
-wwwwwwwwwwwww
+wwwwww
+w   Aw
+w    w
+w    w
+wx   w
+wwwwww
