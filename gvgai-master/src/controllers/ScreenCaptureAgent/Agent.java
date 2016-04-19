@@ -188,6 +188,8 @@ public class Agent extends AbstractPlayer{
         int blockW = stateObs.getBlockSize();//25;
         double[][] pixs = preProcess(bufferedImage,blockW);
         
+        System.out.println(experience+" "+currentIndex);
+        
         if(experience == null)
         {
         	experience = new Experience();
@@ -210,8 +212,9 @@ public class Agent extends AbstractPlayer{
         		
         		if(pixIndex==-1)
         		{
-        			learning.pool.set(currentIndex-1,pixs.clone());
-        			experiencePool[currentIndex++] = experience.copy();
+        			learning.pool.set(currentIndex,pixs.clone());
+        			experiencePool[currentIndex] = experience.copy();
+        			currentIndex++;
         		}
         		else //update?
         		{
@@ -248,14 +251,17 @@ public class Agent extends AbstractPlayer{
         if(index==-1)
         	index = random.nextInt(actions.size());
         
-        try
+        if(currentIndex!=0)
+        	try
         {
         for(int i=0;i<batchSize;i++)
         {
+        	
         	int rand = 0;
         	do
         	{
-        		rand = random.nextInt(learning.pool.size());
+        		//System.out.println(learning.pool.size()+" "+rand);
+        		rand = random.nextInt(learning.pool.size()+1);
         	}while(experiencePool[rand]==null);
         	
         	Experience toUpdateExp = experiencePool[rand];
@@ -266,6 +272,8 @@ public class Agent extends AbstractPlayer{
         //     System.out.println(index);
         
         experience.setAction(actions.get(index));
+        
+        
         
 		return actions.get(index);
 	}

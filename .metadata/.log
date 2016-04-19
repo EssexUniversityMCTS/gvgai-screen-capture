@@ -477,3 +477,61 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2016-04-19 11:11:00.421 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-19 11:11:41.192
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-19 11:11:41.216
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Aek'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:22:57.440
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-nlp\0.4-rc3.8\deeplearning4j-nlp-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:22:57.921
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-scaleout-akka\0.4-rc3.8\deeplearning4j-scaleout-akka-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:22:59.341
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-scaleout-zookeeper\0.4-rc3.8\deeplearning4j-scaleout-zookeeper-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:22:59.353
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-scaleout-api\0.4-rc3.8\deeplearning4j-scaleout-api-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:22:59.361
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\apache\zookeeper\zookeeper\3.5.1-alpha\zookeeper-3.5.1-alpha.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:02.322
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-core\0.4-rc3.8\deeplearning4j-core-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:02.594
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\nd4j\nd4j-api\0.4-rc3.8\nd4j-api-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:02.654
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\nd4j\nd4j-common\0.4-rc3.8\nd4j-common-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:02.870
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\deeplearning4j\deeplearning4j-ui\0.4-rc3.8\deeplearning4j-ui-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:03.226
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\nd4j\nd4j-jackson\0.4-rc3.8\nd4j-jackson-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:23:03.370
+!MESSAGE Error while extracting name and version from file: C:\Users\Aek\.m2\repository\org\nd4j\nd4j-x86\0.4-rc3.8\nd4j-x86-0.4-rc3.8.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-04-19 11:31:19.729
+!MESSAGE Unable to update index for central|http://repo.maven.apache.org/maven2

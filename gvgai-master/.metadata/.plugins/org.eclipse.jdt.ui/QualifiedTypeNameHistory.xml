@@ -3,4 +3,8 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="org.nd4j.linalg.factory.Nd4j"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.jblas.util.Random"/>
+<fullyQualifiedTypeName name="org.nd4j.linalg.cpu.NDArray"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

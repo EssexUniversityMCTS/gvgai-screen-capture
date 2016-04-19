@@ -13,5 +13,10 @@
     "coordinate": "jre:jre:zip:call:1.0.0",
     "location": "D:\\Program Files\\Java\\lib\\rt.jar",
     "status": "RESOLVED"
+  },
+  "D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\dl4j-tutorial\\src\\main\\java": {
+    "location": "D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\dl4j-tutorial\\src\\main\\java",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Essex\\Master Project\\Code\\gvgai-screen-capture\\gvgai-master\\dl4j-tutorial\\src\\main\\java\u0027. Skipped."
   }
 }
