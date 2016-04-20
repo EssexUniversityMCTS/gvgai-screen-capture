@@ -43,6 +43,8 @@ public class QLearning {
 		double prevQ = qValues[curIndex][actionIndex];
 		qValues[curIndex][actionIndex] = prevQ+alpha*(reward+gamma*max-prevQ);
 		
+		//if(epsilon>0.01)
+			//epsilon-=0.1;
 	}
 	
 	public double getMaxQValue(int index)
@@ -79,9 +81,12 @@ public class QLearning {
 					mIndex.add(i);
 				}
 			}
+			
 						
 		//	System.out.println(mIndex.size());
-			return mIndex.get(random.nextInt(mIndex.size()));
+			int chosen = mIndex.get(random.nextInt(mIndex.size()));
+			System.out.println(index+" "+" "+chosen+" "+qValues[index][chosen]);
+			return chosen;
 		}
 		
 	}
@@ -99,7 +104,7 @@ public class QLearning {
 		//	System.out.println("xxx "+i);
 			int index = getMaxActionIndex(i);
 			
-			System.out.println("found "+i+" "+index+" "+qValues[i][index]);
+			System.out.println(index+" "+qValues[i][index]);
 			return index;//getMaxActionIndex(i);
 		}
 	}
@@ -134,8 +139,11 @@ public class QLearning {
 			}catch(Exception e){}
 			if(!found)
 				return -1;
-				
-			else return i;
+			
+			else {
+		//		System.out.println("found "+i);
+				return i;
+			}
 		}
 	}
 	

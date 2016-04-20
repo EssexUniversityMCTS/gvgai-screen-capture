@@ -156,7 +156,7 @@ public class MyFrame extends JFrame {
 	
 	public void update()
 	{
-		picSize.setText("Store "+QLearning.pool.size());
+		picSize.setText("Store "+QLearning.pool.size()+" "+Agent.currentIndex);
 		
 	}
 	
