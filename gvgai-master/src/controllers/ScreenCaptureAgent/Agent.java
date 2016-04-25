@@ -169,6 +169,7 @@ public class Agent extends AbstractPlayer{
 	
 	public ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
 		
+		
        
        // log.info("Load data....");
       //  DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize,true,12345);
@@ -205,14 +206,14 @@ public class Agent extends AbstractPlayer{
 
         	tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
         	//learning.mapper.put(experience.copy(), currentIndex);
-        	int pixIndex =  QLearning.findIndexFromImage(pixs);
+        //	int pixIndex =  QLearning.findIndexFromImage(pixs);
         	//learning.qValues[currentIndex] = new double[stateObs.getAvailableActions().size()];
         	
         	
         	try
         	{
         		
-        		if(pixIndex==-1)
+        		if(index==-1)
         		{
         			QLearning.pool.add(pixs);//.set(currentIndex,experience.getPrevious().clone());
         			experiencePool[currentIndex] = experience.copy();
@@ -221,7 +222,7 @@ public class Agent extends AbstractPlayer{
         		else //update?
         		{
         			System.out.println("not add new");
-        			experiencePool[pixIndex] = experience.copy();
+        			experiencePool[index] = experience.copy();
         		}
         	}
         	catch(Exception e)
@@ -286,6 +287,8 @@ public class Agent extends AbstractPlayer{
 	@Override
 	public void result(StateObservation stateObservation, ElapsedCpuTimer elapsedCpuTimer)
     {
+		//System.out.println(stateObservation.isAvatarAlive());
+		
 		System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
 		int pixIndex = QLearning.findIndexFromImage(experience.getPrevious());
 		
@@ -294,7 +297,7 @@ public class Agent extends AbstractPlayer{
 		{
 			experience.setReward(1000);
 			}
-		else
+		else //if (!stateObservation.isAvatarAlive())
 		{
 			experience.setReward(-1000);
 		}

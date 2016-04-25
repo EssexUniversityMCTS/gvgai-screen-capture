@@ -1,15 +1,7 @@
 package core.game;
 
 import java.awt.Dimension;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 import core.SpriteGroup;
@@ -737,6 +729,24 @@ public class ForwardModel extends Game
      */
     public int getAvatarLimitHealthPoints() {return avatar.limitHealthPoints;}
 
+
+    /**
+     * Returns true if the avatar is alive
+     * @return true if the avatar is alive
+     */
+    public boolean isAvatarAlive()
+    {
+        return isAvatarAlive(0);
+    }
+
+    /**
+     * Method overloaded for multi player games, returns true if the avatar is still alive.
+     *
+     * @param playerID ID of the player to query.
+     */
+    public boolean isAvatarAlive(int playerID) {
+        return !avatar.is_disabled();
+    }
 
     /** Methods that return positions of things **/
 

@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import ontology.Types;
+import tools.KeyHandler;
 import tools.Vector2d;
 
 /**
@@ -20,9 +21,9 @@ import tools.Vector2d;
 public class StateObservation {
     /**
      * This is the model of the game, used to apply an action and
-     * get to the next state. This model MUST be private.
+     * get to the next state. This model MUST NOT be public.
      */
-    private ForwardModel model;
+    protected ForwardModel model;
 
     /**
      * Constructor for StateObservation. Requires a forward model
@@ -90,6 +91,7 @@ public class StateObservation {
     }
 
 
+
     /**
      * Gets the score of the game at this observation.
      * @return score of the game.
@@ -147,7 +149,6 @@ public class StateObservation {
     }
 
     //Methods to retrieve the state of the avatar, in the game...
-
 
     /**
      * Returns the position of the avatar. If the game is finished, we cannot guarantee that
@@ -232,6 +233,13 @@ public class StateObservation {
      * @return the limit of health points the avatar can have.
      */
     public int getAvatarLimitHealthPoints() {return model.getAvatarLimitHealthPoints();}
+
+    /**
+     * returns true if the avatar is alive.
+     * @return true if the avatar is alive.
+     */
+    public boolean isAvatarAlive() {return model.isAvatarAlive();}
+
 
     //Methods to retrieve the state external to the avatar, in the game...
 
@@ -403,8 +411,6 @@ public class StateObservation {
         return model.getPortalsPositions(reference);
     }
 
-
-
     /**
      * Returns a list of observations of sprites created by the avatar (usually, by applying the
      * action Types.ACTIONS.ACTION_USE). As there can be sprites of different type, each entry in
@@ -433,6 +439,7 @@ public class StateObservation {
         return model.getFromAvatarSpPositions(reference);
     }
 
+    
     /**
      * Compares if this and the received StateObservation state are equivalent.
      * DEBUG ONLY METHOD.
