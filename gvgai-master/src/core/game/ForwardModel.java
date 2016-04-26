@@ -504,7 +504,7 @@ public class ForwardModel extends Game
             {
                 VGDLSprite sp = spriteIt.next();
 
-                if(sp != avatar)
+                if(sp != avatar && ! sp.is_disabled())
                 {
                     sp.preMovement();
                     sp.update(this);

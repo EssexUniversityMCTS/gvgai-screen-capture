@@ -287,7 +287,7 @@ public class Agent extends AbstractPlayer{
 	@Override
 	public void result(StateObservation stateObservation, ElapsedCpuTimer elapsedCpuTimer)
     {
-		//System.out.println(stateObservation.isAvatarAlive());
+		System.out.println(stateObservation.isAvatarAlive());
 		
 		System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
 		int pixIndex = QLearning.findIndexFromImage(experience.getPrevious());
@@ -297,7 +297,7 @@ public class Agent extends AbstractPlayer{
 		{
 			experience.setReward(1000);
 			}
-		else //if (!stateObservation.isAvatarAlive())
+		else if (!stateObservation.isAvatarAlive())
 		{
 			experience.setReward(-1000);
 		}

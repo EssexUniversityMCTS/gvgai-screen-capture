@@ -785,6 +785,15 @@ public abstract class Game
         }
         return acum;
     }
+    
+    public int getNumDisabledSprites(int itype) {
+        int acum = 0;
+        for( Integer subtype : this.iSubTypes[itype] )
+        {
+            acum += spriteGroups[subtype].numDisabledSprites();
+        }
+        return acum;
+    }
 
     /**
      * Runs a game, without graphics.
@@ -1089,8 +1098,11 @@ public abstract class Game
     protected void tick()
     {
         //Now, do the avatar.
-        avatar.preMovement();
-        avatar.update(this);
+    	if(!avatar.is_disabled())
+    	{
+    		avatar.preMovement();
+    		avatar.update(this);
+    	}
         //random = new Random(this.gameTick * 100); //uncomment this for testing a new rnd generator after avatar's move
 
         int spriteOrderCount = spriteOrder.length;
@@ -1102,7 +1114,7 @@ public abstract class Game
             if(keys!=null) for(Integer spriteKey : keys)
             {
                 VGDLSprite sp = spriteGroups[spriteTypeInt].getSprite(spriteKey);
-                if(sp != avatar)
+                if(sp != avatar && !sp.is_disabled())
                 {
                     sp.preMovement();
                     sp.update(this);
@@ -1160,7 +1172,7 @@ public abstract class Game
                 //For all sprites that can collide.
                 for (VGDLSprite s1 : bucketList[intId].getAllSprites()) {
                     //Check that they are not dead (could happen in this same cycle).
-                    if (!kill_list.contains(s1)) {
+                    if (!kill_list.contains(s1) && !s1.is_disabled()) {
                         executeEffect(ef, s1, null);
                     }
                 }
@@ -1212,7 +1224,7 @@ public abstract class Game
                 {
                     //Check if they are at the edge to trigger the effect. Also check that they
                     //are not dead (could happen in this same cycle).
-                    if(isAtEdge(s1.rect) && !kill_list.contains(s1)) {
+                    if(isAtEdge(s1.rect) && !kill_list.contains(s1)&& !s1.is_disabled()) {
                         executeEffect(ef, s1, null);
                     }
                 }
@@ -1286,6 +1298,7 @@ public abstract class Game
                     if(sprites1nBucket1!=null)
                         for(VGDLSprite s1 : sprites1nBucket1)
                         {
+                        	if(!s1.is_disabled()){
                             //Decide in what buckets to look.
                             int[] buckets;
                             if(s1.bucketSharp)  buckets = new int[]{s1.bucket-1, s1.bucket};
@@ -1303,7 +1316,8 @@ public abstract class Game
                                     {
                                         //Take each sprite of p.second and check for collision
                                         VGDLSprite s2 = spritesInBucket2.get(idx2);
-                                        if(s1 != s2 && s1.rect.intersects(s2.rect))
+                                        if(!s2.is_disabled())
+                                        {if(s1 != s2 && s1.rect.intersects(s2.rect))
                                         {
                                             executeEffect(ef, s1, s2);
 
@@ -1311,13 +1325,14 @@ public abstract class Game
                                                 break s2loop; //Stop checking sprite 1 if it was killed.
 
                                         }
+                                        }
 
                                     } //end FOR sprites s2.
 
                                 }
 
                             } //end FOR buckets p.second.
-
+                        }
                         }//end FOR sprites s1
 
                 }//end FOR buckets p.first
@@ -1529,7 +1544,14 @@ public abstract class Game
      */
     public void killSprite(VGDLSprite sprite)
     {
+    	if(sprite instanceof MovingAvatar)
+    	{
+    		sprite.setDisabled(true);
+    	}
+    	else
+    	{
         kill_list.add(sprite);
+    	}
     }
 
     /**

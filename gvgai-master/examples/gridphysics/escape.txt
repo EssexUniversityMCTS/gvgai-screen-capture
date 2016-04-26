@@ -1,4 +1,4 @@
-BasicGame key_handler=Pulse
+BasicGame key_handler=Pulse square_size=25
     SpriteSet
         avatar > MovingAvatar 
         box    > Passive img=box
