@@ -837,6 +837,7 @@ public abstract class Game
 
         //Create and initialize the panel for the graphics.
         VGDLViewer view = new VGDLViewer(this, player);
+        
         JEasyFrame frame;
         frame = new JEasyFrame(view, "Java-VGDL");
         frame.addKeyListener(ki);
@@ -864,9 +865,14 @@ public abstract class Game
 		width = dimension.width;
 		height = dimension.height;
         int count = 1;
-        //Play until the game is ended
+        
+     //   im = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+    //	im.createGraphics();
+        
+    	//Play until the game is ended
         while(!isEnded && !wi.windowClosed)
         {	
+        	
             //Determine the time to adjust framerate.
             long then = System.currentTimeMillis();
 
@@ -881,7 +887,7 @@ public abstract class Game
 
             //Draw all sprites in the panel.
             view.paint(this.spriteGroups);
-
+            
             //Update the frame title to reflect current score and tick.
             this.setTitle(frame);
             
@@ -893,19 +899,24 @@ public abstract class Game
             	
             	firstRun = false;
             }
+            
             int mod = 5;
             if(count%mod==0)
     		try {
+    			BufferedImage vm = view.image;
     			
-    			
-    			im = robot.createScreenCapture(new Rectangle(location.x+8, 
-    					location.y+32, dimension.width, dimension.height));//left, top, width, height
+    			im = new BufferedImage(vm.getColorModel()
+    					,vm.copyData(null)
+    					,vm.isAlphaPremultiplied(),null);
+    			//im = ;
+    			//im = robot.createScreenCapture(new Rectangle(location.x+8, 
+    			//		location.y+32, dimension.width, dimension.height));//left, top, width, height
     			
     			//write to file
     		/*	File outputfile = new File("screenshots/"+(count/mod)+"_"+score+".png");
     		    ImageIO.write(im, "png", outputfile);
-    		    */
-    			
+    		    
+    			*/
     		//	System.out.println(im);
     			
     		} catch (Exception e) {

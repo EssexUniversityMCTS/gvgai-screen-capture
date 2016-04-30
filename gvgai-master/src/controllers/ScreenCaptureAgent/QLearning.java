@@ -85,7 +85,7 @@ public class QLearning {
 						
 		//	System.out.println(mIndex.size());
 			int chosen = mIndex.get(random.nextInt(mIndex.size()));
-			System.out.println(index+" "+" "+chosen+" "+qValues[index][chosen]);
+		//	System.out.println(index+" "+" "+chosen+" "+qValues[index][chosen]);
 			return chosen;
 		}
 		
@@ -104,7 +104,7 @@ public class QLearning {
 		//	System.out.println("xxx "+i);
 			int index = getMaxActionIndex(i);
 			
-			System.out.println(index+" "+qValues[i][index]);
+		//	System.out.println(index+" "+qValues[i][index]);
 			return index;//getMaxActionIndex(i);
 		}
 	}
@@ -147,6 +147,17 @@ public class QLearning {
 		}
 	}
 	
-	
+	public boolean ImageEquals(double[][] pix1, double[][] pix2)
+	{
+		
+		boolean pass = false;
+		for(int j=0;j<pix1.length&&!pass;j++)
+			for(int k=0;k<pix1[0].length&&!pass;k++)
+			{
+				if(pix1[j][k]!=pix2[j][k])
+					pass = true;
+			}
+		return !pass;	
+	}
 
 }

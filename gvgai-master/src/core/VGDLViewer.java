@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -42,6 +43,8 @@ public class VGDLViewer extends JComponent
      */
     public AbstractPlayer player;
 
+    
+    public BufferedImage image;
 
     /**
      * Creates the viewer for the game.
@@ -52,6 +55,8 @@ public class VGDLViewer extends JComponent
         this.game = game;
         this.size = game.getScreenSize();
         this.player = player;
+        //image = new BufferedImage(size.width,size.height,BufferedImage.TYPE_INT_ARGB);
+        
     }
 
     /**
@@ -60,8 +65,9 @@ public class VGDLViewer extends JComponent
      */
     public void paintComponent(Graphics gx)
     {
-        Graphics2D g = (Graphics2D) gx;
-
+    	image = new BufferedImage(size.width,size.height,BufferedImage.TYPE_INT_RGB);
+        image.createGraphics();
+        Graphics2D g = (Graphics2D)image.getGraphics();
         //For a better graphics, enable this: (be aware this could bring performance issues depending on your HW & OS).
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -91,6 +97,8 @@ public class VGDLViewer extends JComponent
 
         g.setColor(Types.BLACK);
         player.draw(g);
+        
+        
     }
 
 
@@ -109,6 +117,7 @@ public class VGDLViewer extends JComponent
             this.spriteGroups[i].copyAllSprites(spriteGroupsGame[i].getSprites().values());
         }
 
+        
         this.repaint();
     }
 

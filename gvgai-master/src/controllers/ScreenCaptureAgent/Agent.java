@@ -42,7 +42,7 @@ public class Agent extends AbstractPlayer{
 	 * @param stateObs Observation of the current state.
      * @param elapsedTimer Timer when the action returned is due.
 	 */
-	static int poolSize = 1000;
+	static int poolSize = 2000;
 	static int batchSize = 100;
 	static int currentIndex;
 	public static Experience[] experiencePool = new Experience[poolSize];
@@ -94,33 +94,48 @@ public class Agent extends AbstractPlayer{
 	        
 	       // INDArray nd = Nd4j.create(pixs);
    //     log.info("Build model....");
-        MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
-                .seed(seed)
-                .iterations(iterations)
-                .regularization(true).l2(0.0005)
-                .learningRate(0.01)
-                .weightInit(WeightInit.XAVIER)
-                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .updater(Updater.NESTEROVS).momentum(0.9)
-                .list(2) //layer size
-                .layer(0, new ConvolutionLayer.Builder(5, 5) //kernelsize[]
-                        .nIn(nChannels) //dimensions?
-                        .stride(1, 1) //stride[]
-                        .nOut(20) //num output
-                        .dropOut(0.5) //rate of droping some units
-                        .activation("relu") //rectifier linear
-                        .build())
-       /*         .layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                        .kernelSize(2,2)
-                        .stride(2,2)
-                        .build())
-                .layer(2, new DenseLayer.Builder().activation("relu")
-                        .nOut(500).build())*/
-                .layer(1, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
-                        .nOut(outputNum)
-                        .activation("softmax")
-                        .build())
-                .backprop(true).pretrain(false);
+	        MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
+                    .seed(seed)
+                    .iterations(iterations)
+                    .regularization(true).l2(0.0005)
+                    .learningRate(0.01)
+                    .weightInit(WeightInit.XAVIER)
+                    .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+                    .updater(Updater.NESTEROVS).momentum(0.9)
+                    .list(5)
+                    .layer(0, new ConvolutionLayer.Builder(8, 8)
+                            .nIn(nChannels)
+                            .stride(4,4)
+                            .nOut(32)
+                            .activation("relu")
+                            .build())
+                   /* .layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
+                            .kernelSize(2,2)
+                            .stride(2,2)
+                            .build())*/
+                    .layer(1, new ConvolutionLayer.Builder(4, 4)
+                            .nIn(nChannels)
+                            .stride(2, 2)
+                            .nOut(64)
+                            .activation("relu")
+                            .build())
+                    .layer(2, new ConvolutionLayer.Builder(3, 3)
+                            .nIn(nChannels)
+                            .stride(1, 1)
+                            .nOut(64)
+                            .activation("relu")
+                            .build())
+                   /* .layer(3, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
+                            .kernelSize(2,2)
+                            .stride(2,2)
+                            .build())*/
+                    .layer(3, new DenseLayer.Builder().activation("relu")
+                            .nOut(512).build())
+                    .layer(4, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
+                            .nOut(outputNum)
+                            .activation("softmax")
+                            .build())
+                    .backprop(true).pretrain(false);
         new ConvolutionLayerSetup(builder,w,h,1);
 
         MultiLayerConfiguration conf = builder.build();
@@ -179,6 +194,8 @@ public class Agent extends AbstractPlayer{
       //  File imgPath = new File("screenshots/2_2.0.png");//_shrink.png");
         BufferedImage bufferedImage = Game.im;
 		
+        //System.out.println(currentIndex);
+        
         if(bufferedImage == null) {
 			//	bufferedImage = ImageIO.read(imgPath);
 	//			System.out.println("null");
@@ -189,21 +206,29 @@ public class Agent extends AbstractPlayer{
         int blockW = stateObs.getBlockSize();//25;
         double[][] pixs = preProcess(bufferedImage,blockW);
         
-        int index = QLearning.findIndexFromImage(pixs);
+        int pixIndex = QLearning.findIndexFromImage(pixs);
         if(experience == null)
         {
         	experience = new Experience();
         	experience.setPrevious(pixs);
         	
-        	if(index==-1)
+        	if(pixIndex==-1)
+        	{
+        		pixIndex = QLearning.pool.size();
         		QLearning.pool.add(pixs);
+        		
+        	}
         }
         
         else
         {
         	experience.setResult(pixs);
-        	experience.setReward(stateObs.getGameScore());
-
+        	
+        	double penalty = 0;
+        	if(learning.ImageEquals(experience.getPrevious(), pixs))
+        		penalty = -5;
+        	experience.setReward(stateObs.getGameScore()+penalty);
+        		
         	tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
         	//learning.mapper.put(experience.copy(), currentIndex);
         //	int pixIndex =  QLearning.findIndexFromImage(pixs);
@@ -213,16 +238,17 @@ public class Agent extends AbstractPlayer{
         	try
         	{
         		
-        		if(index==-1)
+        		if(pixIndex==-1)
         		{
+        			pixIndex = QLearning.pool.size();
         			QLearning.pool.add(pixs);//.set(currentIndex,experience.getPrevious().clone());
         			experiencePool[currentIndex] = experience.copy();
         			currentIndex++;
         		}
         		else //update?
         		{
-        			System.out.println("not add new");
-        			experiencePool[index] = experience.copy();
+      //  			System.out.println("not add new");
+        			experiencePool[pixIndex] = experience.copy();
         		}
         	}
         	catch(Exception e)
@@ -251,15 +277,15 @@ public class Agent extends AbstractPlayer{
         
         
         
-        if(index==-1)
-        	index = random.nextInt(actions.size());
-        else
-        	index = learning.getMaxActionIndex(index);
-        
-        if(currentIndex!=0)
-        	try
-        {
-        for(int i=0;i<batchSize;i++)
+        //if(index==-1)
+        //	index = random.nextInt(actions.size());
+        //else
+        	int index = learning.getMaxActionIndex(pixIndex);
+        int limit = batchSize;
+        if(currentIndex<batchSize)
+        	limit = currentIndex/4;
+    //    {
+        for(int i=0;i<limit;i++)
         {
         	
         	int rand = 0;
@@ -274,11 +300,12 @@ public class Agent extends AbstractPlayer{
         	int nextIndex = QLearning.findIndexFromImage(toUpdateExp.getResult());
         	learning.qUpdate(startIndex, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
         	
-        }}catch(Exception e){}
+     //   }}catch(Exception e){}
         //     System.out.println(index);
-        
+        }
         experience.setAction(actions.get(index));
         
+        System.out.println(pixIndex+" "+actions.get(index));
         
         frame.update();
 		return actions.get(index);
