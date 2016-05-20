@@ -1,6 +1,7 @@
 package controllers.ScreenCaptureAgent;
 
 import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -56,16 +57,17 @@ public void setImage(BufferedImage image)
 protected void paintComponent(Graphics g) {
     super.paintComponent(g);
     
+    //g.setColor(Color.WHITE);
     if(image!=null)
     {
     	g.drawImage(image, 0, 0, null); // see javadoc for more info on the parameters
-    	File outputfile = new File("image.png");
-	    try {
-			ImageIO.write(image, "png", outputfile);
-		} catch (IOException e) {
+    //	File outputfile = new File("image.png");
+	 //   try {
+	//		ImageIO.write(image, "png", outputfile);
+	//	} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	//		e.printStackTrace();
+	//	}
     	
     }
 }

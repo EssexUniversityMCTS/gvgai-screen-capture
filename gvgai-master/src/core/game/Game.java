@@ -903,15 +903,15 @@ public abstract class Game
             int mod = 5;
             if(count%mod==0)
     		try {
-    			//BufferedImage vm = view.image;
+    			BufferedImage vm = view.image;
     			
     			
-    			//im = new BufferedImage(vm.getColorModel()
-    			//		,vm.copyData(null)
-    			//		,vm.isAlphaPremultiplied(),null);
+    			im = new BufferedImage(vm.getColorModel()
+    					,vm.copyData(null)
+    					,vm.isAlphaPremultiplied(),null);
     			//im = ;
-    			im = robot.createScreenCapture(new Rectangle(location.x+8, 
-    					location.y+32, dimension.width, dimension.height));//left, top, width, height
+    		//	im = robot.createScreenCapture(new Rectangle(location.x+8, 
+    		//			location.y+32, dimension.width, dimension.height));//left, top, width, height
     			
     			//write to file
     		/*	File outputfile = new File("screenshots/"+(count/mod)+"_"+score+".png");

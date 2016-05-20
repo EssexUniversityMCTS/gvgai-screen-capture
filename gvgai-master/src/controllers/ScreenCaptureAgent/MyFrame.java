@@ -165,7 +165,10 @@ public class MyFrame extends JFrame {
 		Experience experience = experiencePool[row];
     	reward.setText(experience.getReward()+"");
     	action.setText(experience.getAction()+"");
-    	
+    	//System.out.println(experience);
+    	//System.out.println(experience.getPrevious());
+    	//System.out.println(experience.getReward());
+    	//System.out.println(experience.getResult());
     	double[][] pr = experience.getPrevious();
     	BufferedImage prev = new BufferedImage(pr.length,pr[0].length,BufferedImage.TYPE_INT_RGB);
    // 	System.out.println(pr+" "+pr.length+" "+pr[0].length);
@@ -176,15 +179,29 @@ public class MyFrame extends JFrame {
     	previous.setImage(prev);
     	previous.repaint();
     	
-    	double[][] re = experience.getResult();
-    	BufferedImage res = new BufferedImage(re.length,re[0].length,BufferedImage.TYPE_INT_RGB);
-   // 	System.out.println(pr+" "+pr.length+" "+pr[0].length);
-    	for(int i=0;i<re.length;i++)
-    		for(int j=0;j<re[0].length;j++)
-    			res.setRGB(i, j, (int)re[i][j]);
-
+    	BufferedImage res = new BufferedImage(pr.length, pr[0].length, BufferedImage.TYPE_INT_RGB);
+		
+    	if(experience.getResult()==null)
+    	{
+    		for (int i = 0; i < pr.length; i++)
+    			for (int j = 0; j < pr[0].length; j++)
+    				res.setRGB(i, j, Color.BLACK.getRGB());
+    	}
+    	else{
+    		double[][] re = experience.getResult();
+        	//System.out.println(re);
+        	
+    	// System.out.println(pr+" "+pr.length+" "+pr[0].length);
+		for (int i = 0; i < re.length; i++)
+			for (int j = 0; j < re[0].length; j++)
+				res.setRGB(i, j, (int) re[i][j]);
+    	}
+    	
     	result.setImage(res);
-    	result.repaint();
+    	
+    	
+		result.repaint();
+    	
     	/*
     	File outputfile = new File("nm.png");
 	    try {
@@ -200,10 +217,11 @@ public class MyFrame extends JFrame {
     	for(int i=0;i<actions.size();i++)
     	{
     		//String[] st = new String[]{actions.get(i)+"", qv[row][i]+""};
+    	//	System.out.println(qv[index][0]);
     		qTableModel.setValueAt(actions.get(i), i, 0);
     		qTableModel.setValueAt(qv[index][i], i, 1);
     	}
     	
-    	repaint();
+    	qTable.repaint();
 	}
 }

@@ -12,7 +12,7 @@ public class QLearning {
 	//public HashMap<Experience, Integer> mapper;
 	public double alpha = 0.1;
 	public double gamma = 0.9;
-	public double epsilon = 0.1;
+	public double epsilon = 0.2;
 	
 	static ArrayList<double[][]> pool;
 	static ArrayList<double[]> experienceReward;
@@ -32,10 +32,23 @@ public class QLearning {
 	
 	public double[] normalize(int index)
 	{
-		double[] norm = new double[qValues[index].length];
 		double[] src = qValues[index];
+		double[] norm = new double[src.length];
+		
+		double sumEpValue = 0.0;
+		
+		for(int i=0;i<src.length;i++)
+		{
+			norm[i] = Math.exp(src[i]);
+			sumEpValue += norm[i];
+		}
+		
+		for(int i=0;i<norm.length;i++)
+		{
+			norm[i] = norm[i]/sumEpValue;
+		}
 		//System.arraycopy(qValues[index], 0, norm, 0, qValues[index].length);
-		double max = -Double.MAX_VALUE;
+		/*double max = -Double.MAX_VALUE;
 		double min = Double.MAX_VALUE;
 		int cMax = 1;
 		for(int i=0;i<src.length;i++)
@@ -56,7 +69,7 @@ public class QLearning {
 			}
 			
 			
-	//		System.out.println(min+" "+max+" "+src[i]);
+		//	System.out.println(min+" "+max+" "+src[i]);
 		}
 		
 	//	System.out.println(min+" "+max);
@@ -78,7 +91,7 @@ public class QLearning {
 			//System.out.println(norm[i]);
 			//norm[i] = 1-norm[i];
 		}
-		
+		*/
 		
 		return norm;
 	}
@@ -87,6 +100,8 @@ public class QLearning {
 	{
 		//int index = mapper.get(experience);
 		double max = 0;
+		
+		//System.out.println(curIndex+" "+nextIndex+" "+actionIndex+" "+reward);
 		
 		try
 		{

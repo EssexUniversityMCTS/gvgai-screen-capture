@@ -46,7 +46,14 @@ public class Agent extends AbstractPlayer{
 	 */
 	static int poolSize = 2000;
 	static int batchSize = 100;
+	static int maxW = 31;
+	static int maxH = 48;
 	static int currentIndex;
+	int minBlockSize = 5;
+	int firstLayerStride = 1;
+	int learningFrequency = 1;
+	int w,h;
+	
 	public static Experience[] experiencePool = new Experience[poolSize];
 	Random random = new Random();
 	MyFrame frame;
@@ -58,7 +65,7 @@ public class Agent extends AbstractPlayer{
 	
 	private QLearning learning;
 	Experience experience;
-	
+	int countRound = 0;
 	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
 		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
@@ -72,7 +79,7 @@ public class Agent extends AbstractPlayer{
 		 int nChannels = 1;
 	     int outputNum = numAct;
 	     //int batchSize = 100;//1000;
-	     int nEpochs = 10;
+	     int nEpochs = 1;
 	     int iterations = 1;
 	     int seed = 123;
 	       
@@ -95,26 +102,31 @@ public class Agent extends AbstractPlayer{
 	  
 	      //  System.out.println(pixs[2]);
 	        Dimension d = stateObs.getWorldDimension();
-	        int w = d.width/blockW;//bufferedImage.getWidth()/blockW;
-	        int h = d.height/blockW;//bufferedImage.getHeight()/blockW;
+	        w = d.width/blockW;//bufferedImage.getWidth()/blockW;
+	        h = d.height/blockW;//bufferedImage.getHeight()/blockW;
 	        
+	        if(w<minBlockSize)
+	        	w = minBlockSize;
+	        if(h<minBlockSize)
+	        	h = minBlockSize;
 	        
-	      //  System.out.println("width "+w+" "+h);
+	        System.out.println(w+" "+h);
 	        
 	       // INDArray nd = Nd4j.create(pixs);
    //     log.info("Build model....");
 	        MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
                     .seed(seed)
                     .iterations(iterations)
-                    .regularization(true).l2(0.0005)
+                    .regularization(true).l2(0.00001)
                     .learningRate(0.001)
-                    .weightInit(WeightInit.XAVIER)
+                    //.dropOut(0.2)
+                    .weightInit(WeightInit.RELU)
                     .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                     .updater(Updater.RMSPROP).momentum(0.9)
                     .list(4)
-                    .layer(0, new ConvolutionLayer.Builder(5, 5)
+                    .layer(0, new ConvolutionLayer.Builder(minBlockSize-firstLayerStride, minBlockSize-firstLayerStride)
                             .nIn(nChannels)
-                            .stride(1,1)
+                            .stride(firstLayerStride,firstLayerStride)
                             .nOut(32)
                             .activation("relu")
                             .build())
@@ -151,6 +163,7 @@ public class Agent extends AbstractPlayer{
         model = new MultiLayerNetwork(conf);
         model.init();
 
+      //  System.out.println(w+" "+h);
 
     //    log.info("Train model....");
    //     model.setListeners(new ScoreIterationListener(1));
@@ -179,7 +192,7 @@ public class Agent extends AbstractPlayer{
         
         log.info("****************Example finished********************");
 */
-		
+		System.out.println("finished create Agent");
 	}
 	
 	/**
@@ -212,7 +225,9 @@ public class Agent extends AbstractPlayer{
         else Game.im = null;
         
         int blockW = stateObs.getBlockSize();//25;
-        double[][] pixs = preProcess(bufferedImage,blockW);
+        double[][] pixs = extendedImage(preProcess(bufferedImage,blockW),minBlockSize);
+        
+        
     //    System.out.println(pixs.length+" llll "+pixs[0].length);
         int pixIndex = QLearning.findIndexFromImage(pixs);
         if(experience == null)
@@ -244,10 +259,10 @@ public class Agent extends AbstractPlayer{
         		{
         			prevIndex = QLearning.pool.size();
         			QLearning.pool.add(experience.getPrevious());//.set(currentIndex,experience.getPrevious().clone());
-        			experiencePool[currentIndex] = experience.copy();
-        			tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
+        			experiencePool[prevIndex] = experience.copy();
+        			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
-        			currentIndex++;
+        	//		currentIndex++;
         			
         		}
         		else //update?
@@ -257,6 +272,10 @@ public class Agent extends AbstractPlayer{
         			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
         		}
+        	//	System.out.println(experience.getAction());
+        	//	System.out.println(actions.indexOf(experience.getAction()));
+        		learning.qUpdate(prevIndex, pixIndex,actions.indexOf(experience.getAction()),experience.getReward());
+            	
         	}
         	catch(Exception e)
         	{
@@ -302,9 +321,9 @@ public class Agent extends AbstractPlayer{
         INDArray training = new NDArray(limit,pixs.length*pixs[0].length);
         INDArray labels = new NDArray(limit,numAct);
         
+        
         for(int i=0;i<limit;i++)
         {
-        	
         	int rand = 0;
         	do
         	{
@@ -321,14 +340,16 @@ public class Agent extends AbstractPlayer{
         	//	continue;
         	learning.qUpdate(startIndex, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
         	
+        	if(countRound++%learningFrequency == 0){
         	training.putRow(i,Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
         	labels.putRow(i,  Nd4j.create(learning.normalize(startIndex)));
-        	
+        	}
         	
      //   }}catch(Exception e){}
         //     System.out.println(index);
         }
         
+        if(countRound++%learningFrequency == 0)
         if(limit>0)
         { 
     //    	System.out.println(training);
@@ -348,7 +369,7 @@ public class Agent extends AbstractPlayer{
      //   System.out.println();
         int index;
         
-   //     index = learning.getMaxActionIndex(pixIndex);
+     //   index = learning.getMaxActionIndex(pixIndex);
         if(random.nextDouble()<learning.epsilon)
         	index = random.nextInt(numAct);
         else
@@ -392,23 +413,32 @@ public class Agent extends AbstractPlayer{
 		}
 		
 	//	System.out.println(pixIndex);
-		experience.setResult(null);
+		//experience.setResult(null);
+		//System.out.println(experience.getResult());
 		//learning.mapper.put(experience.copy(), currentIndex);
     	//learning.qValues[currentIndex] = new double[numAct];
-		if(pixIndex!=-1)
+		
+		if(pixIndex == -1)
 		{
-			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()),experience.getReward());
-			experiencePool[pixIndex] = experience.copy();
-		}
-		else
-		{
+			pixIndex = QLearning.pool.size();
 			QLearning.pool.add(experience.getPrevious());
-			learning.qUpdate(currentIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
-			tableModel.setValueAt("experience "+currentIndex,currentIndex,0);
-	    	
-			experiencePool[currentIndex++] = experience.copy();
-			
 		}
+	//	if(pixIndex!=-1)
+	//	{
+			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()),experience.getReward());
+			//experiencePool[pixIndex] = experience.copy();
+	//	}
+		//else
+	//	{
+			
+			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
+		//}
+		System.out.println(pixIndex);
+		experiencePool[pixIndex] = experience.copy();
+		tableModel.setValueAt("experience "+pixIndex,pixIndex,0);
+    	
+		//System.out.println(learning.qValues[pixIndex][0]);
+		
     	if(currentIndex == poolSize)
     	{
     		currentIndex = 0;
@@ -591,8 +621,38 @@ public class Agent extends AbstractPlayer{
         for(int i=0;i<pixs.length;i++)
         	pixs[i] = pixels[i];
 		*/
+		//System.out.println(shrinkedIm);
 		return shrinkedIm;
 		
+	}
+	
+	public static double[][] extendedImage(double[][] image, int width)
+	{
+		int newW = image[0].length;
+		int newH = image.length;
+		
+		int height = width;
+		
+		if(newW>=width && newH>=height)
+			return image;
+		
+		if(newW<width)
+			newW = width;
+		
+		if(newH<height)
+			newH = height;
+		
+		double[][] newIm = new double[newH][newW];
+		
+	//	System.out.println(newW+" "+newH+" "+image[0].length+" "+image.length);
+		for(int i=0;i<image.length;i++)
+			for(int j=0;j<image[0].length;j++)
+			{
+	//			System.out.println(i+" "+j);
+				newIm[i][j] = image[i][j];
+			}
+		
+		return newIm;
 	}
 	
 	public static double[] flattenImage(double[][] image)
