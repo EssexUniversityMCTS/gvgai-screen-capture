@@ -3,15 +3,19 @@ package controllers.ScreenCaptureAgent;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -41,6 +45,7 @@ import core.ArcadeMachine;
 import core.game.Game;
 import core.game.StateObservation;
 import core.player.AbstractPlayer;
+import it.unimi.dsi.fastutil.Arrays;
 import ontology.Types;
 import ontology.Types.ACTIONS;
 import tools.ElapsedCpuTimer;
@@ -59,12 +64,19 @@ public class Agent extends AbstractPlayer{
 	static int currentIndex;
 	boolean isFull;
 	
+	int numPlay = 5;
 	int minBlockSize = 5;
 	int firstLayerStride = 1;
 	int learningFrequency = 1;
 	int w,h;
 	
 	int saveModelFreq = 10;
+//	PrintWriter writeOutput;
+//	String actionSequence;
+//	String dumpedOutput;
+//	String outputPath = "output";
+	File theDir;
+	
 	
 	public static Experience[] experiencePool = new Experience[poolSize];
 	
@@ -81,7 +93,25 @@ public class Agent extends AbstractPlayer{
 	Experience experience;
 	int countRound = 0;
 	
+	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
+		
+//		try 
+//		{
+//			String kernelSizeFolder = (minBlockSize-firstLayerStride)+"";
+//			kernelSizeFolder +="by"+kernelSizeFolder;
+//			
+//			theDir = new File(outputPath+"/"+kernelSizeFolder+"/"+numPlay+"/"+ArcadeMachine.gameDescription+"/");
+//    		theDir.mkdir();
+//			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run0"+".txt")));
+//			
+//		} catch (IOException e2) 
+//		{
+//			e2.printStackTrace();
+//		}
+//		
+//		actionSequence = "";
+		
 		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
 		frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
 		tableModel = (DefaultTableModel) frame.table.getModel();
@@ -387,7 +417,7 @@ public class Agent extends AbstractPlayer{
         INDArray training = new NDArray(limit,pixs.length*pixs[0].length);
         INDArray labels = new NDArray(limit,numAct);
         
-        
+        countRound++;
         for(int i=0;i<limit;i++)
         {
         	int rand = 0;
@@ -405,7 +435,7 @@ public class Agent extends AbstractPlayer{
         	//if(startIndex == -1)
         	//	continue;
         	learning.qUpdate(startIndex, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
-        	if(countRound++%learningFrequency == 0){
+        	if(countRound%learningFrequency == 0){
         	training.putRow(i,Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
         	labels.putRow(i,  Nd4j.create(learning.normalize(startIndex)));
         	}
@@ -414,7 +444,7 @@ public class Agent extends AbstractPlayer{
         //     System.out.println(index);
         }
         
-        if(countRound++%learningFrequency == 0)
+        if(countRound%learningFrequency == 0)
         if(limit>0)
         { 
     //    	System.out.println(training);
@@ -424,14 +454,7 @@ public class Agent extends AbstractPlayer{
         
         //learning.getMaxActionIndex(pixIndex);
         }
-        //else index = learning.getMaxActionIndex(pixIndex);
-        INDArray test = new NDArray(1,pixs.length*pixs[0].length);
-        test.putRow(0, Nd4j.create(flattenImage(pixs)));
-        INDArray pd = model.output(test);
-        System.out.println(pd);
-      //  for(int i=0;i<pd.length;i++)
-      //  	System.out.print(actions.get(i)+":"+pd[i]+", ");
-     //   System.out.println();
+        
         
         if(pixIndex==-1)
     	{
@@ -456,6 +479,20 @@ public class Agent extends AbstractPlayer{
     		}
     	}
         
+      //else index = learning.getMaxActionIndex(pixIndex);
+        INDArray test = new NDArray(1,pixs.length*pixs[0].length);
+        test.putRow(0, Nd4j.create(flattenImage(pixs)));
+        INDArray pd = model.output(test);
+        System.out.println(pd);
+        
+        
+ //       writeOutput.write(pd.toString()+"\n");
+        
+        
+      //  for(int i=0;i<pd.length;i++)
+      //  	System.out.print(actions.get(i)+":"+pd[i]+", ");
+     //   System.out.println();
+        
         int index;
         
      //   index = learning.getMaxActionIndex(pixIndex);
@@ -464,21 +501,31 @@ public class Agent extends AbstractPlayer{
         else
         	index = model.predict(test)[0];
         
+        
+        
         for(int i=0;i<numAct;i++)
+        {
         	System.out.print(learning.qValues[pixIndex][i]+" ");
+     //   	writeOutput.write(learning.qValues[pixIndex][i]+" ");
+        }
         System.out.println();
+    //    writeOutput.write("\n");
         
         double[] d = learning.normalize(pixIndex);
         for(int i=0;i<d.length;i++)
+        {
         	System.out.print(d[i]+" ");
+    //    	writeOutput.write(d[i]+" ");
+        }
         System.out.println();
+    //    writeOutput.write("\n");
         
         experience.setAction(actions.get(index));
         
         System.out.println(pixIndex+" "+actions.get(index)+"\n");
+   //     writeOutput.write(pixIndex+" "+actions.get(index)+"\n");
         
-        
-        
+    //    actionSequence += actions.get(index)+"\n";
         frame.update();
 		return actions.get(index);
 	}
@@ -549,40 +596,64 @@ public class Agent extends AbstractPlayer{
     		learning.epsilon -= 0.01;
     
     	experience = null;
+    	countRound = 0;
     	
-    	if(ArcadeMachine.i%saveModelFreq == 0)
-    	{
-    		String path = ArcadeMachine.filePath;
-    		DateTime dateTime = new DateTime();
-    		String dt = dateTime.getDayOfMonth()+"_"+dateTime.getMonthOfYear()+"_"+dateTime.getHourOfDay()+"_"+dateTime.getMinuteOfHour();
-    		
-    		File theDir = new File(path+"/"+dt);
-    		theDir.mkdir();
-    		
-    		path+="/"+dt+"/";
-    		
-    		try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get(path+"coefficients.bin")))){
-                Nd4j.write(model.params(),dos);
-            } catch (IOException e) {
-				e.printStackTrace();
-			}
-
-            //Write the network configuration:
-            try {
-				FileUtils.write(new File(path+"conf.json"), model.getLayerWiseConfigurations().toJson());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-        
-          //Save the updater:
-            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path+"updater.bin"))){
-                oos.writeObject(model.getUpdater());
-            } catch (IOException e) {
-				e.printStackTrace();
-			}
-            
-            System.out.println("finished save model");
-    	}
+    	//Save Model Here
+//    	if(ArcadeMachine.i%saveModelFreq == 0)
+//    	{
+//    		String path = ArcadeMachine.filePath;
+//    		DateTime dateTime = new DateTime();
+//    		String dt = dateTime.getDayOfMonth()+"_"+dateTime.getMonthOfYear()+"_"+dateTime.getHourOfDay()+"_"+dateTime.getMinuteOfHour();
+//    		
+//    		File theDir = new File(path+"/"+dt);
+//    		theDir.mkdir();
+//    		
+//    		path+="/"+dt+"/";
+//    		
+//    		try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get(path+"coefficients.bin")))){
+//                Nd4j.write(model.params(),dos);
+//            } catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//
+//            //Write the network configuration:
+//            try {
+//				FileUtils.write(new File(path+"conf.json"), model.getLayerWiseConfigurations().toJson());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//        
+//          //Save the updater:
+//            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path+"updater.bin"))){
+//                oos.writeObject(model.getUpdater());
+//            } catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//            
+//            System.out.println("finished save model");
+//    	}
+    	
+    //	writeOutput.write((stateObservation.getGameWinner().toString()));
+    //	writeOutput.close();
+    	
+//    	try 
+//    	{
+//			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i+1)+".txt")));
+//			
+//		} catch (IOException e) 
+//    	{
+//		}
+    	
+//    	try 
+//    	{
+//			PrintWriter outputAction = new PrintWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i)+"action.txt"));
+//			outputAction.write(actionSequence);
+//			outputAction.close();
+//			actionSequence = "";
+//		} catch (FileNotFoundException e) 
+//    	{
+//			e.printStackTrace();
+//		}
     }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);

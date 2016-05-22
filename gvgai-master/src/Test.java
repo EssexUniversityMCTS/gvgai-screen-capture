@@ -20,8 +20,8 @@ import core.ArcadeMachine;
  */
 public class Test
 {
-	public static boolean continueLearning = true;
-	public static String filePath = "previousModel/22_5_15_18";
+	public static boolean continueLearning = false;
+	public static String filePath = "previousModel";///22_5_15_18";
 	
     public static void main(String[] args)
     {
@@ -81,7 +81,7 @@ public class Test
         // 2. This plays a game in a level by the controller.
 //        ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);
         
-        ArcadeMachine.Learning(continueLearning,filePath,game, level1, visuals, screenCap, recordActionsFile, seed, false, 300);
+        ArcadeMachine.Learning(continueLearning,filePath,game, level1, visuals, screenCap, recordActionsFile, seed, false, 200);
 
         
         // 3. This replays a game from an action file previously recorded

@@ -47,6 +47,8 @@ public class ArcadeMachine
     public static boolean continueLearning;
     public static String filePath;
     public static int i;
+    
+    public static String gameDescription;
 
     /**
      * Reads and launches a game for a human to be played. Graphics always on.
@@ -91,10 +93,19 @@ public class ArcadeMachine
     	//Warm the game up.
     	//ArcadeMachine.warmUp(toPlay, CompetitionParameters.WARMUP_TIME);
 
+    	//System.out.println(level_file);
+    	String[] subBySlash = level_file.split("/");
+    //	System.out.println(subBySlash[subBySlash.length-1].split(".").length);
+    	
+    	String subByDot = subBySlash[subBySlash.length-1].split("\\.")[0];
+    	
+    	gameDescription = subByDot;
+    	
     	//Create the player.
     	AbstractPlayer player = ArcadeMachine.createPlayer(agentName, actionFile, toPlay.getObservation(), randomSeed);
     	
     	double mean = 0;
+    	
     	
     	for(i=0;i<times;i++)
     	{
