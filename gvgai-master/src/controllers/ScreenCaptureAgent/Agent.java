@@ -3,19 +3,23 @@ package controllers.ScreenCaptureAgent;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.awt.image.WritableRaster;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.imageio.ImageIO;
 import javax.swing.table.DefaultTableModel;
 
-import ontology.Types;
-import ontology.Types.ACTIONS;
-
+import org.apache.commons.io.FileUtils;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
@@ -23,19 +27,23 @@ import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.ConvolutionLayer;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
-import org.deeplearning4j.nn.conf.layers.SubsamplingLayer;
 import org.deeplearning4j.nn.conf.layers.setup.ConvolutionLayerSetup;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
+import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
+import org.joda.time.DateTime;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.cpu.NDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
-import tools.ElapsedCpuTimer;
+import core.ArcadeMachine;
 import core.game.Game;
 import core.game.StateObservation;
 import core.player.AbstractPlayer;
+import ontology.Types;
+import ontology.Types.ACTIONS;
+import tools.ElapsedCpuTimer;
 
 public class Agent extends AbstractPlayer{
 
@@ -49,17 +57,23 @@ public class Agent extends AbstractPlayer{
 	static int maxW = 31;
 	static int maxH = 48;
 	static int currentIndex;
+	boolean isFull;
+	
 	int minBlockSize = 5;
 	int firstLayerStride = 1;
 	int learningFrequency = 1;
 	int w,h;
 	
+	int saveModelFreq = 10;
+	
 	public static Experience[] experiencePool = new Experience[poolSize];
+	
+	
 	Random random = new Random();
 	MyFrame frame;
 	int numAct;
 	ArrayList<Types.ACTIONS> actions; 
-	MultiLayerNetwork model;
+	public MultiLayerNetwork model;
 	
 	DefaultTableModel tableModel;
 	
@@ -114,6 +128,9 @@ public class Agent extends AbstractPlayer{
 	        
 	       // INDArray nd = Nd4j.create(pixs);
    //     log.info("Build model....");
+	        
+	        if(!ArcadeMachine.continueLearning)
+	        {
 	        MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
                     .seed(seed)
                     .iterations(iterations)
@@ -162,7 +179,55 @@ public class Agent extends AbstractPlayer{
         MultiLayerConfiguration conf = builder.build();
         model = new MultiLayerNetwork(conf);
         model.init();
+	    }
+	        
+	        else
+	        {
+	        	String path = ArcadeMachine.filePath;
+	        	//Load network configuration from disk:
+	            MultiLayerConfiguration confFromJson = null;
+				try {
+					confFromJson = MultiLayerConfiguration.fromJson(FileUtils.readFileToString(new File(path+"/conf.json")));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 
+	            //Load parameters from disk:
+	            INDArray newParams = null;
+	            try(DataInputStream dis = new DataInputStream(new FileInputStream(path+"/coefficients.bin"))){
+	                newParams = Nd4j.read(dis);
+	            } catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+	            //Create a MultiLayerNetwork from the saved configuration and parameters
+	            model = new MultiLayerNetwork(confFromJson);
+	            model.init();
+	            model.setParameters(newParams);
+	            
+	          //Load the updater:
+	            org.deeplearning4j.nn.api.Updater updater = null;
+	            try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path+"/updater.bin"))){
+	                try {
+						updater = (org.deeplearning4j.nn.api.Updater) ois.readObject();
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+					}
+	            } catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+	            
+	            //Set the updater in the network
+	            model.setUpdater(updater);
+	            
+	            
+	            model.setListeners(new ScoreIterationListener(1));
+	        }
+	        
       //  System.out.println(w+" "+h);
 
     //    log.info("Train model....");
@@ -235,7 +300,6 @@ public class Agent extends AbstractPlayer{
         	experience = new Experience();
         	experience.setPrevious(pixs);
         	
-        	
         }
         
         else
@@ -257,12 +321,22 @@ public class Agent extends AbstractPlayer{
         		int prevIndex = QLearning.findIndexFromImage(experience.getPrevious());
         		if(prevIndex==-1)
         		{
-        			prevIndex = QLearning.pool.size();
-        			QLearning.pool.add(experience.getPrevious());//.set(currentIndex,experience.getPrevious().clone());
+        			if(isFull)
+        			{
+        				prevIndex = currentIndex;
+        				QLearning.pool.set(currentIndex, experience.getPrevious());
+        				learning.qValues[currentIndex] = new double[numAct];
+        			}
+        			
+        			else
+        			{
+        				prevIndex = QLearning.pool.size();
+        				QLearning.pool.add(experience.getPrevious());//.set(currentIndex,experience.getPrevious().clone());
+        			}
         			experiencePool[prevIndex] = experience.copy();
         			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
-        	//		currentIndex++;
+        			currentIndex++;
         			
         		}
         		else //update?
@@ -283,20 +357,14 @@ public class Agent extends AbstractPlayer{
         	}
         	
         	if(currentIndex == poolSize)
-        	{
-        		currentIndex = 0;
-        	}
+    		{
+    			currentIndex = 0;
+    			isFull = true;
+    		}
         	
         	experience = new Experience();
         	experience.setPrevious(pixs);
         }
-        
-        if(pixIndex==-1)
-    	{
-    		pixIndex = QLearning.pool.size();
-    		QLearning.pool.add(pixs);
-    		
-    	}
         
         //double[][] p = new double[0][0];
     //    System.out.println(bufferedImage.getWidth()+"x"+bufferedImage.getHeight()+"="+pixels.length);
@@ -307,8 +375,6 @@ public class Agent extends AbstractPlayer{
          //     for(int i=0;i<nd.length();i++)
 //        	System.out.println(nd); 
 		//System.out.println(model.params());
-        
-        
         
         //if(index==-1)
         //	index = random.nextInt(actions.size());
@@ -328,7 +394,7 @@ public class Agent extends AbstractPlayer{
         	do
         	{
         		//System.out.println(learning.pool.size()+" "+rand);
-        		rand = random.nextInt(QLearning.pool.size()-1);//*numAct-1);
+        		rand = random.nextInt(QLearning.pool.size());//*numAct-1);
         		
         	}while(experiencePool[rand]==null);
         	
@@ -339,7 +405,6 @@ public class Agent extends AbstractPlayer{
         	//if(startIndex == -1)
         	//	continue;
         	learning.qUpdate(startIndex, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
-        	
         	if(countRound++%learningFrequency == 0){
         	training.putRow(i,Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
         	labels.putRow(i,  Nd4j.create(learning.normalize(startIndex)));
@@ -367,6 +432,30 @@ public class Agent extends AbstractPlayer{
       //  for(int i=0;i<pd.length;i++)
       //  	System.out.print(actions.get(i)+":"+pd[i]+", ");
      //   System.out.println();
+        
+        if(pixIndex==-1)
+    	{
+        	if(isFull)
+			{
+				pixIndex = currentIndex;
+				QLearning.pool.set(currentIndex, pixs);
+				learning.qValues[currentIndex] = new double[numAct];
+			}
+        	
+        	else
+        	{
+        		pixIndex = QLearning.pool.size();
+        		QLearning.pool.add(pixs);
+        	}
+    		currentIndex++;
+    		
+    		if(currentIndex == poolSize)
+    		{
+    			currentIndex = 0;
+    			isFull = true;
+    		}
+    	}
+        
         int index;
         
      //   index = learning.getMaxActionIndex(pixIndex);
@@ -420,8 +509,19 @@ public class Agent extends AbstractPlayer{
 		
 		if(pixIndex == -1)
 		{
-			pixIndex = QLearning.pool.size();
-			QLearning.pool.add(experience.getPrevious());
+			
+			if(isFull)
+			{
+				pixIndex = currentIndex;
+				QLearning.pool.set(currentIndex, experience.getPrevious());
+				learning.qValues[currentIndex] = new double[numAct];
+			}
+			else
+			{
+				pixIndex = QLearning.pool.size();
+				QLearning.pool.add(experience.getPrevious());
+			}
+			currentIndex++;
 		}
 	//	if(pixIndex!=-1)
 	//	{
@@ -439,15 +539,50 @@ public class Agent extends AbstractPlayer{
     	
 		//System.out.println(learning.qValues[pixIndex][0]);
 		
-    	if(currentIndex == poolSize)
-    	{
-    		currentIndex = 0;
-    	}
+		if(currentIndex == poolSize)
+		{
+			currentIndex = 0;
+			isFull = true;
+		}
     	
     	if(learning.epsilon>0.01)
     		learning.epsilon -= 0.01;
     
     	experience = null;
+    	
+    	if(ArcadeMachine.i%saveModelFreq == 0)
+    	{
+    		String path = ArcadeMachine.filePath;
+    		DateTime dateTime = new DateTime();
+    		String dt = dateTime.getDayOfMonth()+"_"+dateTime.getMonthOfYear()+"_"+dateTime.getHourOfDay()+"_"+dateTime.getMinuteOfHour();
+    		
+    		File theDir = new File(path+"/"+dt);
+    		theDir.mkdir();
+    		
+    		path+="/"+dt+"/";
+    		
+    		try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get(path+"coefficients.bin")))){
+                Nd4j.write(model.params(),dos);
+            } catch (IOException e) {
+				e.printStackTrace();
+			}
+
+            //Write the network configuration:
+            try {
+				FileUtils.write(new File(path+"conf.json"), model.getLayerWiseConfigurations().toJson());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        
+          //Save the updater:
+            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path+"updater.bin"))){
+                oos.writeObject(model.getUpdater());
+            } catch (IOException e) {
+				e.printStackTrace();
+			}
+            
+            System.out.println("finished save model");
+    	}
     }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);
@@ -534,7 +669,6 @@ public class Agent extends AbstractPlayer{
 	    try {
 			ImageIO.write(temp, "png", op);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		*/
@@ -542,7 +676,7 @@ public class Agent extends AbstractPlayer{
 		int width = image.getWidth();
 		int height = image.getHeight();
 		
-		int res = width*height;
+		//int res = width*height;
 		
 		double[][] shrinkedIm = new double[width/block][height/block];
 		
@@ -606,8 +740,7 @@ public class Agent extends AbstractPlayer{
 		File outputfile = new File("nm_"+block+".png");
 	    try {
 			ImageIO.write(newImage, "png", outputfile);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) { 
 			e.printStackTrace();
 		}
 	    

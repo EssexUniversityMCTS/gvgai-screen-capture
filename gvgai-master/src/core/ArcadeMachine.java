@@ -44,6 +44,9 @@ import tools.StatSummary;
 public class ArcadeMachine
 {
     public static final boolean VERBOSE = false;
+    public static boolean continueLearning;
+    public static String filePath;
+    public static int i;
 
     /**
      * Reads and launches a game for a human to be played. Graphics always on.
@@ -71,9 +74,11 @@ public class ArcadeMachine
     	return runOneGeneratedLevel(gameFile, visuals, agentName, actionFile, levelFile, randomSeed, true);
     }
     
-    public static double Learning(String game_file, String level_file, boolean visuals,
+    public static double Learning(boolean continueL, String modelF, String game_file, String level_file, boolean visuals,
     		String agentName, String actionFile, int randomSeed, boolean isHuman, int times)
     {
+    	continueLearning = continueL;
+    	filePath = modelF;
     	VGDLFactory.GetInstance().init(); //This always first thing to do.
     	VGDLRegistry.GetInstance().init();
 
@@ -91,12 +96,13 @@ public class ArcadeMachine
     	
     	double mean = 0;
     	
-    	for(int i=0;i<times;i++)
+    	for(i=0;i<times;i++)
     	{
     		System.out.println(player);
     		double score = runLearningGame(game_file, level_file, player, toPlay, visuals, randomSeed, isHuman, i+1<times);
     		System.out.println(score);
     		mean += score;
+    		
     	}
     	
     	System.out.println(mean/times);

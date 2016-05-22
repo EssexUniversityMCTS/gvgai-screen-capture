@@ -20,7 +20,9 @@ import core.ArcadeMachine;
  */
 public class Test
 {
-
+	public static boolean continueLearning = true;
+	public static String filePath = "previousModel/22_5_15_18";
+	
     public static void main(String[] args)
     {
         //Available controllers:
@@ -66,8 +68,8 @@ public class Test
         int seed = new Random().nextInt();
 
         //Game and level to play
-        int gameIdx = 1;//53;
-        int levelIdx = 0; //level names from 0 to 4 (game_lvlN.txt).
+        int gameIdx = 21;//53;
+        int levelIdx = 5; //level names from 0 to 4 (game_lvlN.txt).
         String game = gamesPath + games[gameIdx] + ".txt";
         String level1 = gamesPath + games[gameIdx] + "_lvl" + levelIdx +".txt";
 
@@ -79,7 +81,7 @@ public class Test
         // 2. This plays a game in a level by the controller.
 //        ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);
         
-        ArcadeMachine.Learning(game, level1, visuals, screenCap, recordActionsFile, seed, false, 300);
+        ArcadeMachine.Learning(continueLearning,filePath,game, level1, visuals, screenCap, recordActionsFile, seed, false, 300);
 
         
         // 3. This replays a game from an action file previously recorded
