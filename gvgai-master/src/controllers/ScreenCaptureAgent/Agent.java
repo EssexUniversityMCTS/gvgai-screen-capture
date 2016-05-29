@@ -70,6 +70,7 @@ public class Agent extends AbstractPlayer{
 	int minBlockSize = 10;
 	int firstLayerStride = 1;
 	int learningFrequency = 1;
+	boolean subsamplinglayer = false;
 	int w,h;
 	
 	int saveModelFreq = 10;
@@ -86,7 +87,8 @@ public class Agent extends AbstractPlayer{
 	Random random = new Random();
 	MyFrame frame;
 	int numAct;
-	ArrayList<Types.ACTIONS> actions; 
+	ArrayList<Types.ACTIONS> actions;
+	public ModelOrganizer modelOrganizer;
 	public MultiLayerNetwork model;
 	
 	DefaultTableModel tableModel;
@@ -94,8 +96,9 @@ public class Agent extends AbstractPlayer{
 	private QLearning learning;
 	//private ExperienceCount expCount;
 	public static int[] countAccess;
-	ArrayList<Experience> toBeLearned;
-	boolean reset;
+	//ArrayList<Integer> toBeLearned;
+	int loopIndex = 0;
+	boolean randomPick = false;
 	
 	Experience experience;
 	int countRound = 0;
@@ -120,7 +123,7 @@ public class Agent extends AbstractPlayer{
 //		actionSequence = "";
 		
 		//expCount = new ExperienceCount();
-		toBeLearned = new ArrayList();
+	//	toBeLearned = new ArrayList();
 		countAccess = new int[experiencePool.length];
 		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
 		frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
@@ -130,26 +133,13 @@ public class Agent extends AbstractPlayer{
 		actions = stateObs.getAvailableActions();
 	    numAct = actions.size();
 	    experience = null;
-		 int nChannels = 1;
-	     int outputNum = numAct;
-	     //int batchSize = 100;//1000;
-	     int nEpochs = 1;
-	     int iterations = 1;
-	     int seed = 123;
+		 
 	       
 	     
 	     for(int i=0;i<poolSize;i++)
 	    	 tableModel.addRow(new String[]{});
-	     /*   BufferedImage bufferedImage = Game.im;
-			
-	        while(bufferedImage == null) {
-				//	bufferedImage = ImageIO.read(imgPath);
-		//			System.out.println("null");
-	        	bufferedImage = Game.im;
-				//	return null;
-			}
-	       */ 
-	        int blockW = stateObs.getBlockSize();//25;
+	    
+	     int blockW = stateObs.getBlockSize();//25;
 	       // float[] pixs = preProcess(bufferedImage,blockW);
 	        
 	    //    System.out.println(bufferedImage.getWidth()+"x"+bufferedImage.getHeight()+"="+pixels.length);
@@ -164,110 +154,8 @@ public class Agent extends AbstractPlayer{
 	        if(h<minBlockSize)
 	        	h = minBlockSize;
 	        
-	        System.out.println(w+" "+h);
-	        
-	       // INDArray nd = Nd4j.create(pixs);
-   //     log.info("Build model....");
-	        
-	        if(!ArcadeMachine.continueLearning)
-	        {
-	        MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
-                    .seed(seed)
-                    .iterations(iterations)
-                    .regularization(true).l2(0.00001)
-                    .learningRate(0.001)
-                    //.dropOut(0.2)
-                    .weightInit(WeightInit.RELU)
-                    .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                    .updater(Updater.RMSPROP).momentum(0.9)
-                    .list(4)
-                    .layer(0, new ConvolutionLayer.Builder(minBlockSize-firstLayerStride, minBlockSize-firstLayerStride)
-                            .nIn(nChannels)
-                            .stride(firstLayerStride,firstLayerStride)
-                            .nOut(32)
-                            .activation("relu")
-                            .build())
-                    /*.layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                            .kernelSize(2,2)
-                            .stride(2,2)
-                            .build())
-                    */.layer(1, new ConvolutionLayer.Builder(2, 2)
-                            .nIn(nChannels)
-                            .stride(1, 1)
-                            .nOut(64)
-                            .activation("relu")
-                            .build())
-                    /*.layer(2, new ConvolutionLayer.Builder(3, 3)
-                            .nIn(nChannels)
-                            .stride(1, 1)
-                            .nOut(64)
-                            .activation("relu")
-                            .build())*/
-                   /* .layer(3, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                            .kernelSize(2,2)
-                            .stride(2,2)
-                            .build())*/
-                    .layer(2, new DenseLayer.Builder().activation("relu")
-                            .nOut(512).build())
-                    .layer(3, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
-                            .nOut(outputNum)
-                            .activation("softmax")
-                            .build())
-                    .backprop(true).pretrain(false);
-        new ConvolutionLayerSetup(builder,w,h,1);
-
-        MultiLayerConfiguration conf = builder.build();
-        model = new MultiLayerNetwork(conf);
-        model.init();
-	    }
-	        
-	        else
-	        {
-	        	String path = ArcadeMachine.filePath;
-	        	//Load network configuration from disk:
-	            MultiLayerConfiguration confFromJson = null;
-				try {
-					confFromJson = MultiLayerConfiguration.fromJson(FileUtils.readFileToString(new File(path+"/conf.json")));
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-
-	            //Load parameters from disk:
-	            INDArray newParams = null;
-	            try(DataInputStream dis = new DataInputStream(new FileInputStream(path+"/coefficients.bin"))){
-	                newParams = Nd4j.read(dis);
-	            } catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-	            //Create a MultiLayerNetwork from the saved configuration and parameters
-	            model = new MultiLayerNetwork(confFromJson);
-	            model.init();
-	            model.setParameters(newParams);
-	            
-	          //Load the updater:
-	            org.deeplearning4j.nn.api.Updater updater = null;
-	            try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path+"/updater.bin"))){
-	                try {
-						updater = (org.deeplearning4j.nn.api.Updater) ois.readObject();
-					} catch (ClassNotFoundException e) {
-						e.printStackTrace();
-					}
-	            } catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-	            
-	            //Set the updater in the network
-	            model.setUpdater(updater);
-	            
-	            
-	            model.setListeners(new ScoreIterationListener(1));
-	        }
-	        
+	        modelOrganizer = new ModelOrganizer(new Dimension(w,h),minBlockSize, firstLayerStride, numAct, subsamplinglayer);
+	        model = modelOrganizer.model;		
       //  System.out.println(w+" "+h);
 
     //    log.info("Train model....");
@@ -380,6 +268,7 @@ public class Agent extends AbstractPlayer{
         			}
         			
         			experiencePool[prevIndex] = experience.copy();
+        		//	toBeLearned.add(prevIndex);
         		//	System.out.println(experiencePool[prevIndex].accessCount);
         //			expCount.increase(prevIndex);
         		//	System.out.println(experiencePool[prevIndex].accessCount);
@@ -396,6 +285,7 @@ public class Agent extends AbstractPlayer{
       //  			System.out.println("not add new");
         			experiencePool[prevIndex] = experience.copy();
         			countAccess[prevIndex]++;
+        			
         			//System.out.println(experiencePool[prevIndex].accessCount);
         			
         	//		System.out.println("happening "+prevIndex+" "+experiencePool[prevIndex].accessCount);
@@ -448,26 +338,40 @@ public class Agent extends AbstractPlayer{
         countRound++;
         for(int i=0;i<limit;i++)
         {
-        	int rand = 0;
-        	do
+        	Experience toUpdateExp;
+        	if(randomPick)
         	{
-        		//System.out.println(learning.pool.size()+" "+rand);
-        		rand = random.nextInt(QLearning.pool.size());//*numAct-1);
-        		
-        	}while(experiencePool[rand]==null);
-        	
-        	Experience toUpdateExp = experiencePool[rand];
-        	int startIndex = QLearning.findIndexFromImage(toUpdateExp.getPrevious());
-        	int nextIndex = QLearning.findIndexFromImage(toUpdateExp.getResult());
-   
-        	//if(startIndex == -1)
-        	//	continue;
-        	learning.qUpdate(startIndex, nextIndex,actions.indexOf(toUpdateExp.getAction()),toUpdateExp.getReward());
-        	if(countRound%learningFrequency == 0){
-        	training.putRow(i,Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
-        	labels.putRow(i,  Nd4j.create(learning.normalize(startIndex)));
+				int rand = 0;
+				do
+				{
+					// System.out.println(learning.pool.size()+" "+rand);
+					rand = random.nextInt(QLearning.pool.size());// *numAct-1);
+
+				} while (experiencePool[rand] == null);
+
+				toUpdateExp = experiencePool[rand];
         	}
         	
+        	else
+        	{
+        		toUpdateExp = experiencePool[loopIndex];
+        		loopIndex++;
+        		
+        		if(loopIndex == QLearning.pool.size())
+        			loopIndex = 0;
+        		
+        	}
+			
+			int startIndex = QLearning.findIndexFromImage(toUpdateExp.getPrevious());
+			int nextIndex = QLearning.findIndexFromImage(toUpdateExp.getResult());
+
+			// if(startIndex == -1)
+			// continue;
+			learning.qUpdate(startIndex, nextIndex, actions.indexOf(toUpdateExp.getAction()), toUpdateExp.getReward());
+			if (countRound % learningFrequency == 0) {
+				training.putRow(i, Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
+				labels.putRow(i, Nd4j.create(learning.normalize(startIndex)));
+			}
      //   }}catch(Exception e){}
         //     System.out.println(index);
         }
