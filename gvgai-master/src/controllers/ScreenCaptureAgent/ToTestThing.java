@@ -11,53 +11,33 @@ public class ToTestThing {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BufferedReader b;
-		int round = 5;
 		
-		int kSize = 10;
-		String gameName = "escape_lvl5";
-		String path = "output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
+				/*
+		Experience exp1 = new Experience();
+		Experience exp2 = new Experience();
+		Experience exp3 = new Experience();
 		
-		for(int i=0;i<199;i++)
-		{
-			try 
-			{
-				String st = "";
-				String result = "";
-				b = new BufferedReader(new FileReader(new File(path+"run"+i+".txt")));
-				while((st=b.readLine())!=null)
-				{
-					result = st;
-				}
-				
-				b = new BufferedReader(new FileReader(new File(path+"run"+i+"action.txt")));
-				
-				int countAction = 0;
-				while((st=b.readLine())!=null)
-				{
-					countAction++;
-				}
-				
-				if(result.trim().equals("PLAYER_WINS"))
-				{
-					System.out.println(countAction*1);
-				}
-				
-				else
-				{
-					System.out.println(countAction*-1);
-				}
-				
-			//System.out.println(result);
-			
-			} catch (Exception e) 
-			{
-				e.printStackTrace();
-			}
-			
-			
-			
-		}
+		ExperienceCount expCount = new ExperienceCount();
+		
+		System.out.println(exp1.accessCount+" "+exp2.accessCount+" "+exp3.accessCount);
+		expCount.increase(exp1);
+		System.out.println("add 1\n"+exp1+": "+exp1.accessCount);
+		
+		expCount.increase(exp1);
+		expCount.increase(exp2);
+		expCount.increase(exp2);
+		expCount.increase(exp2);
+		expCount.increase(exp3);
+		
+		System.out.println("add 2\n"+exp2+": "+exp2.accessCount);
+		System.out.println(exp1+": "+exp1.accessCount);
+		
+		System.out.println("inside list");
+		//expCount.print();
+		
+		System.out.println(expCount.getMinAccessNotRemove().accessCount);
+		System.out.println(expCount.getMinAccessAndRemove().accessCount);
+		*/
 		
 		
 		

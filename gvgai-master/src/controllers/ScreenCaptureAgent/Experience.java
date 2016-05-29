@@ -8,19 +8,22 @@ public class Experience {
 	private Types.ACTIONS action;
 	private double[][] result;
 	private double reward;
+//	public int accessCount;
 	
 	public Experience()
 	{
-		
+//		accessCount = 1;
 	}
 	
-	public Experience(double[][] p, Types.ACTIONS a, double[][] r, double re)
+	public Experience(double[][] p, Types.ACTIONS a, double[][] r, double re)//,int count)
 	{
 		previous = p;
 		action = a;
 		result = r;
 		reward = re;
+	///	accessCount = 1;
 	}
+	
 	
 	public void setPrevious(double[][] previous)
 	{
@@ -64,7 +67,12 @@ public class Experience {
 	
 	public Experience copy()
 	{
-		return new Experience(previous,action,result,reward);
+		Experience newExp = new Experience(previous,action,result,reward);//,accessCount);
+		//newExp.accessCount = accessCount;
+		
+	//	System.out.println("count "+newExp.accessCount+" "+this.accessCount);
+		
+		return newExp;
 	}
 	
 

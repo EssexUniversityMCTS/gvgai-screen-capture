@@ -19,6 +19,8 @@ import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Random;
 
 import javax.swing.table.DefaultTableModel;
@@ -58,14 +60,14 @@ public class Agent extends AbstractPlayer{
      * @param elapsedTimer Timer when the action returned is due.
 	 */
 	static int poolSize = 2000;
-	static int batchSize = 100;
+	static int batchSize = 1000;
 	static int maxW = 31;
 	static int maxH = 48;
 	static int currentIndex;
 	boolean isFull;
 	
 	int numPlay = 5;
-	int minBlockSize = 5;
+	int minBlockSize = 10;
 	int firstLayerStride = 1;
 	int learningFrequency = 1;
 	int w,h;
@@ -90,6 +92,11 @@ public class Agent extends AbstractPlayer{
 	DefaultTableModel tableModel;
 	
 	private QLearning learning;
+	//private ExperienceCount expCount;
+	public static int[] countAccess;
+	ArrayList<Experience> toBeLearned;
+	boolean reset;
+	
 	Experience experience;
 	int countRound = 0;
 	
@@ -112,6 +119,9 @@ public class Agent extends AbstractPlayer{
 //		
 //		actionSequence = "";
 		
+		//expCount = new ExperienceCount();
+		toBeLearned = new ArrayList();
+		countAccess = new int[experiencePool.length];
 		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
 		frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
 		tableModel = (DefaultTableModel) frame.table.getModel();
@@ -301,6 +311,7 @@ public class Agent extends AbstractPlayer{
 	public ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
 		
 		
+	//	expCount.print();
        
        // log.info("Load data....");
       //  DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize,true,12345);
@@ -353,17 +364,27 @@ public class Agent extends AbstractPlayer{
         		{
         			if(isFull)
         			{
-        				prevIndex = currentIndex;
-        				QLearning.pool.set(currentIndex, experience.getPrevious());
-        				learning.qValues[currentIndex] = new double[numAct];
+        				int lowestIndex = findLowestAccessedIndex();//expCount.getMinAccessAndRemove();
+        				prevIndex = lowestIndex;
+        				countAccess[lowestIndex] = 0;
+        				QLearning.pool.set(lowestIndex, experience.getPrevious());
+        				learning.qValues[lowestIndex] = new double[numAct];
+        				
         			}
         			
         			else
         			{
         				prevIndex = QLearning.pool.size();
         				QLearning.pool.add(experience.getPrevious());//.set(currentIndex,experience.getPrevious().clone());
+        				countAccess[prevIndex]++;
         			}
+        			
         			experiencePool[prevIndex] = experience.copy();
+        		//	System.out.println(experiencePool[prevIndex].accessCount);
+        //			expCount.increase(prevIndex);
+        		//	System.out.println(experiencePool[prevIndex].accessCount);
+        			//System.out.println("happening "+experiencePool[prevIndex].accessCount);
+        			
         			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
         			currentIndex++;
@@ -371,8 +392,15 @@ public class Agent extends AbstractPlayer{
         		}
         		else //update?
         		{
+        			
       //  			System.out.println("not add new");
         			experiencePool[prevIndex] = experience.copy();
+        			countAccess[prevIndex]++;
+        			//System.out.println(experiencePool[prevIndex].accessCount);
+        			
+        	//		System.out.println("happening "+prevIndex+" "+experiencePool[prevIndex].accessCount);
+        	//		expCount.increase(prevIndex);
+        	//		System.out.println("happening2 "+prevIndex+" "+experiencePool[prevIndex].accessCount);
         			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
         		}
@@ -383,7 +411,7 @@ public class Agent extends AbstractPlayer{
         	}
         	catch(Exception e)
         	{
-        		//learning.pool.add(pixs);
+        		e.printStackTrace();
         	}
         	
         	if(currentIndex == poolSize)
@@ -460,9 +488,9 @@ public class Agent extends AbstractPlayer{
     	{
         	if(isFull)
 			{
-				pixIndex = currentIndex;
-				QLearning.pool.set(currentIndex, pixs);
-				learning.qValues[currentIndex] = new double[numAct];
+				pixIndex = currentIndex;//expCount.getMinAccessAndRemove();
+				QLearning.pool.set(pixIndex, pixs);
+				learning.qValues[pixIndex] = new double[numAct];
 			}
         	
         	else
@@ -522,7 +550,9 @@ public class Agent extends AbstractPlayer{
         
         experience.setAction(actions.get(index));
         
+        
         System.out.println(pixIndex+" "+actions.get(index)+"\n");
+        
    //     writeOutput.write(pixIndex+" "+actions.get(index)+"\n");
         
     //    actionSequence += actions.get(index)+"\n";
@@ -559,14 +589,17 @@ public class Agent extends AbstractPlayer{
 			
 			if(isFull)
 			{
-				pixIndex = currentIndex;
-				QLearning.pool.set(currentIndex, experience.getPrevious());
-				learning.qValues[currentIndex] = new double[numAct];
+				pixIndex = findLowestAccessedIndex();//expCount.getMinAccessAndRemove();
+				QLearning.pool.set(pixIndex, experience.getPrevious());
+				learning.qValues[pixIndex] = new double[numAct];
+				countAccess[pixIndex]++;
+				
 			}
 			else
 			{
 				pixIndex = QLearning.pool.size();
 				QLearning.pool.add(experience.getPrevious());
+				
 			}
 			currentIndex++;
 		}
@@ -578,10 +611,14 @@ public class Agent extends AbstractPlayer{
 		//else
 	//	{
 			
-			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
+//			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
 		//}
 		System.out.println(pixIndex);
+	//	if(experiencePool[pixIndex]!=null)
+	//	experience.accessCount = experiencePool[pixIndex].accessCount;
+		countAccess[pixIndex]++;
 		experiencePool[pixIndex] = experience.copy();
+	//	expCount.increase(pixIndex);
 		tableModel.setValueAt("experience "+pixIndex,pixIndex,0);
     	
 		//System.out.println(learning.qValues[pixIndex][0]);
@@ -657,6 +694,23 @@ public class Agent extends AbstractPlayer{
     }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);
+	
+	private int findLowestAccessedIndex()
+	{
+		int min = 0;
+		
+		for(int i=0;i<experiencePool.length;i++)
+		{
+			if(experiencePool[i]!=null)
+			{
+				if(countAccess[i]<countAccess[min])
+					min = i;
+			}
+			else break;
+		}
+		return min;
+	}
+	
 	private static int[][] convertTo2DWithoutUsingGetRGB(BufferedImage image) {
 
 		if(image==null)

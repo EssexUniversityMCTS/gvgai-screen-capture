@@ -35,6 +35,7 @@ public class MyFrame extends JFrame {
 	ArrayList<Types.ACTIONS> actions;
 	double[][] qv;
 	private JTextField picSize;
+	private JTextField accessCount;
 	/**
 	 * Launch the application.
 	 */
@@ -83,7 +84,7 @@ public class MyFrame extends JFrame {
 		action = new JTextField();
 		action.setEditable(false);
 		action.setFont(new Font("Traditional Arabic", Font.PLAIN, 15));
-		action.setBounds(134, 177, 164, 35);
+		action.setBounds(134, 177, 125, 35);
 		getContentPane().add(action);
 		action.setColumns(10);
 		
@@ -91,7 +92,7 @@ public class MyFrame extends JFrame {
 		reward.setEditable(false);
 		reward.setFont(new Font("Traditional Arabic", Font.PLAIN, 22));
 		reward.setColumns(10);
-		reward.setBounds(336, 177, 109, 35);
+		reward.setBounds(269, 177, 73, 35);
 		getContentPane().add(reward);
 		
 		panel = new JPanel();
@@ -148,6 +149,13 @@ public class MyFrame extends JFrame {
 		picSize.setColumns(10);
 		picSize.setText("Store "+QLearning.pool.size());
 		
+		accessCount = new JTextField();
+		accessCount.setFont(new Font("Dialog", Font.PLAIN, 22));
+		accessCount.setEditable(false);
+		accessCount.setColumns(10);
+		accessCount.setBounds(352, 177, 73, 35);
+		getContentPane().add(accessCount);
+		
 	//	contentPane = new JPanel();
 	//	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	//	contentPane.setLayout(new GridLayout(1, 3));
@@ -156,8 +164,10 @@ public class MyFrame extends JFrame {
 	
 	public void update()
 	{
-		picSize.setText("Store "+QLearning.pool.size()+" "+Agent.currentIndex);
-		
+		try{
+		picSize.setText("Store "+QLearning.pool.size());//+ExperienceCount.getMinAccessNotRemove());
+		}
+		catch(Exception e){}
 	}
 	
 	public void fill(int row)
@@ -165,6 +175,7 @@ public class MyFrame extends JFrame {
 		Experience experience = experiencePool[row];
     	reward.setText(experience.getReward()+"");
     	action.setText(experience.getAction()+"");
+    	accessCount.setText(Agent.countAccess[row]+"");
     	//System.out.println(experience);
     	//System.out.println(experience.getPrevious());
     	//System.out.println(experience.getReward());

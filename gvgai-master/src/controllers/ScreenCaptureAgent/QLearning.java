@@ -237,7 +237,7 @@ public class QLearning {
 		}
 	}
 	
-	public boolean ImageEquals(double[][] pix1, double[][] pix2)
+	public static boolean ImageEquals(double[][] pix1, double[][] pix2)
 	{
 		
 		boolean pass = false;
