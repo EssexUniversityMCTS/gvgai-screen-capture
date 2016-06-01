@@ -18,6 +18,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -73,11 +74,11 @@ public class Agent extends AbstractPlayer{
 	boolean subsamplinglayer = false;
 	int w,h;
 	
-	int saveModelFreq = 10;
-//	PrintWriter writeOutput;
-//	String actionSequence;
-//	String dumpedOutput;
-//	String outputPath = "output";
+	int saveModelFreq;//10;
+	PrintWriter writeOutput;
+	String actionSequence;
+	String dumpedOutput;
+	String outputPath = "output";
 	File theDir;
 	
 	
@@ -85,13 +86,14 @@ public class Agent extends AbstractPlayer{
 	
 	
 	Random random = new Random();
-	MyFrame frame;
+
 	int numAct;
 	ArrayList<Types.ACTIONS> actions;
 	public ModelOrganizer modelOrganizer;
 	public MultiLayerNetwork model;
 	
-	DefaultTableModel tableModel;
+	//MyFrame frame;
+	//DefaultTableModel tableModel;
 	
 	private QLearning learning;
 	//private ExperienceCount expCount;
@@ -106,29 +108,54 @@ public class Agent extends AbstractPlayer{
 	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
 		
-//		try 
-//		{
-//			String kernelSizeFolder = (minBlockSize-firstLayerStride)+"";
-//			kernelSizeFolder +="by"+kernelSizeFolder;
-//			
-//			theDir = new File(outputPath+"/"+kernelSizeFolder+"/"+numPlay+"/"+ArcadeMachine.gameDescription+"/");
-//    		theDir.mkdir();
-//			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run0"+".txt")));
-//			
-//		} catch (IOException e2) 
-//		{
-//			e2.printStackTrace();
-//		}
-//		
-//		actionSequence = "";
+		poolSize = ArcadeMachine.poolSize;
+		batchSize = ArcadeMachine.currentBatchSize;
+		numPlay = ArcadeMachine.currentRepetition;//ArcadeMachine.repetition;
+		saveModelFreq = ArcadeMachine.episodes/20;
+		//System.out.println(poolSize);
+		
+		///// bear in mind the case of w!=h
+		minBlockSize = ArcadeMachine.currentKernel1.width+ArcadeMachine.strideSize_1;
+		
+		int learningFrequency = 1;
+		
+		try 
+		{
+			String subsamp = ArcadeMachine.currentSubsampling? "subsampling/":"";
+			
+			String kernelSizeFolder = ArcadeMachine.currentKernel1.width+"";//(minBlockSize-firstLayerStride)+"";
+			kernelSizeFolder +="by"+ArcadeMachine.currentKernel1.height+"";
+			String kernelSizeFolder2 = ArcadeMachine.currentKernel2.width+"by"+ArcadeMachine.currentKernel2.height;
+			String str = outputPath+"/"
+						+ArcadeMachine.gameDescription+"/"
+					+ArcadeMachine.currentBatchSize+"batch/"
+					+subsamp
+					+kernelSizeFolder+"/"
+					+kernelSizeFolder2+"/"
+					+numPlay+"/";
+			
+			
+			String[] directory = str.split("\\/");
+			createNestedDir(directory);
+			theDir = new File(str);
+    		//theDir.mkdir();
+			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run0"+".txt")));
+			
+		} catch (IOException e2) 
+		{
+			e2.printStackTrace();
+		}
+		
+		actionSequence = "";
 		
 		//expCount = new ExperienceCount();
 	//	toBeLearned = new ArrayList();
+		
 		countAccess = new int[experiencePool.length];
 		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
-		frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
-		tableModel = (DefaultTableModel) frame.table.getModel();
-		frame.setVisible(true);
+	//	frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
+	//	tableModel = (DefaultTableModel) frame.table.getModel();
+	//	frame.setVisible(true);
 		currentIndex = 0;
 		actions = stateObs.getAvailableActions();
 	    numAct = actions.size();
@@ -136,9 +163,9 @@ public class Agent extends AbstractPlayer{
 		 
 	       
 	     
-	     for(int i=0;i<poolSize;i++)
-	    	 tableModel.addRow(new String[]{});
-	    
+//	     for(int i=0;i<poolSize;i++)
+//	    	 tableModel.addRow(new String[]{});
+//	    
 	     int blockW = stateObs.getBlockSize();//25;
 	       // float[] pixs = preProcess(bufferedImage,blockW);
 	        
@@ -154,7 +181,7 @@ public class Agent extends AbstractPlayer{
 	        if(h<minBlockSize)
 	        	h = minBlockSize;
 	        
-	        modelOrganizer = new ModelOrganizer(new Dimension(w,h),minBlockSize, firstLayerStride, numAct, subsamplinglayer);
+	        modelOrganizer = new ModelOrganizer(new Dimension(w,h), numAct);
 	        model = modelOrganizer.model;		
       //  System.out.println(w+" "+h);
 
@@ -236,7 +263,7 @@ public class Agent extends AbstractPlayer{
         	experience.setResult(pixs);
         	
         	double penalty = 0;
-        	if(learning.ImageEquals(experience.getPrevious(), pixs))
+        	if(QLearning.ImageEquals(experience.getPrevious(), pixs))
         		penalty = -5;
         	experience.setReward(stateObs.getGameScore()+penalty);
         		
@@ -274,7 +301,7 @@ public class Agent extends AbstractPlayer{
         		//	System.out.println(experiencePool[prevIndex].accessCount);
         			//System.out.println("happening "+experiencePool[prevIndex].accessCount);
         			
-        			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
+       // 			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
         			currentIndex++;
         			
@@ -288,10 +315,10 @@ public class Agent extends AbstractPlayer{
         			
         			//System.out.println(experiencePool[prevIndex].accessCount);
         			
-        	//		System.out.println("happening "+prevIndex+" "+experiencePool[prevIndex].accessCount);
         	//		expCount.increase(prevIndex);
-        	//		System.out.println("happening2 "+prevIndex+" "+experiencePool[prevIndex].accessCount);
-        			tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
+        			
+        			
+        	//		tableModel.setValueAt("experience "+prevIndex,prevIndex,0);
                 	
         		}
         	//	System.out.println(experience.getAction());
@@ -301,7 +328,7 @@ public class Agent extends AbstractPlayer{
         	}
         	catch(Exception e)
         	{
-        		e.printStackTrace();
+        	//	e.printStackTrace();
         	}
         	
         	if(currentIndex == poolSize)
@@ -415,10 +442,10 @@ public class Agent extends AbstractPlayer{
         INDArray test = new NDArray(1,pixs.length*pixs[0].length);
         test.putRow(0, Nd4j.create(flattenImage(pixs)));
         INDArray pd = model.output(test);
-        System.out.println(pd);
+    //    System.out.println(pd);
         
         
- //       writeOutput.write(pd.toString()+"\n");
+        writeOutput.write(pd.toString()+"\n");
         
         
       //  for(int i=0;i<pd.length;i++)
@@ -437,39 +464,39 @@ public class Agent extends AbstractPlayer{
         
         for(int i=0;i<numAct;i++)
         {
-        	System.out.print(learning.qValues[pixIndex][i]+" ");
-     //   	writeOutput.write(learning.qValues[pixIndex][i]+" ");
+    //    	System.out.print(learning.qValues[pixIndex][i]+" ");
+        	writeOutput.write(learning.qValues[pixIndex][i]+" ");
         }
-        System.out.println();
-    //    writeOutput.write("\n");
+    //    System.out.println();
+        writeOutput.write("\n");
         
         double[] d = learning.normalize(pixIndex);
         for(int i=0;i<d.length;i++)
         {
-        	System.out.print(d[i]+" ");
-    //    	writeOutput.write(d[i]+" ");
+    //    	System.out.print(d[i]+" ");
+        	writeOutput.write(d[i]+" ");
         }
-        System.out.println();
-    //    writeOutput.write("\n");
+    //    System.out.println();
+        writeOutput.write("\n");
         
         experience.setAction(actions.get(index));
         
         
-        System.out.println(pixIndex+" "+actions.get(index)+"\n");
+   //     System.out.println(pixIndex+" "+actions.get(index)+"\n");
         
-   //     writeOutput.write(pixIndex+" "+actions.get(index)+"\n");
+        writeOutput.write(pixIndex+" "+actions.get(index)+"\n\n");
         
-    //    actionSequence += actions.get(index)+"\n";
-        frame.update();
+        actionSequence += actions.get(index)+"\n";
+    //    frame.update();
 		return actions.get(index);
 	}
 	
 	@Override
 	public void result(StateObservation stateObservation, ElapsedCpuTimer elapsedCpuTimer)
     {
-		System.out.println(stateObservation.isAvatarAlive());
+	//	System.out.println(stateObservation.isAvatarAlive());
 		
-		System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
+		//System.out.println("WIN = "+stateObservation.getGameWinner().equals(Types.WINNER.PLAYER_WINS));
 		int pixIndex = QLearning.findIndexFromImage(experience.getPrevious());
 		
 		
@@ -517,13 +544,13 @@ public class Agent extends AbstractPlayer{
 			
 //			learning.qUpdate(pixIndex,-1,actions.indexOf(experience.getAction()), experience.getReward());
 		//}
-		System.out.println(pixIndex);
+	//	System.out.println(pixIndex);
 	//	if(experiencePool[pixIndex]!=null)
 	//	experience.accessCount = experiencePool[pixIndex].accessCount;
 		countAccess[pixIndex]++;
 		experiencePool[pixIndex] = experience.copy();
 	//	expCount.increase(pixIndex);
-		tableModel.setValueAt("experience "+pixIndex,pixIndex,0);
+	//	tableModel.setValueAt("experience "+pixIndex,pixIndex,0);
     	
 		//System.out.println(learning.qValues[pixIndex][0]);
 		
@@ -533,68 +560,132 @@ public class Agent extends AbstractPlayer{
 			isFull = true;
 		}
     	
-    	if(learning.epsilon>0.01)
-    		learning.epsilon -= 0.01;
+    	//if(learning.epsilon>0.01)
+    	//	learning.epsilon -= 0.01;
+    		learning.epsilon = 1.0/(ArcadeMachine.i+1);
     
+    		//DecimalFormat df = new DecimalFormat("##.####");
+    //		System.out.println("EPS "+" "+learning.epsilon);
     	experience = null;
     	countRound = 0;
     	
     	//Save Model Here
-//    	if(ArcadeMachine.i%saveModelFreq == 0)
-//    	{
-//    		String path = ArcadeMachine.filePath;
-//    		DateTime dateTime = new DateTime();
-//    		String dt = dateTime.getDayOfMonth()+"_"+dateTime.getMonthOfYear()+"_"+dateTime.getHourOfDay()+"_"+dateTime.getMinuteOfHour();
-//    		
-//    		File theDir = new File(path+"/"+dt);
-//    		theDir.mkdir();
-//    		
-//    		path+="/"+dt+"/";
-//    		
-//    		try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get(path+"coefficients.bin")))){
-//                Nd4j.write(model.params(),dos);
-//            } catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//
-//            //Write the network configuration:
-//            try {
-//				FileUtils.write(new File(path+"conf.json"), model.getLayerWiseConfigurations().toJson());
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//        
-//          //Save the updater:
-//            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path+"updater.bin"))){
-//                oos.writeObject(model.getUpdater());
-//            } catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//            
-//            System.out.println("finished save model");
-//    	}
+    	if(ArcadeMachine.i!=0&&ArcadeMachine.i%saveModelFreq == 0)
+    	{
+    	//	System.out.println("save");
+    		//String path = ArcadeMachine.filePath;
+    		DateTime dateTime = new DateTime();
+    		String d = dateTime.getDayOfMonth()+"_"+dateTime.getMonthOfYear()+"_"+dateTime.getHourOfDay()+"_"+dateTime.getMinuteOfHour()+"_"+dateTime.getSecondOfMinute();
+    		//String dt = ArcadeMachine.gameDescription+"_"+d;
+    		
+    		 String[] directory = (theDir.getPath()+"/"+d+"/experience/").split("\\/");
+             
+             createNestedDir(directory);
+    		
+    	//	File theDir1 = new File(path+"/"+dt);
+    	//	theDir1.mkdir();
+    		
+    	//	path+="/"+dt+"/";
+    //		System.out.println(path);
+    		
+    		try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get(theDir.getPath()+"/"+d+"/"+"coefficients.bin")))){
+                Nd4j.write(model.params(),dos);
+            } catch (IOException e) {
+				e.printStackTrace();
+			}
+
+            //Write the network configuration:
+            try {
+				FileUtils.write(new File(theDir.getPath()+"/"+d+"/conf.json"), model.getLayerWiseConfigurations().toJson());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        
+          //Save the updater:
+            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(theDir.getPath()+"/"+d+"/updater.bin"))){
+                oos.writeObject(model.getUpdater());
+            } catch (IOException e) {
+				e.printStackTrace();
+			}
+            
+            System.out.println("finished save model");
+            
+            File newDir = new File(theDir.getPath()+"/"+d+"/experience/");
+            newDir.mkdir();
+            
+            for(int i=0;i<experiencePool.length;i++)
+            {
+            	try 
+            	{
+					
+					if(experiencePool[i]!=null)
+	            	{
+						PrintWriter p = new PrintWriter(new FileWriter(new File(newDir.getPath()+"/exp"+i+".txt")));
+						
+						Experience exp = experiencePool[i];
+	            		double[][] prev = exp.getPrevious();
+	            		double[][] res = exp.getResult();
+	            		double reward = exp.getReward();
+	            		String action = exp.getAction().toString();
+	            		int access = countAccess[i];
+	            		
+	            		p.write("Previous=================================\n");
+	            		for(int m=0;m<prev.length;m++)
+	            		{
+	            			for(int n=0;n<prev[0].length;n++)
+	            				p.write(prev[m][n]+" ");
+	            			p.write("\n");;
+	            		}
+	            		p.write("Result=================================\n");
+	            		if(res!=null)
+	            		for(int m=0;m<res.length;m++)
+	            		{
+	            			for(int n=0;n<res[0].length;n++)
+	            				p.write(res[m][n]+" ");
+	            			p.write("\n");;
+	            		}
+	            		else
+	            			p.write("END OF EP\n");
+	            		p.write("Action="+action+"\n");
+	            		p.write("Reward="+reward+"\n");
+	            		p.write("access="+access+"\n");
+	            		
+	            		p.close();
+	            	}
+					else break;
+					
+				} catch (IOException e) 
+            	{
+					e.printStackTrace();
+				}
+            	
+            }
+            System.out.println("finished exp");
+            
+            
+    	}
     	
-    //	writeOutput.write((stateObservation.getGameWinner().toString()));
-    //	writeOutput.close();
+    	writeOutput.write((stateObservation.getGameWinner().toString()));
+    	writeOutput.close();
     	
-//    	try 
-//    	{
-//			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i+1)+".txt")));
-//			
-//		} catch (IOException e) 
-//    	{
-//		}
+    	try 
+    	{
+			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i+1)+".txt")));
+			
+		} catch (IOException e) 
+    	{
+		}
     	
-//    	try 
-//    	{
-//			PrintWriter outputAction = new PrintWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i)+"action.txt"));
-//			outputAction.write(actionSequence);
-//			outputAction.close();
-//			actionSequence = "";
-//		} catch (FileNotFoundException e) 
-//    	{
-//			e.printStackTrace();
-//		}
+    	try 
+    	{
+			PrintWriter outputAction = new PrintWriter(new File(theDir.getPath()+"/run"+(ArcadeMachine.i)+"action.txt"));
+			outputAction.write(actionSequence);
+			outputAction.close();
+			actionSequence = "";
+		} catch (FileNotFoundException e) 
+    	{
+			e.printStackTrace();
+		}
     }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);
@@ -836,5 +927,17 @@ public class Agent extends AbstractPlayer{
     	}
     	return newImage;
     }
+	
+	public void createNestedDir(String[] str)
+	{
+		String concat = "";
+		for(int i=0;i<str.length;i++)
+		{
+			concat +=str[i]+"/";
+			File theDir = new File(concat);
+			if(!theDir.exists())
+				theDir.mkdirs();
+		}
+	}
 
 }

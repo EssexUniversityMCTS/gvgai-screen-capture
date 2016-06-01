@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -44,10 +45,60 @@ import tools.StatSummary;
 public class ArcadeMachine
 {
     public static final boolean VERBOSE = false;
-    public static boolean continueLearning;
-    public static String filePath;
-    public static int i;
     
+    // to load pre-trained model from file
+    public static boolean continueLearning = false;
+    public static String filePath = "previousModel";
+    
+    //episodes to play
+    public static int episodes = 2000;
+    public static int i = 0;
+    
+    /*
+     * Max no. of Experience that can be stored
+     * Max no. of Experience learned in each iteration
+     * Replay times to do the experiment
+     */
+    public static int poolSize = 2000;
+    public static int[] batchSize;
+    public static int currentBatchSize = 100;
+    public static int repetition = 5;
+    public static int currentRepetition= 0;
+    
+    /*
+     * Learning rate, decay method, dropout
+     */
+    public static double initialLearningRate = 0.01;
+    public static String learningDecay;
+    public static double[] dropOut;
+    public static double currentDropOut = 0.2;
+    
+    /*
+     * Model First Layer Kernel Size
+     * Model First Layer Stride
+     * Model Second Layer Kernel Size
+     * Model Second Layer Stride
+     * Using subsampling?
+     * DenseLayer output
+     */
+    public static Dimension[] kernelSize_1;
+    public static Dimension currentKernel1;
+    public static int strideSize_1;
+    public static Dimension[] kernelSize_2;
+    public static Dimension currentKernel2;
+    public static int strideSize_2;
+    public static boolean[] subsampling;
+    public static boolean currentSubsampling;
+    public static int outputDenseLayer;
+    
+    /*
+     * Q-learning parameters
+     */
+    public static double gamma;
+    public static double alpha;
+    public static double epsilon;
+    
+    //to set the result file names
     public static String gameDescription;
 
     /**
@@ -76,6 +127,116 @@ public class ArcadeMachine
     	return runOneGeneratedLevel(gameFile, visuals, agentName, actionFile, levelFile, randomSeed, true);
     }
     
+    public static void setUp(Properties prop,boolean visuals, String agentName,String actionFile, int randomSeed)
+    {
+    	poolSize = Integer.parseInt(prop.getProperty("poolSize"));
+    	String[] bs = prop.getProperty("batchSize").split(",");
+    	batchSize = new int[bs.length];
+    	for(int i=0;i<bs.length;i++)
+    	{
+    		batchSize[i] = Integer.parseInt(bs[i]);
+    	}
+    	
+    	repetition = Integer.parseInt(prop.getProperty("repetition"));
+    	initialLearningRate = Double.parseDouble(prop.getProperty("learningRate"));
+    	learningDecay = prop.getProperty("decayMethod");
+    	
+    	String[] dr = prop.getProperty("dropout").split(",");
+    	dropOut = new double[dr.length];
+    	for(int i=0;i<dr.length;i++)
+    	{
+    		dropOut[i] = Double.parseDouble(dr[i]);
+    	}
+    	
+    	String[] kn = prop.getProperty("kernel1").split(",");
+    	kernelSize_1 = new Dimension[kn.length];
+    	for(int i=0;i<kn.length;i++)
+    	{
+    		//System.out.println(kn[i]);
+    		String[] dim = kn[i].split("_");
+    		
+    		//System.out.println(dim[0]);
+    		Dimension newDim = new Dimension();
+    		newDim.width = Integer.parseInt(dim[0]);
+    		newDim.height = Integer.parseInt(dim[1]);
+    		
+    		kernelSize_1[i] = newDim;
+    	}
+    	
+    	kn = prop.getProperty("kernel2").split(",");
+    	kernelSize_2 = new Dimension[kn.length];
+    	for(int i=0;i<kn.length;i++)
+    	{
+    		String[] dim = kn[i].split("_");
+    		
+    		Dimension newDim = new Dimension();
+    		newDim.width = Integer.parseInt(dim[0]);
+    		newDim.height = Integer.parseInt(dim[1]);
+    		
+    		kernelSize_2[i] = newDim;
+    	}
+    	
+    	strideSize_1 = Integer.parseInt(prop.getProperty("stride1"));
+    	strideSize_2 = Integer.parseInt(prop.getProperty("stride2"));
+    	
+    	String[] subsampl = prop.getProperty("isSubsampling").split(",");
+    	subsampling = new boolean[subsampl.length];
+    	
+    	for(int i=0;i<subsampl.length;i++)
+    	{
+    		if(subsampl[i].equals("true"))
+    		{
+    			subsampling[i] = true;
+    		}
+    		else subsampling[i] = false;
+    	}
+    	
+    	outputDenseLayer = Integer.parseInt(prop.getProperty("outputDenseLayer"));
+    	alpha = Double.parseDouble(prop.getProperty("alpha"));
+    	gamma = Double.parseDouble(prop.getProperty("gamma"));
+    	epsilon = Double.parseDouble(prop.getProperty("epsilon"));
+    	
+    	
+    	continueLearning = Boolean.parseBoolean(prop.getProperty("continueLearning"));
+    	filePath = prop.getProperty("previousModel");
+    	String gameName = prop.getProperty("gameName");
+    	String gameLevel = prop.getProperty("gameLevel");
+    	
+    	String gamesPath = "examples/gridphysics/";
+    	
+    	
+    	gameLevel = gamesPath+gameName+"_lvl"+gameLevel+".txt";
+    	gameName = gamesPath+gameName+".txt";
+    	episodes = Integer.parseInt(prop.getProperty("numEpisodes"));
+    	
+    	
+    	/////////Generalized to loop
+    	
+    	for(int i1=0;i1<kernelSize_1.length;i1++)
+    		for(int i2=0;i2<kernelSize_2.length;i2++)
+    			for(int i3=0;i3<subsampling.length;i3++)
+    				for(int i4=0;i4<dropOut.length;i4++)
+    					for(int i5=0;i5<batchSize.length;i5++)
+    					{
+    	
+							currentKernel1 = kernelSize_1[i1];
+							currentKernel2 = kernelSize_2[i2];
+
+							currentSubsampling = subsampling[i3];
+							currentDropOut = dropOut[i4];
+							currentBatchSize = batchSize[i5];
+							
+							currentRepetition = 0;
+							
+							while(currentRepetition<repetition){
+								Learning(continueLearning, filePath, gameName, gameLevel, visuals, agentName, actionFile,
+									randomSeed, false, episodes);
+								currentRepetition++;
+							}
+						}
+    	 
+    }
+    
     public static double Learning(boolean continueL, String modelF, String game_file, String level_file, boolean visuals,
     		String agentName, String actionFile, int randomSeed, boolean isHuman, int times)
     {
@@ -88,6 +249,7 @@ public class ArcadeMachine
 
     	// First, we create the game to be played..
     	Game toPlay = new VGDLParser().parseGame(game_file);
+    	//System.out.println(toPlay);
     	toPlay.buildLevel(level_file);
 
     	//Warm the game up.
@@ -106,12 +268,19 @@ public class ArcadeMachine
     	
     	double mean = 0;
     	
-    	
+    	System.out.println("playing:\t"+gameDescription+"\n"
+    			+ "round:\t"+currentRepetition+"\n"
+    			+ "batchSize:\t"+currentBatchSize+"\n"
+    			+ "1kernel:\t"+currentKernel1.toString()+"\n"
+    			+ "2kernel:\t"+currentKernel2.toString()+"\n"
+    			+ "subsampling:\t"+currentSubsampling+"\n"
+    			+ "dropOut:\t"+currentDropOut+"\n"
+    			);
     	for(i=0;i<times;i++)
     	{
-    		System.out.println(player);
+    		System.out.println("run "+i+":");
     		double score = runLearningGame(game_file, level_file, player, toPlay, visuals, randomSeed, isHuman, i+1<times);
-    		System.out.println(score);
+    		//System.out.println(score);
     		mean += score;
     		
     	}
@@ -127,7 +296,7 @@ public class ArcadeMachine
     	VGDLFactory.GetInstance().init(); //This always first thing to do.
     	VGDLRegistry.GetInstance().init();
 
-    	System.out.println(" ** Playing game " + game_file + ", level " + level_file + " **");
+    	//System.out.println(" ** Playing game " + game_file + ", level " + level_file + " **");
 
     	// First, we create the game to be played..
         toPlay = new VGDLParser().parseGame(game_file);
@@ -994,7 +1163,7 @@ public class ArcadeMachine
             return false;
         }
 
-        System.out.println("Controller tear down time: " + timeTaken + " ms.");
+  //      System.out.println("Controller tear down time: " + timeTaken + " ms.");
         return true;
     }
 

@@ -99,7 +99,6 @@ public class TimeEffect extends Effect implements Comparable<TimeEffect> {
         nextExecution = base + timer;
     }
 
-    @Override
     public int compareTo(TimeEffect o) {
 
         if (this == o)

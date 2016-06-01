@@ -839,7 +839,10 @@ public abstract class Game
         VGDLViewer view = new VGDLViewer(this, player);
         
         JEasyFrame frame;
+        
         frame = new JEasyFrame(view, "Java-VGDL");
+      //  frame.setVisible(false);
+        
         frame.addKeyListener(ki);
         frame.addWindowListener(wi);
         wi.windowClosed = false;

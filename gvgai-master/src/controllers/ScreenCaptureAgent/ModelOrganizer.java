@@ -13,6 +13,7 @@ import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
+//import org.deeplearning4j.nn.conf.LearningRatePolicy;
 import org.deeplearning4j.nn.conf.layers.ConvolutionLayer;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
@@ -39,36 +40,41 @@ public class ModelOrganizer {
     int seed = 123;
     
     
-	public ModelOrganizer(Dimension d,int minBlockSize, int firstLayerStride, int outputNum, boolean subsamplinglayer)
+	public ModelOrganizer(Dimension d, int outputNum)
 	{
 		this.outputNum = outputNum;
 		
 		int w = (int)d.getWidth();
 		int h = (int)d.getHeight();
+		
+		
         
         if(!ArcadeMachine.continueLearning)
 		{
-			if (!subsamplinglayer) 
+        //	System.out.println(ArcadeMachine.currentSubsampling);
+			if (!ArcadeMachine.currentSubsampling) 
 			{
 				MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder().seed(seed)
-						.iterations(iterations).regularization(true).l2(0.00001).learningRate(0.001)
-						// .dropOut(0.2)
+						.iterations(iterations).regularization(true).l2(0.00001)
+						.learningRate(ArcadeMachine.initialLearningRate)
+					//	.learningRateDecayPolicy(LearningRatePolicy.Sigmoid)
+						.dropOut(ArcadeMachine.currentDropOut)
 						.weightInit(WeightInit.RELU)
 						.optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
 						.updater(Updater.RMSPROP)
 						.momentum(0.9)
 						.list(4)
 						.layer(0,new ConvolutionLayer
-								.Builder(minBlockSize - firstLayerStride,minBlockSize - firstLayerStride)
+								.Builder((int)ArcadeMachine.currentKernel1.getWidth(),(int)ArcadeMachine.currentKernel1.getHeight())
 								.nIn(nChannels)
-								.stride(firstLayerStride, firstLayerStride)
+								.stride(ArcadeMachine.strideSize_1, ArcadeMachine.strideSize_1)
 								.nOut(32)
 								.activation("relu")
 								.build())
 						.layer(1,new ConvolutionLayer
-								.Builder(2, 2)
+								.Builder((int)ArcadeMachine.currentKernel2.getWidth(), (int)ArcadeMachine.currentKernel2.getHeight())
 								.nIn(nChannels)
-								.stride(1, 1)
+								.stride(ArcadeMachine.strideSize_2, ArcadeMachine.strideSize_2)
 								.nOut(64)
 								.activation("relu").build())
 						.layer(2, new DenseLayer
@@ -92,35 +98,36 @@ public class ModelOrganizer {
 			else
 			{
 				MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder().seed(seed)
-						.iterations(iterations).regularization(true).l2(0.00001).learningRate(0.001)
-						// .dropOut(0.2)
+						.iterations(iterations).regularization(true).l2(0.00001).learningRate(ArcadeMachine.initialLearningRate)
+						.dropOut(ArcadeMachine.currentDropOut)
 						.weightInit(WeightInit.RELU).optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-						.updater(Updater.RMSPROP).momentum(0.9).list(4)
-						.layer(0,new ConvolutionLayer.Builder(minBlockSize - firstLayerStride, minBlockSize - firstLayerStride)
+						.updater(Updater.RMSPROP).momentum(0.9).list(6)
+						.layer(0,new ConvolutionLayer
+								.Builder((int)ArcadeMachine.currentKernel1.getWidth(),(int)ArcadeMachine.currentKernel1.getHeight())
 								.nIn(nChannels)
-								.stride(firstLayerStride, firstLayerStride)
+								.stride(ArcadeMachine.strideSize_1, ArcadeMachine.strideSize_1)
 								.nOut(32)
 								.activation("relu")
 								.build())
-						
 						 .layer(1,new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX) 
 								 .kernelSize(2,2)
-								 .stride(2,2)
+								 .stride(1,1)
 								 .build())
-						 .layer(2,new ConvolutionLayer.Builder(2, 2)
-								 .nIn(nChannels).
-								 stride(1, 1).
-								 nOut(64)
+						 .layer(2,new ConvolutionLayer
+								 .Builder((int)ArcadeMachine.currentKernel2.getWidth(), (int)ArcadeMachine.currentKernel2.getHeight())
+								 .nIn(nChannels)
+								 .stride(ArcadeMachine.strideSize_2, ArcadeMachine.strideSize_2)
+								 .nOut(64)
 								 .activation("relu").build())
 						 .layer(3,new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX) 
 								 .kernelSize(2,2) 
-								 .stride(2,2) 
+								 .stride(1,1) 
 								 .build())
 						.layer(4, new DenseLayer.Builder()
 								.activation("relu")
 								.nOut(512)
 								.build())
-						.layer(3, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
+						.layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
 								.nOut(outputNum)
 								.activation("softmax")
 								.build())

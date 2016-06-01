@@ -5,12 +5,21 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.awt.image.DataBufferInt;
 import java.awt.image.WritableRaster;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.canova.api.records.reader.RecordReader;
 import org.canova.api.records.reader.impl.CSVRecordReader;
 import org.canova.api.split.FileSplit;
@@ -375,52 +384,77 @@ public class App
             //System.out.println("wwww "+color);
             	
             int[] labels = new int[]{0,0,1,0,1,1};//,0,1};
-            log.info("Build model....");
-            MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
-                    .seed(seed)
-                    .iterations(iterations)
-                    .regularization(true).l2(0.0005)
-                    .learningRate(0.01)
-                    .weightInit(WeightInit.XAVIER)
-                    .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                    .updater(Updater.NESTEROVS).momentum(0.9)
-                    .list(4)
-                    .layer(0, new ConvolutionLayer.Builder(5, 5)
-                            .nIn(nChannels)
-                            .stride(1,1)
-                            .nOut(20)
-                            .activation("relu")
-                            .build())
-                   /* .layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                            .kernelSize(2,2)
-                            .stride(2,2)
-                            .build())*/
-                    .layer(1, new ConvolutionLayer.Builder(3, 3)
-                            .nIn(nChannels)
-                            .stride(1, 1)
-                            .nOut(50)
-                            .activation("relu")
-                            .build())
-                   /* .layer(3, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                            .kernelSize(2,2)
-                            .stride(2,2)
-                            .build())*/
-                    .layer(2, new DenseLayer.Builder().activation("relu")
-                            .nOut(500).build())
-                    .layer(3, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
-                            .nOut(outputNum)
-                            .activation("softmax")
-                            .build())
-                    .backprop(true).pretrain(false);
-            new ConvolutionLayerSetup(builder,w,h,nChannels);
+            
+          //Load network configuration from disk:
+            MultiLayerConfiguration confFromJson = MultiLayerConfiguration.fromJson(FileUtils.readFileToString(new File("conf.json")));
 
-            MultiLayerConfiguration conf = builder.build();
-            MultiLayerNetwork model = new MultiLayerNetwork(conf);
+            //Load parameters from disk:
+            INDArray newParams;
+            try(DataInputStream dis = new DataInputStream(new FileInputStream("coefficients.bin"))){
+                newParams = Nd4j.read(dis);
+            }
+
+            //Create a MultiLayerNetwork from the saved configuration and parameters
+            MultiLayerNetwork model = new MultiLayerNetwork(confFromJson);
             model.init();
+            model.setParameters(newParams);
+          
+//            log.info("Build model....");
+//            MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
+//                    .seed(seed)
+//                    .iterations(iterations)
+//                    .regularization(true).l2(0.0005)
+//                    .learningRate(0.01)
+//                    .weightInit(WeightInit.XAVIER)
+//                    .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+//                    .updater(Updater.NESTEROVS).momentum(0.9)
+//                    .list(4)
+//                    .layer(0, new ConvolutionLayer.Builder(5, 5)
+//                            .nIn(nChannels)
+//                            .stride(1,1)
+//                            .nOut(20)
+//                            .activation("relu")
+//                            .build())
+//                   /* .layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
+//                            .kernelSize(2,2)
+//                            .stride(2,2)
+//                            .build())*/
+//                    .layer(1, new ConvolutionLayer.Builder(3, 3)
+//                            .nIn(nChannels)
+//                            .stride(1, 1)
+//                            .nOut(50)
+//                            .activation("relu")
+//                            .build())
+//                   /* .layer(3, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
+//                            .kernelSize(2,2)
+//                            .stride(2,2)
+//                            .build())*/
+//                    .layer(2, new DenseLayer.Builder().activation("relu")
+//                            .nOut(500).build())
+//                    .layer(3, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
+//                            .nOut(outputNum)
+//                            .activation("softmax")
+//                            .build())
+//                    .backprop(true).pretrain(false);
+//            new ConvolutionLayerSetup(builder,w,h,nChannels);
+//
+//            MultiLayerConfiguration conf = builder.build();
+//            MultiLayerNetwork model = new MultiLayerNetwork(conf);
+//            model.init();
 
+          //Load the updater:
+            org.deeplearning4j.nn.api.Updater updater;
+            try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("updater.bin"))){
+                updater = (org.deeplearning4j.nn.api.Updater) ois.readObject();
+            }
+            
+            //Set the updater in the network
+            model.setUpdater(updater);
+            
+            
+            model.setListeners(new ScoreIterationListener(1));
             
             log.info("Train model....");
-            model.setListeners(new ScoreIterationListener(1));
             for( int i=0; i<nEpochs; i++ ) {
             //	System.out.println("ep "+nEpochs);
             	//System.out.println(nd+""+nd.length());
@@ -437,7 +471,7 @@ public class App
                  //   DataSet ds = iterator.next();
                     int[] predict = model.predict(testSet);//.output(redND);//ds.getFeatureMatrix());//model.output(ds.getFeatureMatrix());
                     INDArray output = model.output(testSet);
-                    
+                   // System.out.println("xxx"+ output.toString());
                     for(int p=0;p<predict.length;p++)
                     {
                     	System.out.println("p"+p+" = "+predict[p]+", r"+p+" = "+testLabel[p]);
@@ -454,7 +488,20 @@ public class App
             }
             
             log.info("****************Example finished********************");
+            
+            try(DataOutputStream dos = new DataOutputStream(Files.newOutputStream(Paths.get("coefficients.bin")))){
+                Nd4j.write(model.params(),dos);
+            }
+
+            //Write the network configuration:
+            FileUtils.write(new File("conf.json"), model.getLayerWiseConfigurations().toJson());
         
+          //Save the updater:
+            try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("updater.bin"))){
+                oos.writeObject(model.getUpdater());
+            }
+            
+            System.out.println("finished save model");
     }
     
     public static INDArray readImageFromFile(String imgPath, int blockW)

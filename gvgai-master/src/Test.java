@@ -1,11 +1,21 @@
 import java.lang.annotation.Repeatable;
+import java.util.Properties;
 import java.util.Random;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 import javax.imageio.ImageIO;
 
@@ -80,9 +90,33 @@ public class Test
         
         // 2. This plays a game in a level by the controller.
 //        ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);
+        String propertieFile = "";
+        if(args.length>0)
+        {
+        	propertieFile = args[0];
+        }
+        else
+        {
+        	propertieFile = "tmpConfig.properties";
+        }
+        	try 
+        	{
+				InputStream b = new FileInputStream(propertieFile);
+				String st = "";
+				Properties prop = new Properties();
+				prop.load(b);
+				
+				//System.out.println(prop.getProperty("gameName"));
+				ArcadeMachine.setUp(prop, visuals, screenCap, recordActionsFile, seed);
+				
+			} catch (Exception e) 
+        	{
+				e.printStackTrace();
+			}
         
-        ArcadeMachine.Learning(continueLearning,filePath,game, level1, visuals, screenCap, recordActionsFile, seed, false, 200);
-
+        
+        //System.out.println(args.length);
+       
         
         // 3. This replays a game from an action file previously recorded
       //  String readActionsFile = "actionsFile_aliens_lvl0.txt";  //This example is for
