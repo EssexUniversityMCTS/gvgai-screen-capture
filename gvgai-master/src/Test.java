@@ -73,7 +73,7 @@ public class Test
                              "zelda", "zenpuzzle" }; //60, 61 ...
 
         //Other settings
-        boolean visuals = true;
+        boolean visuals = false;
         String recordActionsFile = null; //where to record the actions executed. null if not to save.
         int seed = new Random().nextInt();
 

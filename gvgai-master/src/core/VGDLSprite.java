@@ -712,6 +712,7 @@ public abstract class VGDLSprite {
      */
     public void loadImage(String str)
     {
+    	if(ArcadeMachine.vis)
         if(image == null && str != null)
         {
             //load image.

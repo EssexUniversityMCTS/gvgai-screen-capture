@@ -46,6 +46,8 @@ public class ArcadeMachine
 {
     public static final boolean VERBOSE = false;
     
+    public static boolean vis = true;
+    
     // to load pre-trained model from file
     public static boolean continueLearning = false;
     public static String filePath = "previousModel";
@@ -240,6 +242,7 @@ public class ArcadeMachine
     public static double Learning(boolean continueL, String modelF, String game_file, String level_file, boolean visuals,
     		String agentName, String actionFile, int randomSeed, boolean isHuman, int times)
     {
+    	vis = visuals;
     	continueLearning = continueL;
     	filePath = modelF;
     	VGDLFactory.GetInstance().init(); //This always first thing to do.

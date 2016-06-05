@@ -65,9 +65,9 @@ public class VGDLViewer extends JComponent
      */
     public void paintComponent(Graphics gx)
     {
-    	image = new BufferedImage(size.width,size.height,BufferedImage.TYPE_INT_RGB);
-        image.createGraphics();
-        Graphics2D g = (Graphics2D)image.getGraphics();
+    	//image = new BufferedImage(size.width,size.height,BufferedImage.TYPE_INT_RGB);
+       // image.createGraphics();
+        Graphics2D g = (Graphics2D)gx;//image.getGraphics();
         //For a better graphics, enable this: (be aware this could bring performance issues depending on your HW & OS).
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 

@@ -21,9 +21,11 @@ import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 import javax.swing.table.DefaultTableModel;
 
 import org.apache.commons.io.FileUtils;
@@ -46,6 +48,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import core.ArcadeMachine;
 import core.game.Game;
+import core.game.Observation;
 import core.game.StateObservation;
 import core.player.AbstractPlayer;
 import it.unimi.dsi.fastutil.Arrays;
@@ -104,6 +107,8 @@ public class Agent extends AbstractPlayer{
 	
 	Experience experience;
 	int countRound = 0;
+	
+	HashMap<Integer, Color> mapper;
 	
 	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
@@ -211,7 +216,47 @@ public class Agent extends AbstractPlayer{
         }
         
         log.info("****************Example finished********************");
+        
 */
+	        mapper = new HashMap();
+	        ArrayList<Observation>[][] obs = stateObs.getObservationGrid();
+			
+			for(int i=0;i<obs.length;i++)
+			{
+				for(int j=0;j<obs[i].length;j++)
+				{
+					if(obs[i][j].size()>0)
+					{
+						//System.out.print(obs[i][j].size());
+						if(!mapper.containsKey(obs[i][j].get(0).itype))
+						{
+							Color white = Color.WHITE;
+							int red_white = white.getRed();
+							int green_white = white.getGreen();
+							int blue_white = white.getBlue();
+							
+							Color genColor = white;
+							do
+							{
+							int red_gen = random.nextInt(red_white);
+							int green_gen = random.nextInt(green_white);
+							int blue_gen = random.nextInt(blue_white);
+							
+							genColor = new Color(red_gen,green_gen,blue_gen);
+							
+							}
+							while(mapper.containsValue(genColor));
+							
+							mapper.put(obs[i][j].get(0).itype, genColor);
+						}
+					}
+					//else
+						//System.out.print(" ");
+				}
+			//	System.out.println();
+			}
+
+		//	System.out.println();
 		System.out.println("finished create Agent");
 	}
 	
@@ -225,6 +270,7 @@ public class Agent extends AbstractPlayer{
 	
 	public ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
 		
+	//	System.out.println("mapper size = "+mapper.size());
 		
 	//	expCount.print();
        
@@ -234,20 +280,60 @@ public class Agent extends AbstractPlayer{
        // DataSetIterator mnistTest = new MnistDataSetIterator(batchSize,false,12345);
 
       //  File imgPath = new File("screenshots/2_2.0.png");//_shrink.png");
-        BufferedImage bufferedImage = Game.im;
-		
-        //System.out.println(currentIndex);
-        
-        if(bufferedImage == null) {
-			//	bufferedImage = ImageIO.read(imgPath);
-	//			System.out.println("null");
+		 double[][] pixs;
+		if(ArcadeMachine.vis)
+		{
+			BufferedImage bufferedImage = Game.im;
+
+			// System.out.println(currentIndex);
+
+			if (bufferedImage == null) {
+				// bufferedImage = ImageIO.read(imgPath);
+				// System.out.println("null");
 				return Types.ACTIONS.ACTION_NIL;
+			} else
+				Game.im = null;
+
+			int blockW = stateObs.getBlockSize();// 25;
+			pixs = extendedImage(preProcess(bufferedImage, blockW), minBlockSize);
 		}
-        else Game.im = null;
-        
-        int blockW = stateObs.getBlockSize();//25;
-        double[][] pixs = extendedImage(preProcess(bufferedImage,blockW),minBlockSize);
-        
+		else
+		{
+			ArrayList<Observation>[][] obs = stateObs.getObservationGrid();
+			pixs = new double[obs.length][obs[0].length];
+			
+			for(int i=0;i<obs.length;i++)
+			{
+				for(int j=0;j<obs[i].length;j++)
+				{
+					if(obs[i][j].size()>0)
+					{
+						//System.out.print(obs[i][j].get(0).itype+"");
+						pixs[i][j] = mapper.get(obs[i][j].get(0).itype).getRGB();
+					}
+				//	else
+				//		System.out.print(" ");
+				}
+			//	System.out.println();
+			}
+
+		//	System.out.println();
+			
+			pixs = extendedImage(pixs, minBlockSize);
+			
+//			BufferedImage temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
+//			for(int i=0;i<pixs.length;i++)
+//				for(int j=0;j<pixs[0].length;j++)
+//					temp.setRGB(i,j,(int) pixs[i][j]);
+//			
+//			File op = new File(stateObs.getGameTick()+".png");
+//		    try {
+//				ImageIO.write(temp, "png", op);
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+			
+		}
         
     //    System.out.println(pixs.length+" llll "+pixs[0].length);
         int pixIndex = QLearning.findIndexFromImage(pixs);
@@ -482,7 +568,7 @@ public class Agent extends AbstractPlayer{
         experience.setAction(actions.get(index));
         
         
-   //     System.out.println(pixIndex+" "+actions.get(index)+"\n");
+   //     System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
         
         writeOutput.write(pixIndex+" "+actions.get(index)+"\n\n");
         

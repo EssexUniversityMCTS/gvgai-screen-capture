@@ -15,6 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
+import core.ArcadeMachine;
 import core.SpriteGroup;
 import core.VGDLFactory;
 import core.VGDLRegistry;
@@ -762,12 +763,15 @@ public abstract class Game
         if(sprite.is_stochastic)
             this.is_stochastic = true;
 
+        if(ArcadeMachine.vis)
+        {
         if(itype == wallId)
         {
             sprite.loadImage("wall.png");
         }else if(itype == avatarId)
         {
             sprite.loadImage("avatar.png");
+        }
         }
     }
 
@@ -801,11 +805,15 @@ public abstract class Game
      * @param randomSeed sampleRandom seed for the whole game.
      * @return the score of the game played.
      */
+    double[][] screen;
     public double runGame(AbstractPlayer player, int randomSeed)
     {
         //Prepare some structures and references for this game.
         prepareGame(player, randomSeed);
 
+        Dimension gameDim = fwdModel.getScreenSize();
+        screen = new double[gameDim.width][gameDim.height];
+        
         //Play until the game is ended
         while(!isEnded)
         {
@@ -841,7 +849,6 @@ public abstract class Game
         JEasyFrame frame;
         
         frame = new JEasyFrame(view, "Java-VGDL");
-      //  frame.setVisible(false);
         
         frame.addKeyListener(ki);
         frame.addWindowListener(wi);
@@ -872,6 +879,7 @@ public abstract class Game
      //   im = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
     //	im.createGraphics();
         
+        //frame.setVisible(false);
     	//Play until the game is ended
         while(!isEnded && !wi.windowClosed)
         {	
@@ -909,12 +917,12 @@ public abstract class Game
     			BufferedImage vm = view.image;
     			
     			
-    			im = new BufferedImage(vm.getColorModel()
-    					,vm.copyData(null)
-    					,vm.isAlphaPremultiplied(),null);
-    			//im = ;
-    		//	im = robot.createScreenCapture(new Rectangle(location.x+8, 
-    		//			location.y+32, dimension.width, dimension.height));//left, top, width, height
+//    			im = new BufferedImage(vm.getColorModel()
+//    					,vm.copyData(null)
+//    					,vm.isAlphaPremultiplied(),null);
+//    			//im = ;
+    			im = robot.createScreenCapture(new Rectangle(location.x+8, 
+    					location.y+32, dimension.width, dimension.height));//left, top, width, height
     			
     			//write to file
     		/*	File outputfile = new File("screenshots/"+(count/mod)+"_"+score+".png");
