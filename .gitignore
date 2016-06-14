@@ -1,13 +1,14 @@
 #################
 ## Eclipse
 #################
-
+.metadata/*
 *.pydevproject
 .project
 gvgai-master/.metadata/*
 gvgai-master/dl4j-tutorial/*
 gvgai-master/sprites/*
-.metadata/*
+gvgai-master/output/*
+*.metadata/*
 .recommenders/*
 bin/
 tmp/
@@ -219,3 +220,5 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 *.xmi
+.metadata/.plugins/org.eclipse.core.resources/.projects/gvgai-master/.indexes/af/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/gvgai-master/.indexes/e4/9f/history.index
