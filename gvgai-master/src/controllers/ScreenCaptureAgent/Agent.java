@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.PriorityQueue;
+import java.util.Properties;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -116,7 +118,10 @@ public class Agent extends AbstractPlayer{
 		poolSize = ArcadeMachine.poolSize;
 		batchSize = ArcadeMachine.currentBatchSize;
 		numPlay = ArcadeMachine.currentRepetition;//ArcadeMachine.repetition;
-		saveModelFreq = ArcadeMachine.episodes/20;
+		saveModelFreq = ArcadeMachine.episodes/5;
+		
+		if(saveModelFreq == 0)
+			saveModelFreq = 1;
 		//System.out.println(poolSize);
 		
 		///// bear in mind the case of w!=h
@@ -137,12 +142,15 @@ public class Agent extends AbstractPlayer{
 					+subsamp
 					+kernelSizeFolder+"/"
 					+kernelSizeFolder2+"/"
+					+"dropout_"+ArcadeMachine.currentDropOut+"/"
 					+numPlay+"/";
+			
 			
 			
 			String[] directory = str.split("\\/");
 			createNestedDir(directory);
 			theDir = new File(str);
+			System.out.println("\nsaving directory = "+theDir.getPath());
     		//theDir.mkdir();
 			writeOutput = new PrintWriter(new FileWriter(new File(theDir.getPath()+"/run0"+".txt")));
 			
@@ -165,29 +173,27 @@ public class Agent extends AbstractPlayer{
 		actions = stateObs.getAvailableActions();
 	    numAct = actions.size();
 	    experience = null;
-		 
-	       
-	     
-//	     for(int i=0;i<poolSize;i++)
-//	    	 tableModel.addRow(new String[]{});
-//	    
-	     int blockW = stateObs.getBlockSize();//25;
-	       // float[] pixs = preProcess(bufferedImage,blockW);
-	        
-	    //    System.out.println(bufferedImage.getWidth()+"x"+bufferedImage.getHeight()+"="+pixels.length);
-	  
-	      //  System.out.println(pixs[2]);
-	        Dimension d = stateObs.getWorldDimension();
-	        w = d.width/blockW;//bufferedImage.getWidth()/blockW;
-	        h = d.height/blockW;//bufferedImage.getHeight()/blockW;
-	        
-	        if(w<minBlockSize)
-	        	w = minBlockSize;
-	        if(h<minBlockSize)
-	        	h = minBlockSize;
-	        
-	        modelOrganizer = new ModelOrganizer(new Dimension(w,h), numAct);
-	        model = modelOrganizer.model;		
+
+		// for(int i=0;i<poolSize;i++)
+		// tableModel.addRow(new String[]{});
+		//
+		int blockW = stateObs.getBlockSize();// 25;
+		// float[] pixs = preProcess(bufferedImage,blockW);
+
+		// System.out.println(bufferedImage.getWidth()+"x"+bufferedImage.getHeight()+"="+pixels.length);
+
+		// System.out.println(pixs[2]);
+		Dimension d = stateObs.getWorldDimension();
+		w = d.width / blockW;// bufferedImage.getWidth()/blockW;
+		h = d.height / blockW;// bufferedImage.getHeight()/blockW;
+
+		if (w < minBlockSize)
+			w = minBlockSize;
+		if (h < minBlockSize)
+			h = minBlockSize;
+
+		modelOrganizer = new ModelOrganizer(new Dimension(w, h), numAct);
+		model = modelOrganizer.model;		
       //  System.out.println(w+" "+h);
 
     //    log.info("Train model....");
@@ -218,44 +224,75 @@ public class Agent extends AbstractPlayer{
         log.info("****************Example finished********************");
         
 */
-	        mapper = new HashMap();
-	        ArrayList<Observation>[][] obs = stateObs.getObservationGrid();
-			
-			for(int i=0;i<obs.length;i++)
-			{
-				for(int j=0;j<obs[i].length;j++)
-				{
-					if(obs[i][j].size()>0)
-					{
-						//System.out.print(obs[i][j].size());
-						if(!mapper.containsKey(obs[i][j].get(0).itype))
-						{
+	    if(!ArcadeMachine.continueLearning)
+		{
+			mapper = new HashMap();
+			ArrayList<Observation>[][] obs = stateObs.getObservationGrid();
+
+			for (int i = 0; i < obs.length; i++) {
+				for (int j = 0; j < obs[i].length; j++) {
+					if (obs[i][j].size() > 0) {
+						// System.out.print(obs[i][j].size());
+						if (!mapper.containsKey(obs[i][j].get(0).itype)) {
 							Color white = Color.WHITE;
 							int red_white = white.getRed();
 							int green_white = white.getGreen();
 							int blue_white = white.getBlue();
-							
+
 							Color genColor = white;
-							do
-							{
-							int red_gen = random.nextInt(red_white);
-							int green_gen = random.nextInt(green_white);
-							int blue_gen = random.nextInt(blue_white);
-							
-							genColor = new Color(red_gen,green_gen,blue_gen);
-							
-							}
-							while(mapper.containsValue(genColor));
-							
+							do {
+								int red_gen = random.nextInt(red_white);
+								int green_gen = random.nextInt(green_white);
+								int blue_gen = random.nextInt(blue_white);
+
+								genColor = new Color(red_gen, green_gen, blue_gen);
+
+							} while (mapper.containsValue(genColor));
+
 							mapper.put(obs[i][j].get(0).itype, genColor);
 						}
 					}
-					//else
-						//System.out.print(" ");
+					// else
+					// System.out.print(" ");
 				}
-			//	System.out.println();
+				// System.out.println();
 			}
 
+			try {
+				PrintWriter p = new PrintWriter(new FileWriter(new File(theDir.getPath() + "/mapper.properties")));
+				Object[] key = mapper.keySet().toArray();
+				for (int i = 0; i < mapper.size(); i++) {
+					Color color = mapper.get((int) key[i]);
+					p.write(key[i] + "=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue());
+					p.write("\n");
+				}
+				p.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	    else
+	    {
+	    	InputStream b = null;
+			try 
+			{
+				b = new FileInputStream(theDir+"/mapper.properties");
+			
+			String st = "";
+			Properties prop = new Properties();
+			prop.load(b);
+			Object[] keys = prop.keySet().toArray();
+			for(int i=0;i<prop.size();i++)
+			{
+				String[] keyColor = prop.getProperty(keys[i].toString()).split(",");
+				Color color = new Color(Integer.parseInt(keyColor[0]),Integer.parseInt(keyColor[1]),Integer.parseInt(keyColor[2]));
+				mapper.put((int)keys[i],color );	
+			}
+			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	    }
 		//	System.out.println();
 		System.out.println("finished create Agent");
 	}
@@ -326,9 +363,10 @@ public class Agent extends AbstractPlayer{
 //				for(int j=0;j<pixs[0].length;j++)
 //					temp.setRGB(i,j,(int) pixs[i][j]);
 //			
-//			File op = new File(stateObs.getGameTick()+".png");
+//			File op = new File("screenshots/"+stateObs.getGameTick()+".png");
 //		    try {
 //				ImageIO.write(temp, "png", op);
+//				System.out.println("save");
 //			} catch (IOException e) {
 //				e.printStackTrace();
 //			}
@@ -426,6 +464,19 @@ public class Agent extends AbstractPlayer{
         	experience = new Experience();
         	experience.setPrevious(pixs);
         }
+        
+//		BufferedImage temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
+//		for(int i=0;i<pixs.length;i++)
+//			for(int j=0;j<pixs[0].length;j++)
+//				temp.setRGB(i,j,(int) pixs[i][j]);
+//		
+//		File op = new File("screenshots/"+stateObs.getGameTick()+".png");
+//	    try {
+//			ImageIO.write(temp, "png", op);
+//			System.out.println("save");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
         
         //double[][] p = new double[0][0];
     //    System.out.println(bufferedImage.getWidth()+"x"+bufferedImage.getHeight()+"="+pixels.length);
@@ -568,7 +619,7 @@ public class Agent extends AbstractPlayer{
         experience.setAction(actions.get(index));
         
         
-   //     System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
+        System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
         
         writeOutput.write(pixIndex+" "+actions.get(index)+"\n\n");
         
@@ -655,6 +706,8 @@ public class Agent extends AbstractPlayer{
     	experience = null;
     	countRound = 0;
     	
+    	
+    	
     	//Save Model Here
     	if(ArcadeMachine.i!=0&&ArcadeMachine.i%saveModelFreq == 0)
     	{
@@ -693,8 +746,7 @@ public class Agent extends AbstractPlayer{
             } catch (IOException e) {
 				e.printStackTrace();
 			}
-            
-            System.out.println("finished save model");
+            System.out.println("finished save model at "+d);
             
             File newDir = new File(theDir.getPath()+"/"+d+"/experience/");
             newDir.mkdir();

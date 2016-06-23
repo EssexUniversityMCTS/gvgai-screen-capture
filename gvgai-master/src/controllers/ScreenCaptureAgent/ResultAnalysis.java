@@ -9,13 +9,18 @@ public class ResultAnalysis {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BufferedReader b;
-		int round = 5;
+		int round = 3;
 		
 		int kSize = 10;
-		String gameName = "escape_lvl5";
-		String path = "output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
 		
-		for(int i=0;i<199;i++)
+		
+		String gameName = "escape_lvl0";
+		int r = 4;
+		//for(int r=0;r<5;r++)
+		{
+		String path = "I:\\MasterProj\\Code\\output\\escape_lvl0\\400batch\\subsampling\\3by3\\3by3\\dropout_0.0\\"+r+"\\";//"../../output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
+		System.out.println("\nround "+r);
+		for(int i=0;i<399;i++)
 		{
 			try 
 			{
@@ -49,9 +54,9 @@ public class ResultAnalysis {
 			
 			} catch (Exception e) 
 			{
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 		}
 	}
-
+	}
 }

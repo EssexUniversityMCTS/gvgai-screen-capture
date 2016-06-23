@@ -117,7 +117,7 @@ public class VGDLViewer extends JComponent
             this.spriteGroups[i].copyAllSprites(spriteGroupsGame[i].getSprites().values());
         }
 
-        
+       // System.out.println("paint");
         this.repaint();
     }
 

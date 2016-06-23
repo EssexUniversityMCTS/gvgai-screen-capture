@@ -854,6 +854,8 @@ public abstract class Game
         frame.addWindowListener(wi);
         wi.windowClosed = false;
 
+       
+        
         //Determine the delay for playing with a good fps.
         double delay = CompetitionParameters.LONG_DELAY;
         if(player instanceof controllers.human.Agent)
@@ -881,14 +883,16 @@ public abstract class Game
         
         //frame.setVisible(false);
     	//Play until the game is ended
+        
+        boolean written = false;
         while(!isEnded && !wi.windowClosed)
         {	
-        	
-            //Determine the time to adjust framerate.
+        	 //Determine the time to adjust framerate.
             long then = System.currentTimeMillis();
-
+           
             this.gameCycle(); //Execute a game cycle.
-
+           
+            
             //Get the remaining time to keep fps.
             long now = System.currentTimeMillis();
             int remaining = (int) Math.max(0, delay - (now-then));
@@ -921,14 +925,18 @@ public abstract class Game
 //    					,vm.copyData(null)
 //    					,vm.isAlphaPremultiplied(),null);
 //    			//im = ;
-    			im = robot.createScreenCapture(new Rectangle(location.x+8, 
-    					location.y+32, dimension.width, dimension.height));//left, top, width, height
+    	//		if(!written)
+    			{
+					im = robot.createScreenCapture(
+								new Rectangle(location.x + 8, location.y + 32, dimension.width, dimension.height));// left,
+
+						// write to file
+//					File outputfile = new File("screenshots/" + myStuffs.gvgai_ui.gameNameAndLevel + ".png");
+//					ImageIO.write(im, "png", outputfile);
+//					System.out.println("fin " + myStuffs.gvgai_ui.gameNameAndLevel + ".png");
+//					written = true;
+    			}
     			
-    			//write to file
-    		/*	File outputfile = new File("screenshots/"+(count/mod)+"_"+score+".png");
-    		    ImageIO.write(im, "png", outputfile);
-    		    
-    			*/
     		//	System.out.println(im);
     			
     		} catch (Exception e) {
@@ -1009,7 +1017,7 @@ public abstract class Game
         this.clearAll(fwdModel);        //clear all additional data, including dead sprites.
         this.terminationHandling();     //check for game termination.
         this.checkTimeOut();            //Check for end of game by time steps.
-
+        
         //if(gameTick == 0 || isEnded)
         //    fwdModel.printObservationGrid(); //uncomment this to show the observation grid.
     }

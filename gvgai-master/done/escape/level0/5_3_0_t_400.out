@@ -1,0 +1,2346 @@
+
+saving directory = output/escape_lvl0/400batch/subsampling/5by5/3by3/dropout_0.0/0
+11:43:36.336 [main] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-jackson-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-api-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-common-0.4-rc3.8.jar!/
+11:43:36.414 [main] DEBUG org.reflections.Reflections - could not scan file org/nd4j/linalg/cpu/javacpp/linux-x86_64/libjniLoop.so in url jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/ with scanner TypeAnnotationsScanner
+11:43:36.415 [main] DEBUG org.reflections.Reflections - could not scan file org/nd4j/linalg/cpu/javacpp/linux-x86_64/libjniLoop.so in url jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/ with scanner SubTypesScanner
+11:43:36.536 [main] INFO  org.reflections.Reflections - Reflections took 187 ms to scan 4 urls, producing 116 keys and 359 values 
+finished create Agent
+Controller initialization time: 721 ms.
+playing:	escape_lvl0
+round:	0
+batchSize:	400
+1kernel:	java.awt.Dimension[width=5,height=5]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	true
+dropOut:	0.0
+
+run 0:
+11:43:37.168 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:152
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:193
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:15
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:358
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:265
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:882
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 8:
+12:02:32.790 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.3498607311150492, oldScore=1.3498688275469568, condition=org.deeplearning4j.optimize.terminations.EpsTermination@15a902e7
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:871
+run 9:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:14
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_7_41
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 12:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 13:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:8
+run 15:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 17:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 18:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 19:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 20:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_8_24
+finished exp
+run 21:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:243
+run 22:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:8
+run 23:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 24:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:47
+run 25:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 26:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 27:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 28:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 29:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 30:
+12:12:46.075 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.35298218013514, oldScore=1.3529869924975908, condition=org.deeplearning4j.optimize.terminations.EpsTermination@15a902e7
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_12_46
+finished exp
+run 31:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 32:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 33:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 34:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 35:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 36:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 37:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 38:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 39:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 40:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:7
+finished save model at 15_6_12_13_27
+finished exp
+run 41:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 42:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 43:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 44:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 45:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 46:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 47:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 48:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:561
+run 49:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 50:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_21_37
+finished exp
+run 51:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 52:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 53:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 54:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 55:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 56:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 57:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 58:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 59:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 60:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+finished save model at 15_6_12_22_23
+finished exp
+run 61:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 62:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 63:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 64:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 65:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 66:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 67:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 68:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 69:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 70:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_23_7
+finished exp
+run 71:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 72:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 73:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 74:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 75:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 76:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 77:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 78:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 79:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 80:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_23_49
+finished exp
+run 81:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 82:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 83:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 84:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 85:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 86:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 87:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 88:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 89:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 90:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_24_30
+finished exp
+run 91:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 92:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 93:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 94:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 95:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 96:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 97:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 98:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 99:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 100:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_25_14
+finished exp
+run 101:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 102:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 103:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 104:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 105:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 106:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 107:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 108:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 109:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 110:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_25_57
+finished exp
+run 111:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 112:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 113:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 114:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 115:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 116:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 117:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 118:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 119:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 120:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_26_40
+finished exp
+run 121:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 122:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 123:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 124:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 125:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 126:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 127:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 128:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 129:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 130:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_27_21
+finished exp
+run 131:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 132:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 133:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 134:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 135:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 136:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 137:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 138:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 139:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 140:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_28_3
+finished exp
+run 141:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 142:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 143:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 144:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 145:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 146:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 147:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 148:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 149:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 150:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_28_44
+finished exp
+run 151:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 152:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 153:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 154:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 155:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 156:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 157:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 158:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 159:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 160:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_29_25
+finished exp
+run 161:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 162:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 163:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 164:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 165:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 166:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 167:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 168:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 169:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 170:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_30_8
+finished exp
+run 171:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 172:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 173:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 174:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 175:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 176:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 177:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 178:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 179:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 180:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_30_51
+finished exp
+run 181:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 182:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 183:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 184:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 185:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 186:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 187:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 188:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 189:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 190:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 15_6_12_31_36
+finished exp
+run 191:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 192:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 193:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 194:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 195:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 196:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 197:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 198:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 199:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+-1.0
+
+saving directory = output/escape_lvl0/400batch/subsampling/5by5/3by3/dropout_0.0/1
+finished create Agent
+Controller initialization time: 53 ms.
+playing:	escape_lvl0
+round:	1
+batchSize:	400
+1kernel:	java.awt.Dimension[width=5,height=5]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	true
+dropOut:	0.0
+
+run 0:
+12:32:14.900 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:18
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:96
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:11
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:205
+run 4:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:163
+run 5:
+12:37:28.467 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2760363289235985, oldScore=1.2760337568312106, condition=org.deeplearning4j.optimize.terminations.EpsTermination@8dfe921
+12:39:02.021 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2734036994884326, oldScore=1.2734105815991112, condition=org.deeplearning4j.optimize.terminations.EpsTermination@8dfe921
+Result (1->win; 0->lose):1, Score:1.0, timesteps:949
+run 6:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:55
+run 7:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:356
+run 8:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:342
+run 9:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:242
+run 10:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:35
+finished save model at 15_6_12_49_58
+finished exp
+run 11:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:28
+run 12:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:69
+run 13:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:225
+run 14:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:28
+run 16:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 18:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 20:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+finished save model at 15_6_12_54_50
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 27:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+finished save model at 15_6_12_57_33
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 33:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 37:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:35
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_0_9
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 43:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 44:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 46:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:28
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 49:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_2_51
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 56:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 60:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+finished save model at 15_6_13_5_33
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 62:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 70:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_8_13
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 75:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+finished save model at 15_6_13_10_57
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_13_39
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_16_19
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:26
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_18_59
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_21_35
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:24
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_24_5
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_26_33
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_29_1
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 153:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_31_32
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:24
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_34_2
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 15_6_13_36_29
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+finished save model at 15_6_13_39_3
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:24
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:24
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+0.95
+
+saving directory = output/escape_lvl0/400batch/subsampling/5by5/3by3/dropout_0.0/2
+finished create Agent
+Controller initialization time: 53 ms.
+playing:	escape_lvl0
+round:	2
+batchSize:	400
+1kernel:	java.awt.Dimension[width=5,height=5]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	true
+dropOut:	0.0
+
+run 0:
+13:41:18.929 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:74
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:186
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:113
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:300
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:592
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:477
+run 7:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:616
+run 8:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:729
+run 9:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:37
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:122
+finished save model at 15_6_14_6_32
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:76
+run 12:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:115
+run 13:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:120
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:62
+run 15:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:115
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:217
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:84
+run 18:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:67
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:144
+run 20:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:45
+finished save model at 15_6_14_17_10
+finished exp
+run 21:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:15
+run 22:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:48
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:819
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:190
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:179
+run 26:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:164
+run 27:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:51
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:187
+run 29:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:111
+run 30:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:27
+finished save model at 15_6_14_35_30
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:137
+run 32:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:60
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:102
+run 34:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:276
+run 35:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:91
+run 36:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:10
+run 37:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:380
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:37
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:43
+finished save model at 15_6_14_46_58
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:74
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:39
+run 43:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:464
+run 44:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:42
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:109
+run 46:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:60
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:114
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 49:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:207
+finished save model at 15_6_14_58_24
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:49
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 56:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 60:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:862
+finished save model at 15_6_15_19_39
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:542
+run 62:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 65:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 70:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_15_37_16
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 75:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:25
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+finished save model at 15_6_15_39_18
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_41_17
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_43_18
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_45_20
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_47_22
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_49_21
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_51_24
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_53_25
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 153:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_55_22
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_57_19
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_15_59_18
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 15_6_16_1_12
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+0.65
+
+saving directory = output/escape_lvl0/400batch/subsampling/5by5/3by3/dropout_0.0/3
+finished create Agent
+Controller initialization time: 54 ms.
+playing:	escape_lvl0
+round:	3
+batchSize:	400
+1kernel:	java.awt.Dimension[width=5,height=5]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	true
+dropOut:	0.0
+
+run 0:
+16:02:57.337 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:222
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:253
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:14
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:22
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:241
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:165
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:402
+run 8:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:33
+run 9:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:150
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:145
+finished save model at 15_6_16_16_52
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:52
+run 12:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:93
+run 13:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:283
+run 15:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:34
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:56
+run 17:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 18:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:241
+run 19:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 20:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_17_9_19
+finished exp
+run 21:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:913
+run 22:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 23:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 24:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 25:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 26:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:379
+run 27:
+18:20:37.130 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2691018459425434, oldScore=1.2690995077780753, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 28:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 29:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 30:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_18_56_0
+finished exp
+run 31:
+19:03:02.819 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2249867902856972, oldScore=1.2249989962762686, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 32:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 33:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 34:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 35:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 36:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 37:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 38:
+20:25:44.367 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1856799417690798, oldScore=1.1856761264129119, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 39:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 40:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_20_54_39
+finished exp
+run 41:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 42:
+21:12:11.619 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.204630531665297, oldScore=1.2046255947716096, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 43:
+21:27:55.251 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1990889321588067, oldScore=1.1990956632928287, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 44:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 45:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 46:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 47:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 48:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 49:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 50:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_22_59_12
+finished exp
+run 51:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 52:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 53:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 54:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 55:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:793
+run 56:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 57:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 58:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:413
+run 59:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:79
+run 60:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_0_41_14
+finished exp
+run 61:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 62:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 63:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 64:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 65:
+01:30:52.229 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1580918272402587, oldScore=1.1580814038470095, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+01:31:19.294 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.144950043743429, oldScore=1.1449426287283024, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 66:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 67:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 68:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 69:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 70:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_2_43_35
+finished exp
+run 71:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 72:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 73:
+03:12:58.928 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1451171350788063, oldScore=1.1451169199666842, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 74:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 75:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 76:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:10
+run 77:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 78:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 79:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 80:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_4_34_52
+finished exp
+run 81:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 82:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 83:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 84:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 85:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 86:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 87:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 88:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 89:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 90:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_6_40_45
+finished exp
+run 91:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 92:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 93:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 94:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 95:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 96:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 97:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 98:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 99:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 100:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_8_35_26
+finished exp
+run 101:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 102:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 103:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 104:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 105:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 106:
+09:37:30.140 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1869730068378208, oldScore=1.1869643151544016, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 107:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:34
+run 108:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 109:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 110:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_10_18_48
+finished exp
+run 111:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 112:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 113:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 114:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 115:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 116:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 117:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:356
+run 118:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 119:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:514
+run 120:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_12_1_36
+finished exp
+run 121:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 122:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 123:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 124:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 125:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 126:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 127:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:299
+run 128:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:277
+run 129:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 130:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_13_49_57
+finished exp
+run 131:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 132:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 133:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 134:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 135:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 136:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 137:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 138:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 139:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 140:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_15_57_49
+finished exp
+run 141:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 142:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 143:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:862
+run 144:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:485
+run 145:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 146:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 147:
+17:21:38.123 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2098471477394581, oldScore=1.209836313996935, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:22:13.475 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2097740581576824, oldScore=1.2097742107586384, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:24:15.396 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2098415784098626, oldScore=1.20985286992321, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:24:24.619 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2099254254581928, oldScore=1.2099246625281335, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:24:31.777 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2102345685394764, oldScore=1.2102435712157726, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:24:34.070 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2102415875782966, oldScore=1.2102345685394764, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 148:
+17:27:26.857 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.208158991967678, oldScore=1.2081677657718182, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:27:57.090 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2071374160967827, oldScore=1.207138255330038, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:28:39.042 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2069182999904633, oldScore=1.2069087632351876, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:30:33.053 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2072897753762721, oldScore=1.2072957263082027, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:32:01.466 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2061816822815417, oldScore=1.2061743580619813, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:32:56.944 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2061929738611221, oldScore=1.2061877858707906, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:35:36.318 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2069171563428878, oldScore=1.2069246331359864, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:39:50.106 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2045665406543733, oldScore=1.204574017452097, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:40:52.947 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2048150302183627, oldScore=1.2048205996689796, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:41:26.452 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2069208195176602, oldScore=1.2069278385335445, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:41:33.059 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2066119816327572, oldScore=1.2066008427218913, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:42:58.383 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.204171491112423, oldScore=1.2041832403705597, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:43:05.589 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2049260382562637, oldScore=1.2049356512803078, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:43:25.497 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2058505683616638, oldScore=1.2058548408100604, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:47:40.471 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2033458391746998, oldScore=1.2033440080924511, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:48:30.633 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2030740803540707, oldScore=1.2030738514625072, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:49:12.500 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2055601950508594, oldScore=1.2055672903708936, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:50:05.044 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2030585931593418, oldScore=1.2030688928305149, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+17:59:54.113 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2030100722531796, oldScore=1.20301396322484, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 149:
+18:08:26.400 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.201309254075098, oldScore=1.20131932485919, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:559
+run 150:
+18:29:50.005 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1985733621690273, oldScore=1.1985835855471134, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+18:43:56.185 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.199159535283613, oldScore=1.1991633499498844, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+18:46:11.290 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.198266515926075, oldScore=1.1982744504867078, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+18:56:33.730 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1984107934564114, oldScore=1.1984131585507394, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+19:01:57.557 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1972464746281148, oldScore=1.197242354743147, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_19_4_35
+finished exp
+run 151:
+19:08:16.990 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1967249329133034, oldScore=1.1967261535910607, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+19:11:25.966 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1967224933336735, oldScore=1.1967298938180446, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+19:14:36.001 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1965729590433598, oldScore=1.1965804358255863, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+19:28:00.455 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.202467893462658, oldScore=1.2024575937730313, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+19:28:51.118 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2082738629793166, oldScore=1.2082678357433319, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:931
+run 152:
+20:03:51.472 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2059362324007512, oldScore=1.2059351642538547, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+20:07:05.515 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.203631317644596, oldScore=1.2036324620389938, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+20:12:06.418 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2071989014900684, oldScore=1.2072090485816003, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 153:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:678
+run 154:
+21:11:20.375 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.197753369410801, oldScore=1.1977439852249145, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:531
+run 156:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 157:
+22:32:22.243 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.169608252576828, oldScore=1.1696031408565997, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:817
+run 158:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 159:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:217
+run 160:
+23:49:38.374 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1725929973213673, oldScore=1.1725815532099724, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+00:19:55.975 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1705973193552495, oldScore=1.1705957171543122, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 17_6_0_22_41
+finished exp
+run 161:
+00:53:57.157 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.167995720525074, oldScore=1.1680073171774865, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 162:
+01:28:23.724 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1661522570121288, oldScore=1.166160115251398, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 163:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:444
+run 164:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 165:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:957
+run 166:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:366
+run 167:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:482
+run 168:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:881
+run 169:
+04:57:57.576 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.149301230539465, oldScore=1.149306799968815, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 170:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 17_6_5_37_8
+finished exp
+run 171:
+06:02:07.328 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1639226304734707, oldScore=1.1639291917263985, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 172:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 173:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 174:
+07:44:43.425 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1618289733665466, oldScore=1.161826303048563, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+08:01:52.579 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1615159528116703, oldScore=1.1615148846713066, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 175:
+08:13:35.722 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1582821669426442, oldScore=1.158274232341671, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+08:23:45.446 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1448573395611763, oldScore=1.1448642059857845, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 176:
+08:53:33.126 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1444754351184367, oldScore=1.14447207814517, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:00:22.095 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1446580880438804, oldScore=1.144664191515541, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:07:09.479 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.144172558707857, oldScore=1.1441745423132896, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:09:16.838 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1580841509072304, oldScore=1.15809536608634, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:10:32.320 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1440506436297417, oldScore=1.1440520168792248, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:12:04.961 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1465047159917832, oldScore=1.146506547000885, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:12:42.080 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1580007644749164, oldScore=1.158006791664076, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:17:22.290 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1437907919780732, oldScore=1.1437859091255664, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:22:19.834 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1462854552227975, oldScore=1.1462913298214914, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:25:52.037 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1607469752561093, oldScore=1.1607399561867715, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+09:26:21.905 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.157804394451475, oldScore=1.1578124052838803, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 177:
+10:06:31.006 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1703902481806279, oldScore=1.1703992508513452, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 178:
+10:10:02.821 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1694548862361431, oldScore=1.1694469516637802, condition=org.deeplearning4j.optimize.terminations.EpsTermination@28486680
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:439
+run 179:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:876
+run 180:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 17_6_11_36_25
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 17_6_11_44_31
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+-0.11
+
+saving directory = output/escape_lvl0/400batch/subsampling/5by5/3by3/dropout_0.0/4
+finished create Agent
+Controller initialization time: 56 ms.
+playing:	escape_lvl0
+round:	4
+batchSize:	400
+1kernel:	java.awt.Dimension[width=5,height=5]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	true
+dropOut:	0.0
+
+run 0:
+11:51:31.229 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:51
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:148
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:33
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:101
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:277
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:167
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:12
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:789
+run 8:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:201
+run 9:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:902
+run 10:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:93
+finished save model at 17_6_12_6_25
+finished exp
+run 11:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:269
+run 12:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:95
+run 13:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 14:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:82
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:89
+run 16:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:94
+run 18:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 20:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 17_6_12_11_28
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 25:
+12:12:07.458 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=0.7596023580736916, oldScore=0.7596060126888752, condition=org.deeplearning4j.optimize.terminations.EpsTermination@40226788
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 27:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 17_6_12_12_53
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:228
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:318
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:237
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:318
+run 37:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 38:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 39:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 40:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_21_11
+finished exp
+run 41:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 42:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 43:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 44:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 45:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 46:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 47:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 48:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 49:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 50:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+finished save model at 17_6_12_21_37
+finished exp
+run 51:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 52:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 53:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:47
+run 55:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 56:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 57:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 58:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 59:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 60:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_22_18
+finished exp
+run 61:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 62:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 63:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 64:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:210
+run 66:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:90
+run 68:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 69:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 70:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_24_45
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:40
+run 72:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 73:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 74:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 75:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 76:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 77:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 78:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 79:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 80:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_25_23
+finished exp
+run 81:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 82:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 83:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 84:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 85:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 86:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 87:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 88:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 89:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 90:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_25_45
+finished exp
+run 91:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 92:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 93:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 94:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 95:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 96:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 97:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 98:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 99:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 100:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_26_8
+finished exp
+run 101:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 102:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 103:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 104:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 105:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 106:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 107:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 108:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 109:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 110:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_26_30
+finished exp
+run 111:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 112:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 113:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 114:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 115:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 116:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 117:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 118:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 119:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 120:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_26_53
+finished exp
+run 121:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 122:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 123:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 124:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 125:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 126:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 127:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 128:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 129:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 130:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_27_15
+finished exp
+run 131:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 132:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 133:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 134:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 135:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 136:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 137:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 138:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 139:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 140:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_27_38
+finished exp
+run 141:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 142:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 143:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 144:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 145:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 146:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 147:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 148:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 149:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 150:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_28_0
+finished exp
+run 151:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 152:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 153:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 154:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 155:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 156:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 157:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 158:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 159:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 160:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_28_23
+finished exp
+run 161:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 162:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 163:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 164:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 165:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 166:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 167:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 168:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 169:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 170:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_28_46
+finished exp
+run 171:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 172:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 173:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 174:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 175:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 176:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 177:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 178:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 179:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 180:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_29_8
+finished exp
+run 181:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 182:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 183:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 184:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:206
+run 186:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 187:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 188:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 189:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 190:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 17_6_12_30_55
+finished exp
+run 191:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 192:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 193:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 194:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 195:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 196:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 197:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 198:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 199:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+-0.67

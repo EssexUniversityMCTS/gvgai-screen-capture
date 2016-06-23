@@ -1,0 +1,2274 @@
+
+saving directory = output/escape_lvl0/400batch/3by3/3by3/dropout_0.0/0
+11:41:19.432 [main] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-jackson-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-api-0.4-rc3.8.jar!/
+jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-common-0.4-rc3.8.jar!/
+11:41:19.481 [main] DEBUG org.reflections.Reflections - could not scan file org/nd4j/linalg/cpu/javacpp/linux-x86_64/libjniLoop.so in url jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/ with scanner TypeAnnotationsScanner
+11:41:19.482 [main] DEBUG org.reflections.Reflections - could not scan file org/nd4j/linalg/cpu/javacpp/linux-x86_64/libjniLoop.so in url jar:file:/home/kkunan/ScreenCapProject/gvgai-master/Test_lib/nd4j-x86-0.4-rc3.8.jar!/ with scanner SubTypesScanner
+11:41:19.581 [main] INFO  org.reflections.Reflections - Reflections took 144 ms to scan 4 urls, producing 116 keys and 359 values 
+finished create Agent
+Controller initialization time: 1049 ms.
+playing:	escape_lvl0
+round:	0
+batchSize:	400
+1kernel:	java.awt.Dimension[width=3,height=3]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	false
+dropOut:	0.0
+
+run 0:
+11:41:20.700 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:33
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:26
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:38
+run 3:
+11:45:02.999 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.3113322389166173, oldScore=1.3113216635876435, condition=org.deeplearning4j.optimize.terminations.EpsTermination@63cd604c
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:434
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:166
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:940
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:183
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:38
+run 8:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:258
+run 9:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:26
+run 10:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_12_41_15
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 12:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:473
+run 13:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 14:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:621
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:42
+run 16:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:704
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:131
+run 18:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:102
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:206
+run 20:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:78
+finished save model at 15_6_14_16_40
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:48
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:48
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:35
+run 27:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:33
+run 28:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:873
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:32
+finished save model at 15_6_14_47_7
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:27
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 37:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:32
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:33
+finished save model at 15_6_14_55_18
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 43:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 44:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 46:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 49:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_3_28
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:37
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 56:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 60:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_12_4
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:33
+run 62:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 70:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_20_23
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 75:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:14
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_28_13
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_36_22
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_44_31
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:33
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_15_52_58
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:32
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_16_1_9
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_16_9_25
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_16_17_37
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:33
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_16_25_57
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 153:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:874
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:32
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_16_57_9
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+finished save model at 15_6_17_5_33
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_17_13_54
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+finished save model at 15_6_17_22_18
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:31
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:30
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+0.855
+
+saving directory = output/escape_lvl0/400batch/3by3/3by3/dropout_0.0/1
+finished create Agent
+Controller initialization time: 396 ms.
+playing:	escape_lvl0
+round:	1
+batchSize:	400
+1kernel:	java.awt.Dimension[width=3,height=3]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	false
+dropOut:	0.0
+
+run 0:
+17:29:53.287 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:12
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:29
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:194
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:254
+run 4:
+17:44:24.501 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.3024791888060172, oldScore=1.3024757661056519, condition=org.deeplearning4j.optimize.terminations.EpsTermination@31be6b49
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:746
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:458
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:216
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:10
+run 8:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 9:
+18:37:50.843 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.236890082116127, oldScore=1.2368898556695265, condition=org.deeplearning4j.optimize.terminations.EpsTermination@31be6b49
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 10:
+18:50:04.489 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.2276539346348538, oldScore=1.2276612269928877, condition=org.deeplearning4j.optimize.terminations.EpsTermination@31be6b49
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 15_6_19_1_49
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 12:
+19:28:02.096 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.096154960682127, oldScore=1.0961624818033642, condition=org.deeplearning4j.optimize.terminations.EpsTermination@31be6b49
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 13:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:62
+run 14:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:235
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:208
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:167
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:32
+run 18:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:46
+run 19:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:125
+run 20:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 15_6_20_2_52
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 27:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_7_54
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:530
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 37:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_25_23
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 43:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 44:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 46:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 49:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_30_35
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 56:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 60:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_35_40
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 62:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:8
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 70:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_40_25
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 75:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_45_31
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+finished save model at 15_6_20_50_55
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_20_56_15
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:54
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_21_2_34
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 15_6_21_8_7
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_21_13_40
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+finished save model at 15_6_21_19_12
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 15_6_21_24_43
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 153:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_21_30_12
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+finished save model at 15_6_21_35_26
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_21_40_38
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 15_6_21_45_51
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+0.855
+
+saving directory = output/escape_lvl0/400batch/3by3/3by3/dropout_0.0/2
+finished create Agent
+Controller initialization time: 368 ms.
+playing:	escape_lvl0
+round:	2
+batchSize:	400
+1kernel:	java.awt.Dimension[width=3,height=3]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	false
+dropOut:	0.0
+
+run 0:
+21:50:28.628 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:26
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:20
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:185
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:30
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:10
+run 5:
+21:53:44.687 [main] DEBUG o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0: score=1.1802530557815234, oldScore=1.1802600309530893, condition=org.deeplearning4j.optimize.terminations.EpsTermination@4e6d7365
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:736
+run 6:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:648
+run 8:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:29
+run 9:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:55
+finished save model at 15_6_22_49_4
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 12:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:140
+run 13:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:163
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:76
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:184
+run 16:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:84
+run 17:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:39
+run 18:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:87
+run 20:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+finished save model at 16_6_0_11_25
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:385
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:49
+run 23:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 27:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_0_25_54
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:20
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 37:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_0_30_43
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 43:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 44:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 46:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 49:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 16_6_0_35_33
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:43
+run 56:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 60:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_0_40_58
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 62:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 70:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 16_6_0_45_45
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 75:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 16_6_0_50_31
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_0_55_20
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_0_13
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_4_57
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_9_43
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_14_26
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:64
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_20_20
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_25_5
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 153:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:18
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_29_53
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+finished save model at 16_6_1_34_48
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_39_38
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 186:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+finished save model at 16_6_1_44_29
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:17
+0.865
+
+saving directory = output/escape_lvl0/400batch/3by3/3by3/dropout_0.0/3
+finished create Agent
+Controller initialization time: 326 ms.
+playing:	escape_lvl0
+round:	3
+batchSize:	400
+1kernel:	java.awt.Dimension[width=3,height=3]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	false
+dropOut:	0.0
+
+run 0:
+01:48:52.600 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:12
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:37
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:38
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:103
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:17
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:140
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:111
+run 7:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:16
+run 8:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:131
+run 9:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_1_57_58
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 12:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 13:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 15:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 17:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 18:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 19:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 20:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_1_59_6
+finished exp
+run 21:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 22:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:554
+run 23:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 24:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:66
+run 25:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 26:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 27:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:8
+run 28:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 29:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 30:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_12_27
+finished exp
+run 31:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 32:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 33:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 34:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 35:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 36:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 37:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 38:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 39:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 40:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:728
+finished save model at 16_6_2_30_9
+finished exp
+run 41:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 42:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 43:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 44:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 45:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 46:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 47:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 48:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 49:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 50:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_31_27
+finished exp
+run 51:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 52:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 53:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 54:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 55:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 56:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 57:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 58:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 59:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 60:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_32_45
+finished exp
+run 61:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 62:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 63:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 64:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 65:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 66:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 67:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 68:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 69:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 70:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_34_4
+finished exp
+run 71:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 72:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 73:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 74:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 75:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 76:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 77:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 78:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 79:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 80:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_35_29
+finished exp
+run 81:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 82:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 83:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 84:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 85:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 86:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 87:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 88:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 89:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 90:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_36_48
+finished exp
+run 91:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 92:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 93:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 94:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 95:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 96:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 97:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 98:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 99:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 100:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_38_6
+finished exp
+run 101:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 102:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 103:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 104:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 105:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 106:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 107:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 108:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 109:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 110:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_39_24
+finished exp
+run 111:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 112:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 113:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 114:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 115:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 116:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 117:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 118:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 119:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 120:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_40_40
+finished exp
+run 121:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 122:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 123:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 124:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 125:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 126:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 127:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 128:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 129:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 130:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_41_59
+finished exp
+run 131:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 132:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 133:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 134:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 135:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 136:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 137:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 138:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 139:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 140:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_43_19
+finished exp
+run 141:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 142:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 143:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 144:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 145:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 146:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 147:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 148:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 149:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 150:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_44_37
+finished exp
+run 151:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 152:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 153:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 154:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 155:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 156:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 157:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 158:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 159:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 160:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_45_55
+finished exp
+run 161:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 162:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 163:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 164:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 165:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 166:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 167:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 168:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 169:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 170:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_47_14
+finished exp
+run 171:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 172:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 173:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 174:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 175:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 176:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 177:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 178:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 179:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 180:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_48_31
+finished exp
+run 181:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 182:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 183:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 184:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 185:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 186:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 187:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 188:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 189:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 190:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+finished save model at 16_6_2_49_49
+finished exp
+run 191:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 192:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 193:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 194:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 195:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 196:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 197:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 198:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+run 199:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:4
+-0.99
+
+saving directory = output/escape_lvl0/400batch/3by3/3by3/dropout_0.0/4
+finished create Agent
+Controller initialization time: 283 ms.
+playing:	escape_lvl0
+round:	4
+batchSize:	400
+1kernel:	java.awt.Dimension[width=3,height=3]
+2kernel:	java.awt.Dimension[width=3,height=3]
+subsampling:	false
+dropOut:	0.0
+
+run 0:
+02:51:01.389 [main] WARN  o.d.optimize.solvers.BaseOptimizer - Objective function automatically set to minimize. Set stepFunction in neural net configuration to change default settings.
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:5
+run 1:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:76
+run 2:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:308
+run 3:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:9
+run 4:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:29
+run 5:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:6
+run 6:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:15
+run 7:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 8:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:318
+run 9:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:350
+run 10:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:62
+finished save model at 16_6_3_25_1
+finished exp
+run 11:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:32
+run 12:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:570
+run 13:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:24
+run 14:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:22
+run 15:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:121
+run 16:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:849
+run 17:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:85
+run 18:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:160
+run 19:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:78
+run 20:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:115
+finished save model at 16_6_4_7_11
+finished exp
+run 21:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:96
+run 22:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:87
+run 23:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:164
+run 24:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:329
+run 25:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:344
+run 26:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:136
+run 27:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 28:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 29:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 30:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_4_57_42
+finished exp
+run 31:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 32:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 33:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 34:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 35:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 36:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 37:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 38:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 39:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 40:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_5_2_59
+finished exp
+run 41:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 42:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 43:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 44:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 45:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 46:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 47:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 48:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 49:
+Result (1->win; 0->lose):0, Score:0.0, timesteps:1000
+run 50:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_5_31_25
+finished exp
+run 51:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 52:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 53:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 54:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 55:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 56:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 57:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 58:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 59:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 60:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+finished save model at 16_6_5_36_57
+finished exp
+run 61:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 62:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 63:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 64:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 65:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 66:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 67:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 68:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 69:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 70:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_5_42_24
+finished exp
+run 71:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 72:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 73:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:24
+run 74:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 75:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 76:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 77:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 78:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:29
+run 79:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 80:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_5_48_11
+finished exp
+run 81:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 82:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 83:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 84:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 85:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 86:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 87:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 88:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 89:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 90:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+finished save model at 16_6_5_53_43
+finished exp
+run 91:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 92:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 93:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 94:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 95:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 96:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 97:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:143
+run 98:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 99:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 100:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_2_25
+finished exp
+run 101:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 102:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 103:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 104:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 105:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 106:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 107:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 108:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 109:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 110:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_8_11
+finished exp
+run 111:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+run 112:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 113:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 114:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 115:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 116:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 117:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 118:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 119:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 120:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_14_9
+finished exp
+run 121:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 122:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 123:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 124:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 125:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 126:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 127:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 128:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 129:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 130:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_20_5
+finished exp
+run 131:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 132:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 133:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 134:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 135:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 136:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 137:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 138:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 139:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 140:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_25_55
+finished exp
+run 141:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 142:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 143:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 144:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 145:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 146:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 147:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 148:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 149:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 150:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_31_47
+finished exp
+run 151:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 152:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 153:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 154:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 155:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 156:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 157:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 158:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 159:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 160:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_37_40
+finished exp
+run 161:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 162:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 163:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 164:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 165:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 166:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 167:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 168:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 169:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 170:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_43_36
+finished exp
+run 171:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 172:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 173:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:23
+run 174:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 175:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 176:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 177:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 178:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 179:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 180:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_49_27
+finished exp
+run 181:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 182:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 183:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 184:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 185:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 186:
+Result (1->win; 0->lose):0, Score:-1.0, timesteps:8
+run 187:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 188:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 189:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 190:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+finished save model at 16_6_6_54_56
+finished exp
+run 191:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 192:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 193:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 194:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 195:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 196:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 197:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:21
+run 198:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:22
+run 199:
+Result (1->win; 0->lose):1, Score:1.0, timesteps:19
+0.835

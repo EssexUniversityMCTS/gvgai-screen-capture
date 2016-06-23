@@ -532,7 +532,7 @@ public class ArcadeMachine
             BufferedReader br = new BufferedReader(new FileReader(actionFile));
 
             //First line should be the sampleRandom seed.
-            seed = Integer.parseInt(br.readLine());
+      //      seed = Integer.parseInt(br.readLine());
             System.out.println("Replaying game in " + game_file + ", " + level_file + " with seed " + seed);
 
             //The rest are the actions:
@@ -542,6 +542,7 @@ public class ArcadeMachine
                 Types.ACTIONS nextAction = Types.ACTIONS.fromString(line);
                 actions.add(nextAction);
 
+          //      System.out.println(nextAction);
                 //next!
                 line = br.readLine();
             }
@@ -557,6 +558,7 @@ public class ArcadeMachine
 
         //Then, (re-)play the game.
         double score = 0.0;
+      //  System.out.println(visuals);
         if(visuals)
             score = toPlay.playGame(player, seed, false); //not a human.
         else
