@@ -2,14 +2,14 @@ package myStuffs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.jblas.util.Random;
+import java.util.Random;
 
 import core.ArcadeMachine;
 
 public class gvgai_ui {
-
 	public static String gameNameAndLevel = "";
 	public static void main(String[] args) {
+		Random random = new Random();
 
 		GameSelectionFrame frame = new GameSelectionFrame();
 		frame.setVisible(true);
@@ -29,7 +29,7 @@ public class gvgai_ui {
 				
 				System.out.println(game+"_lvl"+i+".txt");
 				gameNameAndLevel = game+"_lvl"+i+".txt";
-				ArcadeMachine.playOneGame(gamesPath+game+".txt", gamesPath+game+"_lvl"+i+".txt",recordActionsFile, Random.nextInt(Integer.MAX_VALUE));
+				ArcadeMachine.playOneGame(gamesPath+game+".txt", gamesPath+game+"_lvl"+i+".txt",recordActionsFile, random.nextInt());
 			}
 		}
 	

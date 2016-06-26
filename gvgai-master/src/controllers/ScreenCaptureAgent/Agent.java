@@ -44,7 +44,6 @@ import org.deeplearning4j.nn.weights.WeightInit;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.joda.time.DateTime;
 import org.nd4j.linalg.api.ndarray.INDArray;
-import org.nd4j.linalg.cpu.NDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
@@ -496,8 +495,9 @@ public class Agent extends AbstractPlayer{
         if(QLearning.pool.size()<batchSize)
        	limit = QLearning.pool.size()/4;
     //    {
-        INDArray training = new NDArray(limit,pixs.length*pixs[0].length);
-        INDArray labels = new NDArray(limit,numAct);
+        
+        double[][] tmpTraining = new double[limit][pixs.length*pixs[0].length];
+        double[][] tmpLabel = new double[limit][numAct];
         
         countRound++;
         for(int i=0;i<limit;i++)
@@ -533,8 +533,10 @@ public class Agent extends AbstractPlayer{
 			// continue;
 			learning.qUpdate(startIndex, nextIndex, actions.indexOf(toUpdateExp.getAction()), toUpdateExp.getReward());
 			if (countRound % learningFrequency == 0) {
-				training.putRow(i, Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
-				labels.putRow(i, Nd4j.create(learning.normalize(startIndex)));
+				tmpTraining[i] = flattenImage(toUpdateExp.getPrevious());
+				tmpLabel[i] = learning.normalize(startIndex);
+			//	training.putRow(i, Nd4j.create(flattenImage(toUpdateExp.getPrevious())));
+			//	labels.putRow(i, Nd4j.create(learning.normalize(startIndex)));
 			}
      //   }}catch(Exception e){}
         //     System.out.println(index);
@@ -543,6 +545,9 @@ public class Agent extends AbstractPlayer{
         if(countRound%learningFrequency == 0)
         if(limit>0)
         { 
+        INDArray training = Nd4j.create(tmpTraining);//new NDArray(limit,pixs.length*pixs[0].length);
+        INDArray labels = Nd4j.create(tmpLabel);//new NDArray(limit,numAct);
+        
     //    	System.out.println(training);
     //    	System.out.println(labels);
         	
@@ -576,8 +581,11 @@ public class Agent extends AbstractPlayer{
     	}
         
       //else index = learning.getMaxActionIndex(pixIndex);
-        INDArray test = new NDArray(1,pixs.length*pixs[0].length);
-        test.putRow(0, Nd4j.create(flattenImage(pixs)));
+        double[][] tmpTest = new double[1][pixs.length*pixs[0].length];
+        tmpTest[0] = flattenImage(pixs);
+        
+        INDArray test = Nd4j.create(tmpTest);//new NDArray(1,pixs.length*pixs[0].length);
+       // test.putRow(0, Nd4j.create(flattenImage(pixs)));
         INDArray pd = model.output(test);
     //    System.out.println(pd);
         
@@ -619,7 +627,7 @@ public class Agent extends AbstractPlayer{
         experience.setAction(actions.get(index));
         
         
-        System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
+     //   System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
         
         writeOutput.write(pixIndex+" "+actions.get(index)+"\n\n");
         
