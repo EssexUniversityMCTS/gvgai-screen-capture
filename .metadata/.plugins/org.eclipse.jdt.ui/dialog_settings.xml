@@ -11,6 +11,7 @@
 	<list key="SearchScopeActionGroup.working_set">
 	</list>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
 		<item value="false" key="updateSimilarElements"/>
@@ -61,14 +62,15 @@
 	</section>
 	<section name="FatJarPackageWizard">
 		<item value="I:\MasterProj\Code\gvgai-screen-capture" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="GameSelectionFrame - gvgai-master" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="gvgai-master\GVGAI.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Test - gvgai-master" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="gvgai-master\Test.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="gvgai-master\Test.jar"/>
+			<item value="gvgai-master\Escape0_Cheat.jar"/>
 			<item value="gvgai-master\GVGAI.jar"/>
 			<item value="gvgai-master\RunGame.jar"/>
-			<item value="gvgai-master\Test.jar"/>
 			<item value="C:\Users\Sominii\Desktop\CleanSpace\Test.jar"/>
 			<item value="gvgai-master/Test.jar"/>
 		</list>
