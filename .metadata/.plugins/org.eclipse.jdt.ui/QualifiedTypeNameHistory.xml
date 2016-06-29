@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ontology.Types.WINNER"/>
-<fullyQualifiedTypeName name="org.nd4j.linalg.cpu.NDArray"/>
-<fullyQualifiedTypeName name="java.awt.Dimension"/>
-<fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="org.deeplearning4j.berkeley.PriorityQueue"/>
 <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
 <fullyQualifiedTypeName name="java.io.DataInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
@@ -50,4 +45,19 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="org.apache.spark.SparkConf"/>
+<fullyQualifiedTypeName name="org.deeplearning4j.spark.impl.multilayer.SparkDl4jMultiLayer"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.JavaSparkContext"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.JavaRDD"/>
+<fullyQualifiedTypeName name="org.nd4j.linalg.dataset.DataSet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.spark.storage.StorageLevel"/>
+<fullyQualifiedTypeName name="org.apache.log4j.LogManager"/>
+<fullyQualifiedTypeName name="akka.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.LoggerFactory"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="parquet.org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="lombok.val"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 </qualifiedTypeNameHistroy>

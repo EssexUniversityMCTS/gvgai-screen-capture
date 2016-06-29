@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="return" key="selection"/>
+		<item value="saveAs" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="return"/>
-			<item value="WALL_TIME"/>
-			<item value="System."/>
-			<item value="playgame"/>
-			<item value="frame"/>
-			<item value="labyrinth"/>
-			<item value="round"/>
-			<item value="save"/>
+			<item value="saveAs"/>
+			<item value="JavaRDD"/>
+			<item value="set("/>
+			<item value="set(String"/>
+			<item value="set"/>
+			<item value="level"/>
+			<item value="off"/>
+			<item value="OFF"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -23,8 +23,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="259" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="421" key="DIALOG_HEIGHT"/>
-		<item value="1081" key="DIALOG_X_ORIGIN"/>
-		<item value="157" key="DIALOG_Y_ORIGIN"/>
+		<item value="461" key="DIALOG_HEIGHT"/>
+		<item value="1011" key="DIALOG_X_ORIGIN"/>
+		<item value="128" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

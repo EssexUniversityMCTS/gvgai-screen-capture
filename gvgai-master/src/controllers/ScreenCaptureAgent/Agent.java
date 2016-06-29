@@ -257,18 +257,7 @@ public class Agent extends AbstractPlayer{
 				// System.out.println();
 			}
 
-			try {
-				PrintWriter p = new PrintWriter(new FileWriter(new File(theDir.getPath() + "/mapper.properties")));
-				Object[] key = mapper.keySet().toArray();
-				for (int i = 0; i < mapper.size(); i++) {
-					Color color = mapper.get((int) key[i]);
-					p.write(key[i] + "=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue());
-					p.write("\n");
-				}
-				p.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			
 		}
 	    else
 	    {
@@ -344,8 +333,35 @@ public class Agent extends AbstractPlayer{
 				{
 					if(obs[i][j].size()>0)
 					{
-						//System.out.print(obs[i][j].get(0).itype+"");
+						
+					
+						try{
+							
 						pixs[i][j] = mapper.get(obs[i][j].get(0).itype).getRGB();
+						}catch(Exception e)
+						{
+							if(!mapper.containsKey(obs[i][j].get(0).itype))
+							{
+								Color white = Color.WHITE;
+								int red_white = white.getRed();
+								int green_white = white.getGreen();
+								int blue_white = white.getBlue();
+
+								Color genColor = white;
+								do {
+									int red_gen = random.nextInt(red_white);
+									int green_gen = random.nextInt(green_white);
+									int blue_gen = random.nextInt(blue_white);
+
+									genColor = new Color(red_gen, green_gen, blue_gen);
+
+								} while (mapper.containsValue(genColor));
+
+								mapper.put(obs[i][j].get(0).itype, genColor);
+								pixs[i][j] = mapper.get(obs[i][j].get(0).itype).getRGB();
+							}
+						}
+						
 					}
 				//	else
 				//		System.out.print(" ");
@@ -832,6 +848,20 @@ public class Agent extends AbstractPlayer{
     	{
 			e.printStackTrace();
 		}
+    	
+    	if(ArcadeMachine.i==0)
+    	try {
+			PrintWriter p = new PrintWriter(new FileWriter(new File(theDir.getPath() + "/mapper.properties")));
+			Object[] key = mapper.keySet().toArray();
+			for (int i = 0; i < mapper.size(); i++) {
+				Color color = mapper.get((int) key[i]);
+				p.write(key[i] + "=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue());
+				p.write("\n");
+			}
+			p.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 	
 //	private static final Logger log = LoggerFactory.getLogger(Agent.class);
@@ -911,7 +941,11 @@ public class Agent extends AbstractPlayer{
 	            }
 	         }
 	      }
+	      
+	      
 */
+	      
+	      
 	      return result;
 	   }
 
