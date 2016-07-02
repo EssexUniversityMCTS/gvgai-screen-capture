@@ -15,10 +15,10 @@ public class ResultAnalysis {
 		
 		
 		String gameName = "escape_lvl0";
-		int r = 6;
+		int r = 8;
 		//for(int r=0;r<5;r++)
 		{
-		String path = "I:\\MasterProj\\Code\\output\\escape_lvl3\\200batch\\5by5\\3by3\\dropout_0.0\\"+r+"\\";//"../../output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
+		String path = "I:\\MasterProj\\Code\\output\\escape_lvl3\\400batch\\5by5\\3by3\\dropout_0.0\\"+r+"\\";//"../../output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
 		System.out.println("round "+r);
 		for(int i=0;i<399;i++)
 		{

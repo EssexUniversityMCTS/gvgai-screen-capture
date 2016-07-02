@@ -12747,3 +12747,138 @@ java.net.UnknownHostException: services.gradle.org
 2559-06-29 20:16:07,457 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
 2559-06-29 20:16:07,488 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2559-06-29 20:16:07,489 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 17:52:49,705 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2559-06-30 17:56:47,311 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 17:56:47,459 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 17:56:49,105 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 17:56:49,147 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 17:59:54,260 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 17:59:54,335 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 17:59:54,371 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 17:59:54,372 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:13:50,203 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:13:50,251 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:13:50,288 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:13:50,289 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:14:26,137 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:14:26,172 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:14:26,205 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:14:26,205 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:15:00,847 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:15:00,891 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:15:00,928 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:15:00,928 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:15:25,017 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:15:25,056 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:15:25,089 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:15:25,090 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:16:10,417 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:10,454 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:16:10,487 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:10,487 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:16:27,787 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:27,822 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:16:27,855 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:27,856 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-06-30 18:16:45,206 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:45,248 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-06-30 18:16:45,283 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-06-30 18:16:45,284 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 16:22:22,928 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 16:24:21,238 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/nd4j/nd4j-cuda-7.5/0.4-rc3.10/nd4j-cuda-7.5-0.4-rc3.10-linux-x86_64.jar
+2559-07-02 16:24:23,357 [Worker-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/nd4j/nd4j-cuda-7.5/0.4-rc3.10/nd4j-cuda-7.5-0.4-rc3.10-linux-x86_64.jar
+2559-07-02 16:24:25,089 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 16:24:33,921 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:24:34,036 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 16:24:34,113 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:24:34,113 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 16:25:12,332 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:25:12,422 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 16:25:12,496 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:25:12,497 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 16:25:12,613 [Worker-0] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2559-07-02 16:25:25,924 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 16:25:34,622 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gvgai-master/src
+2559-07-02 16:25:34,623 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /gvgai-master/src overlaps with sources folder /gvgai-master/src
+2559-07-02 16:25:34,631 [Worker-0] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /gvgai-master/src/test/java because it overlaps with /gvgai-master/src
+2559-07-02 16:25:38,577 [Worker-0] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 25 sec
+2559-07-02 16:36:36,364 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:36:38,579 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 16:36:59,883 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:36:59,884 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 16:52:34,885 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:52:35,102 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 16:52:35,191 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:52:35,192 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 16:53:39,598 [Worker-35] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2559-07-02 16:53:41,872 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:53:41,958 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 16:53:42,127 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 16:53:42,127 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:00:06,985 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 17:00:37,561 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:00:37,564 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-07-02 17:00:37,569 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:00:37,569 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:00:37,574 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2559-07-02 17:00:40,569 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 17:00:47,517 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gvgai-master/src
+2559-07-02 17:00:47,518 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /gvgai-master/src overlaps with sources folder /gvgai-master/src
+2559-07-02 17:00:47,526 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /gvgai-master/src/test/java because it overlaps with /gvgai-master/src
+2559-07-02 17:00:49,645 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 12 sec
+2559-07-02 17:00:58,790 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:00:58,795 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 17:00:58,897 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:00:58,897 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:01:16,893 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:01:16,943 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 17:01:16,999 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:01:16,999 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:01:47,238 [Worker-41] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 17:01:53,654 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:01:53,658 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-07-02 17:01:53,661 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:01:53,662 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:02:02,323 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:02:02,361 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 17:02:02,424 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:02:02,424 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:05:37,926 [Worker-43] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 17:05:44,747 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:05:44,750 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-07-02 17:05:44,754 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:05:44,754 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:05:45,320 [Worker-43] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2559-07-02 17:05:47,305 [Worker-43] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 17:05:54,329 [Worker-43] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gvgai-master/src
+2559-07-02 17:05:54,329 [Worker-43] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /gvgai-master/src overlaps with sources folder /gvgai-master/src
+2559-07-02 17:05:54,339 [Worker-43] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /gvgai-master/src/test/java because it overlaps with /gvgai-master/src
+2559-07-02 17:05:56,445 [Worker-43] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 11 sec
+2559-07-02 17:06:03,164 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:06:03,168 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 17:06:03,243 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:06:03,243 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 17:06:10,390 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:06:10,434 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 17:06:10,485 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 17:06:10,485 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 20:21:06,146 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2559-07-02 20:39:51,783 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 20:39:58,878 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:39:58,913 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 20:39:59,321 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:39:59,321 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 20:39:59,365 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2559-07-02 20:40:03,312 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\pom.xml.
+2559-07-02 20:40:09,554 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gvgai-master/src
+2559-07-02 20:40:09,555 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /gvgai-master/src overlaps with sources folder /gvgai-master/src
+2559-07-02 20:40:09,559 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /gvgai-master/src/test/java because it overlaps with /gvgai-master/src
+2559-07-02 20:40:11,630 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 12 sec
+2559-07-02 20:40:22,184 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:40:22,193 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 20:40:22,281 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:40:22,281 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-02 20:40:51,235 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:40:51,309 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-02 20:40:51,363 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-02 20:40:51,363 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
-<fullyQualifiedTypeName name="java.io.DataInputStream"/>
-<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 <fullyQualifiedTypeName name="org.deeplearning4j.optimize.listeners.ScoreIterationListener"/>
 <fullyQualifiedTypeName name="org.nd4j.linalg.util.Paths"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
@@ -38,7 +35,6 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.jblas.util.Random"/>
 <fullyQualifiedTypeName name="myStuffs.gvgai_ui"/>
-<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="core.ArcadeMachine"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="parquet.org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="lombok.val"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="org.apache.spark.SparkContext"/>
+<fullyQualifiedTypeName name="scala.Tuple2"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="org.nd4j.jita.conf.CudaEnvironment"/>
 </qualifiedTypeNameHistroy>
