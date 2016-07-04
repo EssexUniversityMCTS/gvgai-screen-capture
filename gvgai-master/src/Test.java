@@ -19,7 +19,6 @@ import java.io.PrintWriter;
 
 import javax.imageio.ImageIO;
 
-import org.nd4j.jita.conf.CudaEnvironment;
 
 import core.ArcadeMachine;
 
@@ -37,8 +36,7 @@ public class Test
 	
     public static void main(String[] args)
     {
-    	CudaEnvironment.getInstance().getConfiguration().allowMultiGPU(true);
-        //Available controllers:
+    	 //Available controllers:
     	String sampleRandomController = "controllers.sampleRandom.Agent";
     	String doNothingController = "controllers.doNothing.Agent";
         String sampleOneStepController = "controllers.sampleonesteplookahead.Agent";
