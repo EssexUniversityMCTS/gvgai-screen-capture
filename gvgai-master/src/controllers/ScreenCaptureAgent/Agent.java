@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,6 +56,7 @@ import core.player.AbstractPlayer;
 import it.unimi.dsi.fastutil.Arrays;
 import ontology.Types;
 import ontology.Types.ACTIONS;
+import tachyon.network.protocol.databuffer.DataBuffer;
 import tools.ElapsedCpuTimer;
 
 public class Agent extends AbstractPlayer{
@@ -86,7 +88,7 @@ public class Agent extends AbstractPlayer{
 	File theDir;
 	
 	
-	public static Experience[] experiencePool = new Experience[poolSize];
+//	public static Experience[] experiencePool = new Experience[poolSize];
 	
 	
 	Random random = new Random();
@@ -163,8 +165,8 @@ public class Agent extends AbstractPlayer{
 		//expCount = new ExperienceCount();
 	//	toBeLearned = new ArrayList();
 		
-		countAccess = new int[experiencePool.length];
-		learning = new QLearning(experiencePool.length,stateObs.getAvailableActions().size());
+		countAccess = new int[poolSize];
+		learning = new QLearning(poolSize,stateObs.getAvailableActions().size());
 	//	frame = new MyFrame(experiencePool,stateObs.getAvailableActions(),learning.qValues);
 	//	tableModel = (DefaultTableModel) frame.table.getModel();
 	//	frame.setVisible(true);
@@ -433,7 +435,8 @@ public class Agent extends AbstractPlayer{
         				countAccess[prevIndex]++;
         			}
         			
-        			experiencePool[prevIndex] = experience.copy();
+        			writeExpToFile(experience.copy(),prevIndex);
+        		//	experiencePool[prevIndex] = experience.copy();
         		//	toBeLearned.add(prevIndex);
         		//	System.out.println(experiencePool[prevIndex].accessCount);
         //			expCount.increase(prevIndex);
@@ -449,7 +452,8 @@ public class Agent extends AbstractPlayer{
         		{
         			
       //  			System.out.println("not add new");
-        			experiencePool[prevIndex] = experience.copy();
+        			//experiencePool[prevIndex] = experience.copy();
+        			writeExpToFile(experience.copy(),prevIndex);
         			countAccess[prevIndex]++;
         			
         			//System.out.println(experiencePool[prevIndex].accessCount);
@@ -507,6 +511,7 @@ public class Agent extends AbstractPlayer{
         //	index = random.nextInt(actions.size());
         //else
         	//int index = learning.getMaxActionIndex(pixIndex);
+        int minLim = 1;
         int limit = batchSize;
         if(QLearning.pool.size()<batchSize)
        	limit = QLearning.pool.size()/4;
@@ -516,6 +521,8 @@ public class Agent extends AbstractPlayer{
         double[][] tmpLabel = new double[limit][numAct];
         
         countRound++;
+        
+        if(limit>=minLim)
         for(int i=0;i<limit;i++)
         {
         	Experience toUpdateExp;
@@ -527,14 +534,16 @@ public class Agent extends AbstractPlayer{
 					// System.out.println(learning.pool.size()+" "+rand);
 					rand = random.nextInt(QLearning.pool.size());// *numAct-1);
 
-				} while (experiencePool[rand] == null);
+				} while (countAccess[rand] == 0);
 
-				toUpdateExp = experiencePool[rand];
+				
+				
+				toUpdateExp = readExpFromFile(rand,w,h);
         	}
         	
         	else
         	{
-        		toUpdateExp = experiencePool[loopIndex];
+        		toUpdateExp = readExpFromFile(loopIndex,w,h);
         		loopIndex++;
         		
         		if(loopIndex == QLearning.pool.size())
@@ -559,14 +568,36 @@ public class Agent extends AbstractPlayer{
         }
         
         if(countRound%learningFrequency == 0)
-        if(limit>0)
+        if(limit>=minLim)
         { 
         INDArray training = Nd4j.create(tmpTraining);//new NDArray(limit,pixs.length*pixs[0].length);
         INDArray labels = Nd4j.create(tmpLabel);//new NDArray(limit,numAct);
         
     //    	System.out.println(training);
     //    	System.out.println(labels);
-        	
+        
+    //    System.out.println("happening limit = "+limit);
+      //  System.out.println("training\n[");
+        
+      //  System.out.println(training);
+        
+//        float[] b = training.data().asFloat();
+//        try {
+//			PrintWriter pr = new PrintWriter(new FileWriter(new File("input"+limit+".txt")));
+//			pr.write("[");
+//			 for(int in=0;in<b.length;in++)
+//		        	pr.write(b[in]+" ");
+//		        pr.write("]");
+//		pr.close();
+//        } catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//       
+        
+  //      System.out.println("finish");
+//        
+//        System.out.println(labels.data().asFloat().toString());
         	model.fit(training, labels);
         
         //learning.getMaxActionIndex(pixIndex);
@@ -614,10 +645,17 @@ public class Agent extends AbstractPlayer{
      //   System.out.println();
         
         int index;
+     //   System.out.println("eps "+learning.epsilon);
         
      //   index = learning.getMaxActionIndex(pixIndex);
+        
+        boolean ran = false;
+        
         if(random.nextDouble()<learning.epsilon)
+        {
         	index = random.nextInt(numAct);
+        	ran = true;
+        }
         else
         	index = model.predict(test)[0];
         
@@ -645,7 +683,7 @@ public class Agent extends AbstractPlayer{
         
      //   System.out.println(stateObs.getGameTick()+" "+actions.get(index)+"\n");
         
-        writeOutput.write(pixIndex+" "+actions.get(index)+"\n\n");
+        writeOutput.write(ran+" "+pixIndex+" "+actions.get(index)+"\n\n");
         
         actionSequence += actions.get(index)+"\n";
     //    frame.update();
@@ -709,7 +747,8 @@ public class Agent extends AbstractPlayer{
 	//	if(experiencePool[pixIndex]!=null)
 	//	experience.accessCount = experiencePool[pixIndex].accessCount;
 		countAccess[pixIndex]++;
-		experiencePool[pixIndex] = experience.copy();
+		writeExpToFile(experience.copy(),pixIndex);
+	//	experiencePool[pixIndex] = experience.copy();
 	//	expCount.increase(pixIndex);
 	//	tableModel.setValueAt("experience "+pixIndex,pixIndex,0);
     	
@@ -721,9 +760,9 @@ public class Agent extends AbstractPlayer{
 			isFull = true;
 		}
     	
-    	//if(learning.epsilon>0.01)
-    	//	learning.epsilon -= 0.01;
-    		learning.epsilon = 1.0/(ArcadeMachine.i+1);
+    	if(learning.epsilon>0.1)
+    		learning.epsilon -= 0.02;
+    	//	learning.epsilon = 1.0/(ArcadeMachine.i+1);
     
     		//DecimalFormat df = new DecimalFormat("##.####");
     //		System.out.println("EPS "+" "+learning.epsilon);
@@ -775,16 +814,16 @@ public class Agent extends AbstractPlayer{
             File newDir = new File(theDir.getPath()+"/"+d+"/experience/");
             newDir.mkdir();
             
-            for(int i=0;i<experiencePool.length;i++)
+            for(int i=0;i<countAccess.length;i++)
             {
             	try 
             	{
 					
-					if(experiencePool[i]!=null)
+					if(countAccess[i]>0)
 	            	{
 						PrintWriter p = new PrintWriter(new FileWriter(new File(newDir.getPath()+"/exp"+i+".txt")));
 						
-						Experience exp = experiencePool[i];
+						Experience exp = readExpFromFile(i,w,h);
 	            		double[][] prev = exp.getPrevious();
 	            		double[][] res = exp.getResult();
 	            		double reward = exp.getReward();
@@ -826,7 +865,7 @@ public class Agent extends AbstractPlayer{
             
             
     	}
-    	
+    	writeOutput.write(stateObservation.getGameScore()+" ");
     	writeOutput.write((stateObservation.getGameWinner().toString()));
     	writeOutput.close();
     	
@@ -870,9 +909,9 @@ public class Agent extends AbstractPlayer{
 	{
 		int min = 0;
 		
-		for(int i=0;i<experiencePool.length;i++)
+		for(int i=0;i<countAccess.length;i++)
 		{
-			if(experiencePool[i]!=null)
+			if(countAccess[i]>0)
 			{
 				if(countAccess[i]<countAccess[min])
 					min = i;
@@ -886,14 +925,7 @@ public class Agent extends AbstractPlayer{
 
 		if(image==null)
 			return null;
-	/*	  int [] pix =  ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
-		  
-		  ByteBuffer byteBuffer = ByteBuffer.allocate(pix.length * 4);        
-	      IntBuffer intBuffer = byteBuffer.asIntBuffer();
-	      intBuffer.put(pix);
 
-	      final byte[] pixels = byteBuffer.array();
-	     */
 	      final int width = image.getWidth();
 	      final int height = image.getHeight();
 	    //  System.out.println("2D "+width+" "+height);
@@ -905,45 +937,7 @@ public class Agent extends AbstractPlayer{
 	    		 // System.out.println(width+" "+height+" "+i+" "+j);
 	    		  result[i][j] = image.getRGB(i, j);
 	    	  }
-	      
-	      
-	/*      final boolean hasAlphaChannel = image.getAlphaRaster() != null;
-
-	      int[][] result = new int[height][width];
-	      if (hasAlphaChannel) {
-	         final int pixelLength = 4;
-	         for (int pixel = 0, row = 0, col = 0; pixel < pixels.length; pixel += pixelLength) {
-	            int argb = 0;
-	            argb += (((int) pixels[pixel] & 0xff) << 24); // alpha
-	            argb += ((int) pixels[pixel + 1] & 0xff); // blue
-	            argb += (((int) pixels[pixel + 2] & 0xff) << 8); // green
-	            argb += (((int) pixels[pixel + 3] & 0xff) << 16); // red
-	            result[row][col] = argb;
-	            col++;
-	            if (col == width) {
-	               col = 0;
-	               row++;
-	            }
-	         }
-	      } else {
-	         final int pixelLength = 3;
-	         for (int pixel = 0, row = 0, col = 0; pixel < pixels.length; pixel += pixelLength) {
-	            int argb = 0;
-	            argb += -16777216; // 255 alpha
-	            argb += ((int) pixels[pixel] & 0xff); // blue
-	            argb += (((int) pixels[pixel + 1] & 0xff) << 8); // green
-	            argb += (((int) pixels[pixel + 2] & 0xff) << 16); // red
-	            result[row][col] = argb;
-	            col++;
-	            if (col == width) {
-	               col = 0;
-	               row++;
-	            }
-	         }
-	      }
-	      
-	      
-*/
+	
 	      
 	      
 	      return result;
@@ -955,23 +949,7 @@ public class Agent extends AbstractPlayer{
 		if(im == null)
 			return null;
 		//System.out.println(im.length+" "+im[0].length);
-	/*	BufferedImage nm = new BufferedImage(im.length,im[0].length,BufferedImage.TYPE_INT_RGB);
-		for(int i=0;i<im.length;i++)
-			for(int j=0;j<im[0].length;j++)
-			{
-				nm.setRGB(i,j,im[i][j]);
-			}
-		BufferedImage temp = new BufferedImage(im.length,im[0].length,BufferedImage.TYPE_INT_RGB);
-		for(int i=0;i<im.length;i++)
-			for(int j=0;j<im[0].length;j++)
-				temp.setRGB(i,j,im[i][j]);
-		File op = new File("pre.png");
-	    try {
-			ImageIO.write(temp, "png", op);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
+	
 		
 		int width = image.getWidth();
 		int height = image.getHeight();
@@ -1021,21 +999,8 @@ public class Agent extends AbstractPlayer{
 			}
 		}
 		/*
-		for(int i=0;i<shrinkedIm.length;i++)
-		{
-			for(int j=0;j<shrinkedIm[0].length;j++)
-				System.out.print(shrinkedIm[i][j]+",");
-			System.out.println();
-		}
-		*/
-		/*
-		BufferedImage newImage = new BufferedImage(shrinkedIm.length,shrinkedIm[0].length,BufferedImage.TYPE_INT_RGB);
 		
-		for(int i=0;i<shrinkedIm.length;i++)
-			for(int j=0;j<shrinkedIm[0].length;j++)
-			{
-				newImage.setRGB(i,j,shrinkedIm[i][j]);
-			}
+		
 	
 		File outputfile = new File("nm_"+block+".png");
 	    try {
@@ -1044,15 +1009,7 @@ public class Agent extends AbstractPlayer{
 			e.printStackTrace();
 		}
 	    
-        // get DataBufferBytes from Raster
-        WritableRaster raster = newImage .getRaster();
-        DataBufferInt data   = (DataBufferInt) raster.getDataBuffer();
-        
-        int[] pixels = data.getData();
-        float[] pixs = new float[pixels.length];
-        
-        for(int i=0;i<pixs.length;i++)
-        	pixs[i] = pixels[i];
+       
 		*/
 		//System.out.println(shrinkedIm);
 		return shrinkedIm;
@@ -1118,6 +1075,110 @@ public class Agent extends AbstractPlayer{
 			if(!theDir.exists())
 				theDir.mkdirs();
 		}
+	}
+	
+	public void writeExpToFile(Experience exp, int index)
+	{
+		PrintWriter expWriter = null;
+		try {
+			expWriter = new PrintWriter(new FileWriter(new File("experience/"+index+".txt")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		double[][] prev = exp.getPrevious();
+		double[][] res = exp.getResult();
+		double reward = exp.getReward();
+		String action = exp.getAction().toString();
+		int access = countAccess[index];
+		
+		expWriter.write("Previous=================================\n");
+		for(int m=0;m<prev.length;m++)
+		{
+			for(int n=0;n<prev[0].length;n++)
+				expWriter.write(prev[m][n]+" ");
+			expWriter.write("\n");;
+		}
+		expWriter.write("Result=================================\n");
+		if(res!=null)
+		for(int m=0;m<res.length;m++)
+		{
+			for(int n=0;n<res[0].length;n++)
+				expWriter.write(res[m][n]+" ");
+			expWriter.write("\n");;
+		}
+		else
+			expWriter.write("END OF EP\n");
+		expWriter.write("Action="+action+"\n");
+		expWriter.write("Reward="+reward+"\n");
+		expWriter.write("access="+access+"\n");
+		
+		expWriter.close();
+	
+	}
+	
+	public Experience readExpFromFile(int index, int width, int height)
+	{
+		Experience exp = new Experience();
+	
+		try 
+		{
+			String fileName = "experience/"+index+".txt";
+		//	System.out.println(fileName);
+			BufferedReader b = new BufferedReader(new FileReader(new File(fileName)));
+			
+			String st = "";
+		
+			
+			st = b.readLine();
+			
+			
+			double[][] tmp = new double[width][height];
+			
+				for (int i = 0; i < width; i++) {
+					st = b.readLine();
+					String[] string = st.split(" ");
+					for (int j = 0; j < height; j++) {
+						tmp[i][j] = Double.parseDouble(string[j]);
+					}
+				}
+			
+			exp.setPrevious(tmp);
+			
+			st = b.readLine();
+				
+			tmp = new double[width][height];
+			try
+			{
+				for (int i = 0; i < width; i++) {
+					st = b.readLine();
+					String[] string = st.split(" ");
+					for (int j = 0; j < height; j++) {
+						tmp[i][j] = Double.parseDouble(string[j]);
+					}
+				}
+			}
+			catch(NumberFormatException e)
+			{
+				tmp = null;
+			//	b.readLine();
+			}
+			exp.setResult(tmp);
+			
+			st = b.readLine();
+
+		//	System.out.println(st);
+			exp.setAction(Types.ACTIONS.fromString(st.split("=")[1]));
+			//System.out.println(exp.getAction());
+			st = b.readLine();
+			exp.setReward(Double.parseDouble(st.split("=")[1]));
+				
+			
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return exp;
 	}
 
 }

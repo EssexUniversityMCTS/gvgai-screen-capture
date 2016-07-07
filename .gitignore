@@ -8,6 +8,7 @@ gvgai-master/.metadata/*
 gvgai-master/dl4j-tutorial/*
 gvgai-master/sprites/*
 gvgai-master/output/*
+gvgai-master/experience/*
 cleanSpaceToTest/*
 *.metadata/*
 .recommenders/*

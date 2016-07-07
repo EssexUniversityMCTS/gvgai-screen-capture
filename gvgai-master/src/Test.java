@@ -36,7 +36,8 @@ public class Test
 	
     public static void main(String[] args)
     {
-    	 //Available controllers:
+ //   	CudaEnvironment.getInstance().getConfiguration().enableDebug(true).setVerbose(true);
+    	//Available controllers:
     	String sampleRandomController = "controllers.sampleRandom.Agent";
     	String doNothingController = "controllers.doNothing.Agent";
         String sampleOneStepController = "controllers.sampleonesteplookahead.Agent";

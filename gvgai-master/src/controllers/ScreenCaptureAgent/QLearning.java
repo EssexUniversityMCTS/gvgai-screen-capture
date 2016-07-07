@@ -12,7 +12,7 @@ public class QLearning {
 	//public HashMap<Experience, Integer> mapper;
 	public double alpha = 0.1;
 	public double gamma = 0.9;
-	public double epsilon = 0.2;
+	public double epsilon = 1;
 	
 	static ArrayList<double[][]> pool;
 	static ArrayList<double[]> experienceReward;

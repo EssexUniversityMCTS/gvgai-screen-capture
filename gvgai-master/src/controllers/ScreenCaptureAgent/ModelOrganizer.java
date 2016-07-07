@@ -54,6 +54,14 @@ public class ModelOrganizer {
         //	System.out.println(ArcadeMachine.currentSubsampling);
 			if (!ArcadeMachine.currentSubsampling) 
 			{
+//				System.out.println("(int)ArcadeMachine.currentKernel1.getWidth() "+(int)ArcadeMachine.currentKernel1.getWidth());
+//				System.out.println("(int)ArcadeMachine.currentKernel1.getHeight() "+(int)ArcadeMachine.currentKernel1.getHeight());
+//				System.out.println("ArcadeMachine.strideSize_1 "+ArcadeMachine.strideSize_1);
+//				System.out.println("(int)ArcadeMachine.currentKernel2.getWidth() "+(int)ArcadeMachine.currentKernel2.getWidth());
+//				System.out.println("(int)ArcadeMachine.currentKernel2.getHeight() "+(int)ArcadeMachine.currentKernel2.getHeight());
+//				System.out.println("ArcadeMachine.strideSize_2 "+ArcadeMachine.strideSize_2);
+//				System.out.println("w "+w);
+//				System.out.println("h "+h);
 				MultiLayerConfiguration.Builder builder = new NeuralNetConfiguration.Builder().seed(seed)
 						.iterations(iterations).regularization(true).l2(0.00001)
 						.learningRate(ArcadeMachine.initialLearningRate)
