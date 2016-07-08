@@ -118,10 +118,11 @@ public class QLearning {
 			return;
 		}
 		
-		
-		double prevQ = qValues[curIndex][actionIndex];
-		qValues[curIndex][actionIndex] = prevQ+alpha*(reward+gamma*max-prevQ);
-		
+		if(curIndex!=-1)
+		{
+			double prevQ = qValues[curIndex][actionIndex];
+			qValues[curIndex][actionIndex] = prevQ + alpha * (reward + gamma * max - prevQ);
+		}
 		//if(reward == 100 || reward == -100)
 			//System.out.println(qValues[curIndex][actionIndex]);
 		//if(epsilon>0.01)

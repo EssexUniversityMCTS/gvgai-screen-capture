@@ -1173,12 +1173,13 @@ public class Agent extends AbstractPlayer{
 			st = b.readLine();
 			exp.setReward(Double.parseDouble(st.split("=")[1]));
 				
-			
+			b.close();
 		} catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
 		return exp;
+		
 	}
 
 }

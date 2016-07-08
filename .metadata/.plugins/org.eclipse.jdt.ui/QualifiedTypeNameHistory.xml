@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.deeplearning4j.optimize.listeners.ScoreIterationListener"/>
-<fullyQualifiedTypeName name="org.nd4j.linalg.util.Paths"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="com.google.common.io.Files"/>
 <fullyQualifiedTypeName name="java.nio.file.Files"/>
@@ -20,7 +18,6 @@
 <fullyQualifiedTypeName name="org.deeplearning4j.nn.conf.layers.SubsamplingLayer"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
@@ -36,7 +33,6 @@
 <fullyQualifiedTypeName name="org.jblas.util.Random"/>
 <fullyQualifiedTypeName name="myStuffs.gvgai_ui"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
-<fullyQualifiedTypeName name="core.ArcadeMachine"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -59,5 +55,9 @@
 <fullyQualifiedTypeName name="org.apache.spark.SparkContext"/>
 <fullyQualifiedTypeName name="scala.Tuple2"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="core.ArcadeMachine"/>
 <fullyQualifiedTypeName name="org.nd4j.jita.conf.CudaEnvironment"/>
+<fullyQualifiedTypeName name="tachyon.network.protocol.databuffer.DataBuffer"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="ontology.Types.ACTIONS"/>
 </qualifiedTypeNameHistroy>

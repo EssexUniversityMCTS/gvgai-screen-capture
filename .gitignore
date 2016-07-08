@@ -11,7 +11,7 @@ gvgai-master/output/*
 gvgai-master/experience/*
 cleanSpaceToTest/*
 *.metadata/*
-.recommenders/*
+*.recommenders/*
 bin/
 tmp/
 *.tmp

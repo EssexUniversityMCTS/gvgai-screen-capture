@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="limit =" key="selection"/>
+		<item value="epsilon" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="epsilon"/>
+			<item value="pool"/>
+			<item value="finish"/>
+			<item value="-cuda-7.5"/>
 			<item value="limit ="/>
 			<item value="native"/>
 			<item value="mapper.put"/>
 			<item value="sparkcontext"/>
-			<item value="saveAs"/>
-			<item value="JavaRDD"/>
-			<item value="set("/>
-			<item value="set(String"/>
 		</list>
 		<list key="replacehistory">
+			<item value="-native"/>
 			<item value="cuda-7.5"/>
 		</list>
 	</section>
@@ -25,7 +26,7 @@
 		<item value="259" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="461" key="DIALOG_HEIGHT"/>
-		<item value="596" key="DIALOG_X_ORIGIN"/>
-		<item value="181" key="DIALOG_Y_ORIGIN"/>
+		<item value="1023" key="DIALOG_X_ORIGIN"/>
+		<item value="38" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

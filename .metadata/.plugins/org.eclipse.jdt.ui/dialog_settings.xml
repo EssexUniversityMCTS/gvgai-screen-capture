@@ -63,10 +63,13 @@
 	<section name="FatJarPackageWizard">
 		<item value="I:\MasterProj\Code\gvgai-screen-capture" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
 		<item value="Test - gvgai-master" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="gvgai-master\Test.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="gvgai-master\Test_DifScore_GPU.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="gvgai-master\Test_DifScore_GPU.jar"/>
+			<item value="gvgai-master\Mnist.jar"/>
+			<item value="gvgai-master\Test_DifScore_MultiGPU.jar"/>
 			<item value="gvgai-master\Test.jar"/>
 			<item value="gvgai-master\Escape0_Cheat.jar"/>
 			<item value="gvgai-master\GVGAI.jar"/>
