@@ -1090,9 +1090,10 @@ public class Agent extends AbstractPlayer{
 	
 	public void writeExpToFile(Experience exp, int index)
 	{
+		createNestedDir((theDir+"/experience/").split("\\/"));
 		PrintWriter expWriter = null;
 		try {
-			expWriter = new PrintWriter(new FileWriter(new File("experience/"+index+".txt")));
+			expWriter = new PrintWriter(new FileWriter(new File(theDir+"/experience/"+index+".txt")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -1134,7 +1135,7 @@ public class Agent extends AbstractPlayer{
 	
 		try 
 		{
-			String fileName = "experience/"+index+".txt";
+			String fileName = theDir+"/experience/"+index+".txt";
 		//	System.out.println(fileName);
 			BufferedReader b = new BufferedReader(new FileReader(new File(fileName)));
 			
