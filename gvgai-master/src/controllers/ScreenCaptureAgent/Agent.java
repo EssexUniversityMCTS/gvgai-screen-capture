@@ -24,9 +24,12 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.PriorityQueue;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
+import java.util.Stack;
 
 import javax.imageio.ImageIO;
 import javax.swing.table.DefaultTableModel;
@@ -104,9 +107,11 @@ public class Agent extends AbstractPlayer{
 	private QLearning learning;
 	//private ExperienceCount expCount;
 	public static int[] countAccess;
-	//ArrayList<Integer> toBeLearned;
+	
+	Stack<Integer> toBeLearnt;
+	
 	int loopIndex = 0;
-	boolean randomPick = false;
+	boolean randomPick = true;
 	
 	Experience experience;
 	int countRound = 0;
@@ -115,7 +120,7 @@ public class Agent extends AbstractPlayer{
 	
 	
 	public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer){
-		
+		toBeLearnt = new Stack();
 		poolSize = ArcadeMachine.poolSize;
 		batchSize = ArcadeMachine.currentBatchSize;
 		numPlay = ArcadeMachine.currentRepetition;//ArcadeMachine.repetition;
@@ -528,17 +533,23 @@ public class Agent extends AbstractPlayer{
         	Experience toUpdateExp;
         	if(randomPick)
         	{
-				int rand = 0;
-				do
-				{
-					// System.out.println(learning.pool.size()+" "+rand);
-					rand = random.nextInt(QLearning.pool.size());// *numAct-1);
-
-				} while (countAccess[rand] == 0);
-
-				
+        		if(toBeLearnt.isEmpty())
+        		{
+        			Set<Integer> generated = new LinkedHashSet<Integer>();
+        			
+        			while (generated.size() < QLearning.pool.size())
+        			{
+        			    Integer next = random.nextInt(QLearning.pool.size());
+        			    // As we're adding to a set, this will automatically do a containment check
+        			    generated.add(next);
+        			}
+        			toBeLearnt.addAll(generated);
+        		}
+        		
+        		int rand = toBeLearnt.pop();
 				
 				toUpdateExp = readExpFromFile(rand,w,h);
+		//		System.out.println(rand+" "+toBeLearnt.size()+" "+learning.pool.size());
         	}
         	
         	else
