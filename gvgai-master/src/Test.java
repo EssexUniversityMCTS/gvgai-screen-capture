@@ -72,7 +72,7 @@ public class Test
                              "realportals", "realsokoban", "roguelike", "seaquest", "sheriff",      //45-49
                              "sokoban", "solarfox" ,"superman", "surround", "survivezombies", //50-54
                              "tercio", "thecitadel", "waitforbreakfast", "watergame", "whackamole", //55-59
-                             "zelda", "zenpuzzle" }; //60, 61 ...
+                             "zelda", "zenpuzzle","gridworld","labyrinth2" }; //60, 61 ...
 
         //Other settings
         boolean visuals = false;
@@ -80,15 +80,15 @@ public class Test
         int seed = new Random().nextInt();
 
         //Game and level to play
-        int gameIdx = 21;//53;
-        int levelIdx = 3; //level names from 0 to 4 (game_lvlN.txt).
+        int gameIdx = 63;//53;
+        int levelIdx = 1; //level names from 0 to 4 (game_lvlN.txt).
         String game = gamesPath + games[gameIdx] + ".txt";
         String level1 = gamesPath + games[gameIdx] + "_lvl" + levelIdx +".txt";
 
         String recordLevelFile = generateLevelPath + games[gameIdx] + ".txt";
 
         // 1. This starts a game, in a level, played by a human.
-   //     ArcadeMachine.playOneGame(game, level1, recordActionsFile, seed);
+     //   ArcadeMachine.playOneGame(game, level1, recordActionsFile, seed);
         
         // 2. This plays a game in a level by the controller.
        // ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);

@@ -1,0 +1,25 @@
+BasicGame
+    SpriteSet
+        exit > Door color=GREEN img=goal
+        avatar > MovingAvatar img=avatar
+        trap > Immovable img=hell
+        food > Immovable
+            power  > Resource color=LIGHTGREEN shrinkfactor=0.8 img=powerpill
+
+    InteractionSet
+
+        avatar wall > stepBack
+        exit avatar > killSprite scoreChange=1
+        avatar trap > killSprite scoreChange=-1
+        power avatar > killSprite scoreChange=10
+        
+
+    TerminationSet
+        Timeout limit=1000 win=False
+        SpriteCounter stype=avatar limit=0 win=False
+        SpriteCounter stype=exit limit=0 win=True
+
+    LevelMapping
+        x > exit
+        t > trap
+        p > power

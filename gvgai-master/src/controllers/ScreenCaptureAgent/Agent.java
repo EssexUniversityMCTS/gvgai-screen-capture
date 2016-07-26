@@ -458,8 +458,9 @@ public class Agent extends AbstractPlayer{
         			
       //  			System.out.println("not add new");
         			//experiencePool[prevIndex] = experience.copy();
-        			writeExpToFile(experience.copy(),prevIndex);
         			countAccess[prevIndex]++;
+        			
+        			writeExpToFile(experience.copy(),prevIndex);
         			
         			//System.out.println(experiencePool[prevIndex].accessCount);
         			
