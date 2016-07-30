@@ -10,10 +10,10 @@ public class ResultAnalysis {
 		// TODO Auto-generated method stub
 		BufferedReader b;
 		
-		int r = 0;
+		int r = 4;
 		//for(int r=0;r<5;r++)
 		{
-		String path = "I:\\MasterProj\\Code\\output\\butterflies_lvl0\\400batch\\5by5\\3by3\\dropout_0.0\\"+r+"\\";//"../../output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
+		String path = "I:\\MasterProj\\Code\\output\\escape_lvl0\\400batch\\5by5\\3by3\\dropout_0.0\\"+r+"\\";//"../../output/"+kSize+"by"+kSize+"/"+round+"/"+gameName+"/";
 		System.out.println("round "+r);
 		for(int i=0;i<500;i++)
 		{
@@ -35,18 +35,18 @@ public class ResultAnalysis {
 					countAction++;
 				}
 				
-				System.out.println(result.split(" ")[0]);
+//				System.out.println(result.split(" ")[0]);
 				
-//				if(result.trim().contains("PLAYER_WINS"))
-//				{
-//					System.out.println(countAction*1);
-//				}
-//				
-//				else
-//				{
-//					System.out.println(countAction*-1);
-//				}
-//				
+				if(result.trim().contains("PLAYER_WINS"))
+				{
+					System.out.println(countAction*1);
+				}
+				
+				else
+				{
+					System.out.println(countAction*-1);
+				}
+				
 			//System.out.println(result);
 			
 			} catch (Exception e) 
