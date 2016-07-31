@@ -14338,3 +14338,8 @@ java.net.UnknownHostException: services.gradle.org
 2559-07-30 14:36:21,051 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2559-07-30 14:36:21,055 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2559-07-30 14:36:21,057 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-07-31 16:06:55,947 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2559-07-31 16:17:10,653 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-31 16:17:10,708 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-07-31 16:17:10,971 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-07-31 16:17:10,971 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources

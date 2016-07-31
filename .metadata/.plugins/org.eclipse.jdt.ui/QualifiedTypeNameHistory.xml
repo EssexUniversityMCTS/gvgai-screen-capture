@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="org.joda.time.DateTime"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
@@ -54,10 +53,11 @@
 <fullyQualifiedTypeName name="org.nd4j.jita.conf.CudaEnvironment"/>
 <fullyQualifiedTypeName name="tachyon.network.protocol.databuffer.DataBuffer"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
-<fullyQualifiedTypeName name="ontology.Types.ACTIONS"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="controllers.singlePlayer.replayer.Agent"/>
+<fullyQualifiedTypeName name="ontology.Types.ACTIONS"/>
 </qualifiedTypeNameHistroy>
