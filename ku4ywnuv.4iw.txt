@@ -1,0 +1,16 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch gpu-allowed
+# Your branch and 'origin/gpu-allowed' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	modified:   .metadata/.mylyn/.tasks.xml.zip
+#	modified:   .metadata/.mylyn/tasks.xml.zip
+#	modified:   .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+#	modified:   .metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml
+#	modified:   .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+#
+
