@@ -15,7 +15,7 @@ public class QLearning {
 	public double epsilon = 1;
 	
 	static ArrayList<double[][]> pool;
-	static ArrayList<double[]> experienceReward;
+//	static ArrayList<double[]> experienceReward;
 	//Experience[] experiencePool;
 	private Random random = new Random();
 	
@@ -24,7 +24,7 @@ public class QLearning {
 		pool = new ArrayList();
 		//experiencePool = exp;
 		qValues = new double[maxKept][actionSize];
-		experienceReward = new ArrayList();
+//		experienceReward = new ArrayList();
 	//	mapper = new HashMap<Experience, Integer>();
 	}
 	
