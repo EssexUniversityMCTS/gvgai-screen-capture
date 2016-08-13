@@ -1,10 +1,11 @@
 BasicGame
     SpriteSet
-        exit > Door color=GREEN img=goal
-        avatar > MovingAvatar img=avatar
-        trap > Immovable img=hell
-        food > Immovable
-            power  > Resource color=LIGHTGREEN shrinkfactor=0.8 img=powerpill
+        floor > Immovable img=oryx/grass autotiling=True hidden=True
+        exit > Door color=GREEN img=newset/exit2
+        avatar > MovingAvatar img=newset/girl1
+        trap > Immovable img=oryx/spike2
+        wall > Immovable img=oryx/wall1
+        power  > Resource color=GREEN shrinkfactor=0.75 img=oryx/diamond3
 
     InteractionSet
 
@@ -20,6 +21,9 @@ BasicGame
         SpriteCounter stype=exit limit=0 win=True
 
     LevelMapping
-        x > exit
-        t > trap
-        p > power
+        x > floor exit
+        t > floor trap
+        . > floor
+        w > floor wall
+        A > floor avatar
+        p > floor power

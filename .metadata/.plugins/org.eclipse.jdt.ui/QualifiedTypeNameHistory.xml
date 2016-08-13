@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="org.joda.time.DateTime"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="it.unimi.dsi.fastutil.Arrays"/>
@@ -49,7 +48,6 @@
 <fullyQualifiedTypeName name="org.apache.spark.SparkContext"/>
 <fullyQualifiedTypeName name="scala.Tuple2"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
-<fullyQualifiedTypeName name="core.ArcadeMachine"/>
 <fullyQualifiedTypeName name="org.nd4j.jita.conf.CudaEnvironment"/>
 <fullyQualifiedTypeName name="tachyon.network.protocol.databuffer.DataBuffer"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="controllers.singlePlayer.replayer.Agent"/>
 <fullyQualifiedTypeName name="ontology.Types.ACTIONS"/>
+<fullyQualifiedTypeName name="core.ArcadeMachine"/>
+<fullyQualifiedTypeName name="tools.Vector2d"/>
 </qualifiedTypeNameHistroy>

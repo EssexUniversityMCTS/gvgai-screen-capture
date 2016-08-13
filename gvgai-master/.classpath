@@ -16,5 +16,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="I:/MasterProj/Code/gvgai-screen-capture/jheatchart-0.6/jheatchart-0.6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

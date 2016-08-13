@@ -88,7 +88,7 @@ public class Test
         String recordLevelFile = generateLevelPath + games[gameIdx] + ".txt";
 
         // 1. This starts a game, in a level, played by a human.
-        ArcadeMachine.playOneGame(game, level1, recordActionsFile, seed);
+      //  ArcadeMachine.playOneGame(game, level1, recordActionsFile, seed);
         
         // 2. This plays a game in a level by the controller.
        // ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);

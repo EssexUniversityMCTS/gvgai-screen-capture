@@ -1,17 +1,19 @@
 #http://www.puzzlescript.net/editor.html?hack=6847423
 
-BasicGame key_handler=Pulse
+BasicGame key_handler=Pulse square_size=48
     SpriteSet
+        background > Immovable img=oryx/backBiege hidden=True
         isincenter > Flicker limit=1
-        avatar  > MovingAvatar
-        ground > Immovable color=RED
-        walked > Immovable color=GREEN
-        rock > Immovable img=boulder
-        
+        avatar  > MovingAvatar img=oryx/angel1
+        ground > Immovable img=oryx/floorTileOrange
+        walked > Immovable img=oryx/floorTileGreen
+        rock > Immovable img=oryx/wall5
     
     LevelMapping
-        r > rock
-        . > ground
+        r > background rock
+        g > background ground
+        . > background
+        A > background avatar
         
     TerminationSet
         SpriteCounter      stype=avatar               limit=0 win=False  

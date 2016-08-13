@@ -1,5 +1,9 @@
 package controllers.ScreenCaptureAgent;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,30 +14,75 @@ import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Set;
 
+import javax.swing.JFrame;
+
+import org.tc33.jheatchart.HeatChart;
+
 public class ToTestThing {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		
-		Random rng = new Random(); // Ideally just create one instance globally
-		// Note: use LinkedHashSet to maintain insertion order
-		Set<Integer> generated = new LinkedHashSet<Integer>();
+		String lab1 = "I:\\MasterProj\\Code\\output\\labyrinth_lvl0\\400batch\\5by5\\3by3\\dropout_0.0\\0\\heatMap.txt";
+		String lab2 = "I:\\MasterProj\\Code\\output\\labyrinth2_lvl0\\400batch\\5by5\\3by3\\dropout_0.0\\1\\heatMap.txt";
 		
-		while (generated.size() < 100)
+		BufferedReader b = new BufferedReader(new FileReader(new File(lab2)));
+		
+		ArrayList<double[]> op = new ArrayList();
+		String st = "";
+		
+		int max = 0;
+		
+		while((st = b.readLine())!=null)
 		{
-		    Integer next = rng.nextInt(100) + 1;
-		    // As we're adding to a set, this will automatically do a containment check
-		    generated.add(next);
+			String[] tmp = st.split("\t");
+			double[] line = new double[tmp.length];
+			
+			for(int i=0;i<line.length;i++)
+			{
+				int parse = Integer.parseInt(tmp[i]);
+				line[i] = parse;
+				
+				if(parse>max)
+					max = parse;
+			}
+			op.add(line);
 		}
 		
-		boolean[] check = new boolean[100];
+		double[][] real = new double[op.size()][op.get(0).length];
 		
-		for (Iterator<Integer> it = generated.iterator(); it.hasNext(); ) {
-	        int f = it.next();
-	            check[f-1] = true;
-	    }
+		for(int i=0;i<real.length;i++)
+		{
+			double[] norm = new double[real[i].length];
+			
+			for(int j=0;j<norm.length;j++)
+			{
+				if(op.get(i)[j]!=0)
+				norm[j] = Math.log(op.get(i)[j]);
+			}
+			real[i] = norm;
+		}
 		
-		for(int i=0;i<check.length;i++)
-			System.out.println(check[i]);
+		for(int i=0;i<real.length;i++)
+		{
+			for(int j=0;j<real[0].length;j++)
+				System.out.print(real[i][j]+"\t");
+			System.out.println();
+		}
+		
+		HeatChart map = new HeatChart(real);
+
+		// Step 2: Customise the chart.
+		map.setTitle("Modified Labyrinth heat map");
+		
+		map.setLowValueColour(Color.white);
+		map.setHighValueColour(Color.BLUE);
+	
+		
+		
+		
+	
+		// Step 3: Output the chart to a file.
+		map.saveToFile(new File("labyrinth_heat2.png"));
 	}
 
 }

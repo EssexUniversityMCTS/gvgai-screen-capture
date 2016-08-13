@@ -316,6 +316,13 @@ public class Agent extends AbstractPlayer{
 		if(ArcadeMachine.vis)
 		{
 			BufferedImage bufferedImage = Game.im;
+			
+//			BufferedImage temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
+//			for(int i=0;i<pixs.length;i++)
+//				for(int j=0;j<pixs[0].length;j++)
+//					temp.setRGB(i,j,(int) pixs[i][j]);
+//			
+			
 
 			// System.out.println(currentIndex);
 
@@ -326,6 +333,14 @@ public class Agent extends AbstractPlayer{
 			} else
 				Game.im = null;
 
+//			File op = new File("screenshots/"+stateObs.getGameTick()+"before.png");
+//		    try {
+//				ImageIO.write(bufferedImage, "png", op);
+//		//		System.out.println("before");
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+			
 			int blockW = stateObs.getBlockSize();// 25;
 			pixs = extendedImage(preProcess(bufferedImage, blockW), minBlockSize);
 		}
@@ -377,24 +392,39 @@ public class Agent extends AbstractPlayer{
 			}
 
 		//	System.out.println();
-			
-			pixs = extendedImage(pixs, minBlockSize);
-			
-//			BufferedImage temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
-//			for(int i=0;i<pixs.length;i++)
-//				for(int j=0;j<pixs[0].length;j++)
-//					temp.setRGB(i,j,(int) pixs[i][j]);
-//			
-//			File op = new File("screenshots/"+stateObs.getGameTick()+".png");
-//		    try {
-//				ImageIO.write(temp, "png", op);
-//				System.out.println("save");
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
+		
 			
 		}
         
+		
+		BufferedImage temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
+		for(int i=0;i<pixs.length;i++)
+			for(int j=0;j<pixs[0].length;j++)
+				temp.setRGB(i,j,(int) pixs[i][j]);
+		
+		File op = new File("screenshots/"+stateObs.getGameTick()+"before.png");
+	    try {
+			ImageIO.write(temp, "png", op);
+//			System.out.println("save");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		pixs = extendedImage(pixs, minBlockSize);
+		
+		temp = new BufferedImage(pixs.length,pixs[0].length,BufferedImage.TYPE_INT_RGB);
+		for(int i=0;i<pixs.length;i++)
+			for(int j=0;j<pixs[0].length;j++)
+				temp.setRGB(i,j,(int) pixs[i][j]);
+		
+		op = new File("screenshots/"+stateObs.getGameTick()+"after.png");
+	    try {
+			ImageIO.write(temp, "png", op);
+			System.out.println("save");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
     //    System.out.println(pixs.length+" llll "+pixs[0].length);
         int pixIndex = QLearning.findIndexFromImage(pixs);
         if(experience == null)
