@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
 <fullyQualifiedTypeName name="org.deeplearning4j.nn.multilayer.MultiLayerNetwork"/>
 <fullyQualifiedTypeName name="org.deeplearning4j.nn.layers.convolution.subsampling.SubsamplingLayer"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="controllers.ScreenCaptureAgent.Agent"/>
 </qualifiedTypeNameHistroy>

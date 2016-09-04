@@ -375,6 +375,7 @@ public class ArcadeMachine
         double score = 0.0;
         if(visuals)
         {
+        //	while(true)
             score = toPlay.playGame(player, randomSeed, isHuman);
             
         }

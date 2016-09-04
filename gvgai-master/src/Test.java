@@ -48,7 +48,8 @@ public class Test
         String tester = "controllers.Tester.Agent";
         String repeatOLETS = "controllers.repeatOLETS.Agent";
         String screenCap = "controllers.ScreenCaptureAgent.Agent";
-
+        String screenCapReplayer = "controllers.ScreenCapReplayer.Agent";
+        
         //Available Generators
         String randomLevelGenerator = "levelGenerators.randomLevelGenerator.LevelGenerator";
         String geneticGenerator = "levelGenerators.geneticLevelGenerator.LevelGenerator";
@@ -80,7 +81,7 @@ public class Test
         int seed = new Random().nextInt();
 
         //Game and level to play
-        int gameIdx = 32;//53;
+        int gameIdx = 21;//53;
         int levelIdx = 0; //level names from 0 to 4 (game_lvlN.txt).
         String game = gamesPath + games[gameIdx] + ".txt";
         String level1 = gamesPath + games[gameIdx] + "_lvl" + levelIdx +".txt";
@@ -91,31 +92,32 @@ public class Test
       //  ArcadeMachine.playOneGame(game, level1, recordActionsFile, seed);
         
         // 2. This plays a game in a level by the controller.
-       // ArcadeMachine.runOneGame(game, level1, visuals, sampleOneStepController, recordActionsFile, seed, false);
         
-        String propertieFile = "";
-        if(args.length>0)
-        {
-        	propertieFile = args[0];
-        }
-        else
-        {
-        	propertieFile = "tmpConfig.properties";
-        }
-        	try 
-        	{
-				InputStream b = new FileInputStream(propertieFile);
-				String st = "";
-				Properties prop = new Properties();
-				prop.load(b);
-				
-				//System.out.println(prop.getProperty("gameName"));
-				ArcadeMachine.setUp(prop, visuals, screenCap, recordActionsFile, seed);
-				
-			} catch (Exception e) 
-        	{
-				e.printStackTrace();
-			}
+        ArcadeMachine.runOneGame(game, level1, true, screenCapReplayer, recordActionsFile, seed, false);
+//        
+//        String propertieFile = "";
+//        if(args.length>0)
+//        {
+//        	propertieFile = args[0];
+//        }
+//        else
+//        {
+//        	propertieFile = "tmpConfig.properties";
+//        }
+//        	try 
+//        	{
+//				InputStream b = new FileInputStream(propertieFile);
+//				String st = "";
+//				Properties prop = new Properties();
+//				prop.load(b);
+//				
+//				//System.out.println(prop.getProperty("gameName"));
+//				ArcadeMachine.setUp(prop, visuals, screenCap, recordActionsFile, seed);
+//				
+//			} catch (Exception e) 
+//        	{
+//				e.printStackTrace();
+//			}
         
         
         //System.out.println(args.length);
@@ -126,13 +128,13 @@ public class Test
        // ArcadeMachine.replayGame(game, level1, visuals, readActionsFile);
 
         // 4. This plays a single game, in N levels, M times :
-        //String level2 = gamesPath + games[gameIdx] + "_lvl" + 1 +".txt";
-        //int M = 3;
-        //for(int i=0; i<games.length; i++){
-        //	game = gamesPath + games[i] + ".txt";
-        //	level1 = gamesPath + games[i] + "_lvl" + levelIdx +".txt";
-        //	ArcadeMachine.runGames(game, new String[]{level1}, 5, evolutionStrategies, null);
-        //}
+//        String level2 = gamesPath + games[gameIdx] + "_lvl" + 0 +".txt";
+//        int M = 10;
+//        for(int i=0; i<games.length; i++){
+//        	game = gamesPath + games[i] + ".txt";
+//        	level1 = gamesPath + games[i] + "_lvl" + levelIdx +".txt";
+//        	ArcadeMachine.runGames(game, new String[]{level1}, 100, screenCapReplayer, null);
+//        }
         
         //5. This starts a game, in a generated level created by a specific level generator
 //        if(ArcadeMachine.generateOneLevel(game, geneticGenerator, recordLevelFile)){

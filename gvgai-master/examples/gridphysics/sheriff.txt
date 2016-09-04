@@ -21,7 +21,7 @@ BasicGame
 
         missile > Missile img=oryx/orb1 shrinkfactor=0.5 speed=0.6
 
-        wall > Immovable autotiling=True img=oryx/dirtwall
+        wall > Immovable img=oryx/dirtwall_0
 
     LevelMapping
         0 > floor base

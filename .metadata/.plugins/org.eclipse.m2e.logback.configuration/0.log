@@ -14597,3 +14597,201 @@ java.net.UnknownHostException: services.gradle.org
 2559-08-19 00:12:55,133 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
 2559-08-19 00:12:55,185 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2559-08-19 00:12:55,185 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-08-22 19:59:50,932 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\toSubmit\pom.xml.
+2559-08-22 20:00:33,030 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:00:33,090 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-22 20:00:33,152 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:00:33,153 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\toSubmit\src\test\resources
+2559-08-22 20:00:35,716 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2559-08-22 20:00:38,182 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: gvgai-master:gvgai-master:0.0.1-SNAPSHOT @ I:\MasterProj\Code\gvgai-screen-capture\toSubmit\pom.xml.
+2559-08-22 20:00:46,809 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /toSubmit/src
+2559-08-22 20:00:46,810 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /toSubmit/src overlaps with sources folder /toSubmit/src
+2559-08-22 20:00:46,816 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /toSubmit/src/test/java because it overlaps with /toSubmit/src
+2559-08-22 20:00:50,001 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 14 sec
+2559-08-22 20:00:57,567 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:00:57,579 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-22 20:00:57,632 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:00:57,632 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\toSubmit\src\test\resources
+2559-08-22 20:01:11,607 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:01:11,642 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-22 20:01:11,672 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-22 20:01:11,672 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\toSubmit\src\test\resources
+2559-08-24 22:37:33,402 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2559-08-24 22:38:32,570 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-24 22:38:32,601 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-24 22:38:32,721 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-24 22:38:32,722 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-08-31 20:03:51,273 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:03:51,358 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-31 20:03:51,885 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:03:51,886 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-08-31 20:10:32,893 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:10:32,942 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-31 20:10:32,993 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:10:32,994 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-08-31 20:59:12,124 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:59:12,178 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-08-31 20:59:12,238 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-08-31 20:59:12,239 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-01 12:15:19,812 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-01 12:15:19,881 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-01 12:15:20,047 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-01 12:15:20,047 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:05:01,397 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2559-09-03 21:05:59,888 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:05:59,922 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:06:00,736 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:06:00,736 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:07:25,134 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:07:25,139 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-09-03 21:07:25,143 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:07:25,144 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:09:12,101 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:09:12,149 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:09:12,189 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:09:12,190 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:14:59,729 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:14:59,781 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:14:59,821 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:14:59,822 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:16:27,400 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:16:27,444 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:16:27,488 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:16:27,488 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:17:28,623 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:17:28,665 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:17:28,700 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:17:28,701 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:18:20,063 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:18:20,104 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:18:20,145 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:18:20,145 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:19:22,107 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:19:22,147 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:19:22,185 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:19:22,186 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:21:56,442 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:21:56,479 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:21:56,511 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:21:56,512 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:22:47,786 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:22:47,843 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:22:47,890 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:22:47,890 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:24:51,819 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:24:51,877 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:24:51,928 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:24:51,928 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:32:57,720 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:32:57,755 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:32:57,787 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:32:57,788 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:34:32,087 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:34:32,123 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:34:32,158 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:34:32,158 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:37:17,122 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:37:17,158 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:37:17,201 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:37:17,202 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:47:09,141 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:47:09,188 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:47:09,236 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:47:09,237 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:49:08,094 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:49:08,130 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:49:08,166 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:49:08,167 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:51:32,482 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:51:32,515 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:51:32,547 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:51:32,547 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:54:10,609 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:54:10,645 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:54:10,678 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:54:10,679 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:55:07,786 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:55:07,830 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:55:07,863 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:55:07,864 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:56:35,866 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:56:35,902 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:56:35,935 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:56:35,935 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:58:10,404 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:58:10,438 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:58:10,474 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:58:10,475 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 21:59:22,539 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:59:22,586 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 21:59:22,622 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 21:59:22,623 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:45:33,301 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:45:33,341 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:45:33,383 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:45:33,384 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:47:25,956 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:47:25,991 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:47:26,030 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:47:26,031 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:48:56,707 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:48:56,740 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:48:56,772 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:48:56,773 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:50:06,929 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:50:06,966 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:50:06,999 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:50:07,000 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:53:54,943 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:53:54,989 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:53:55,022 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:53:55,023 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:55:32,883 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:55:32,918 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:55:32,952 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:55:32,953 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:58:06,032 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:58:06,070 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:58:06,103 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:58:06,103 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 22:58:35,216 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:58:35,254 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 22:58:35,290 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 22:58:35,290 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 23:00:05,108 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:00:05,109 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-09-03 23:00:05,110 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:00:05,110 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 23:05:38,297 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:05:38,339 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 23:05:38,376 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:05:38,377 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 23:07:08,110 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:07:08,111 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-09-03 23:07:08,112 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:07:08,113 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 23:11:26,422 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:11:26,458 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 23:11:26,502 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:11:26,502 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-03 23:15:52,912 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:15:52,957 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-03 23:15:53,001 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-03 23:15:53,001 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-04 10:03:20,172 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2559-09-04 10:04:01,114 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:04:01,145 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-04 10:04:01,219 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:04:01,220 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-04 10:06:47,983 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:06:48,043 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-04 10:06:48,092 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:06:48,093 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-04 10:16:28,661 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:16:28,717 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 131 resources
+2559-09-04 10:16:28,753 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:16:28,753 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
+2559-09-04 10:17:04,387 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:17:04,388 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2559-09-04 10:17:04,391 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2559-09-04 10:17:04,392 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory I:\MasterProj\Code\gvgai-screen-capture\gvgai-master\src\test\resources
